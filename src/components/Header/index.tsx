@@ -79,7 +79,6 @@ const Header = () => {
             </nav>
           </div>
 
-          {/* Кнопка меню для мобильной версии */}
           <div className="flex items-center justify-end w-1/4 lg:hidden">
             <button
               onClick={() => setNavigationOpen(!navigationOpen)}
