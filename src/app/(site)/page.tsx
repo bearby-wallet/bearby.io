@@ -12,8 +12,8 @@ import { Metadata } from "next";
 import { integrations } from "../../../integrations.config";
 
 export const metadata: Metadata = {
-  title: "AI Tool - Next.js Template for AI Tools",
-  description: "This is Home for AI Tool",
+  title: "Bearby wallet",
+  description: "This is Home for Bearby wallet",
   // other metadata
 };
 

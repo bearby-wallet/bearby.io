@@ -1,9 +1,9 @@
 import SidebarLink from "@/components/Docs/SidebarLink";
 import { getAllPosts } from "@/libs/markdown";
-import { Metadata } from "next";
+// import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Docs | Bearby wallet",
+  title: "Docs | Bearby",
   description: "This is Docs page for Bearby wallet",
   // other metadata
 };

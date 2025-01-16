@@ -26,7 +26,7 @@ const Hero = () => {
 
       {/* <!-- Hero Content --> */}
       <div className="relative z-1 mx-auto max-w-[900px] px-4 sm:px-8 xl:px-0">
-        <div className="text-center">
+        <div className="text-left">
           <span className="hero-subtitle-gradient hover:hero-subtitle-hover relative mb-5 inline-flex items-center gap-2 rounded-full px-4.5 py-2 text-sm font-medium">
             <Image
               src="/images/hero/icon-title.svg"
@@ -35,26 +35,19 @@ const Hero = () => {
               height={16}
             />
 
-            <span className="hero-subtitle-text">
-              Launch Your AI Startup with
-            </span>
+            <span className="hero-subtitle-text">Join massa web3.</span>
           </span>
-          <h1 className="mb-6 text-3xl font-extrabold text-white sm:text-5xl xl:text-heading-1">
-            OpenAI + Next.js SaaS Boilerplate and Starter Kit
-          </h1>
-          <p className="mx-auto mb-9 max-w-[500px] font-medium md:text-lg">
-            Ideal for developers looking to build SaaS applications using OpenAI
-            and Next.js, this starter kit comes with pre-configured and
-            pre-built examples, making it easier to quickly kickstart your AI
-            startup.
-          </p>
 
-          <Link
-            href="/ai-examples"
-            className="hero-button-gradient inline-flex rounded-lg px-7 py-3 font-medium text-white duration-300 ease-in hover:opacity-80"
-          >
-            Try AI Examples
-          </Link>
+          {/* Разделение текста на части */}
+          <h1 className="mb-6 text-5xl font-extrabold leading-tight text-white sm:text-5xl xl:text-7xl">
+            <span className="block">A portal to the</span>
+            <span className="block">decentralised</span>
+            <span className="block">world</span>
+          </h1>
+
+          {/* <p className="mx-auto mb-9 max-w-[500px] font-medium md:text-lg"> */}
+          <h2 className="mb-6 text-4xl font-extrabold leading-tight text-white sm:text-5xl xl:text-3xl">The most popular and fastest Massa wallet</h2>
+          {/* </p> */}
         </div>
       </div>
 
@@ -74,3 +67,4 @@ const Hero = () => {
 };
 
 export default Hero;
+
