@@ -38,16 +38,13 @@ const Hero = () => {
             <span className="hero-subtitle-text">Join massa web3.</span>
           </span>
 
-          {/* Разделение текста на части */}
           <h1 className="mb-6 text-5xl font-extrabold leading-tight text-white sm:text-5xl xl:text-7xl">
             <span className="block">A portal to the</span>
             <span className="block">decentralised</span>
             <span className="block">world</span>
           </h1>
 
-          {/* <p className="mx-auto mb-9 max-w-[500px] font-medium md:text-lg"> */}
           <h2 className="mb-6 text-4xl font-extrabold leading-tight text-white sm:text-5xl xl:text-3xl">The most popular and fastest Massa wallet</h2>
-          {/* </p> */}
         </div>
       </div>
 
