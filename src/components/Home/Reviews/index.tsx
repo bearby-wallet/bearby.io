@@ -23,7 +23,7 @@ const Reviews = () => {
 
   return (
     <>
-      <div className="mx-auto max-w-[1170px] px-4 sm:px-8 xl:px-0">
+      {/* <div className="mx-auto max-w-[1170px] px-4 sm:px-8 xl:px-0">
         <SectionTitle
           subTitle="Wall of love"
           title="What Our User Says"
@@ -73,7 +73,7 @@ const Reviews = () => {
             {showContent ? "Okay, I get the point" : "Show more..."}
           </button>
         </div>
-      </div>
+      </div> */}
     </>
   );
 };
