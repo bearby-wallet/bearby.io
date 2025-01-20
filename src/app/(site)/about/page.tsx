@@ -28,7 +28,7 @@ const AboutPage = () => {
       </section>
       <Clients />
       <CallToAction />
-      <Newsletter />
+      {/* <Newsletter /> */}
     </>
   );
 };

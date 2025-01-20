@@ -27,11 +27,11 @@ export default function Home() {
       <section className="relative z-20 overflow-hidden pb-20 pt-22.5 lg:pt-27.5 xl:pt-32.5 2xl:pt-45">
         <Reviews />
       </section>
-      <Clients />
-      <Support />
-      {integrations.isSanityEnabled && <BlogSection />}
-      <CallToAction />
-      <Newsletter />
+      {/* <Clients /> */}
+      {/* <Support /> */}
+      {/* {integrations.isSanityEnabled && <BlogSection />} */}
+      {/* <CallToAction /> */}
+      {/* <Newsletter /> */}
     </>
   );
 }

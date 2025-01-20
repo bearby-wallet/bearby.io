@@ -57,7 +57,7 @@ const FeaturesList = () => {
 
                     <div className="relative hidden aspect-square w-full max-w-[428px] sm:block">
                       <Image
-                        src="/images/features/big-icon.svg"
+                        src="/images/features/logo.png"
                         alt="icon"
                         fill
                       />
