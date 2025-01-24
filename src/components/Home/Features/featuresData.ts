@@ -2,48 +2,51 @@ import { Feature } from "@/types/feature";
 
 const featuresData: Feature[] = [
   {
-    id: 11,
-    title: "OpenAI Integration",
+    id: 1,
+    title: "Unmatched Security",
     description:
-      "Our AI writing tool analyzes your content, suggests improvements",
+      "Protect your assets with cutting-edge encryption algorithms, ensuring total safety from cyber threats.",
     icon: "/images/features/icon-01.svg",
   },
   {
-    id: 27,
-    title: "Next.js 13, React 18, TS",
-    description: "Say goodbye to embarrassing typos and grammar mistakes",
+    id: 2,
+    title: "Private Key Control",
+    description:
+      "Stay in charge with full ownership of your private keys, eliminating the need for third-party trust.",
     icon: "/images/features/icon-02.svg",
   },
   {
-    id: 21,
-    title: "Auth, DB, Sanity Blog",
+    id: 3,
+    title: "Multi-Signature Transactions",
     description:
-      "Originality is key, and our AI writing tool helps you maintain it",
+      "Enhance transaction security with multi-signature functionality, requiring multiple approvals for any action.",
     icon: "/images/features/icon-03.svg",
   },
   {
-    id: 3,
-    title: "Cutting-edge Technologies",
+    id: 4,
+    title: "Fast & Reliable Backups",
     description:
-      "Transform your spoken words into written text easily & effortlessly",
+      "Easily back up your wallet with encrypted recovery phrases, giving you peace of mind at all times.",
     icon: "/images/features/icon-04.svg",
     rotate: true,
   },
   {
-    id: 48,
-    title: "Pre-made AI Examples",
+    id: 5,
+    title: "Fraud Detection System",
     description:
-      "Whether you need a professional, or positive tone it has everyone",
+      "Leverage real-time monitoring powered by AI to identify and prevent fraudulent activities instantly.",
     icon: "/images/features/icon-05.svg",
     rotate: true,
   },
   {
-    id: 3,
-    title: "Rich Documentation",
-    description: "Need inspiration or assistance with generating content?",
+    id: 6,
+    title: "Advanced Cryptography",
+    description:
+      "Benefit from multiple cryptographic layers, ensuring secure storage and transfer of digital assets.",
     icon: "/images/features/icon-06.svg",
     rotate: true,
   },
 ];
 
 export default featuresData;
+

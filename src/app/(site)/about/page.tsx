@@ -22,11 +22,10 @@ const AboutPage = () => {
       <AboutSection />
       <Features />
       <Team />
-      <section className="relative z-20 overflow-hidden pb-20">
+      {/* <section className="relative z-20 overflow-hidden pb-20">
         <Reviews />
-      </section>
+      </section> */}
       <Clients />
-      <CallToAction />
       {/* <Newsletter /> */}
     </>
   );
