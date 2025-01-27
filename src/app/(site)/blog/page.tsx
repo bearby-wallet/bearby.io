@@ -3,7 +3,6 @@ import Breadcrumb from "@/components/Breadcrumb";
 import { Metadata } from "next";
 import { integrations, messages } from "../../../../integrations.config";
 
-// Статические данные, которые могут быть заменены на данные из вашего API
 const posts = [
   { id: 1, title: "Post 1", excerpt: "This is the first post.", slug: { current: "post-1" } },
   { id: 2, title: "Post 2", excerpt: "This is the second post.", slug: { current: "post-2" } },
@@ -22,7 +21,6 @@ export default async function BlogPage() {
 
       <section className="pb-17.5 pt-20 lg:pb-22.5 lg:pt-25 xl:pb-27.5">
         <div className="mx-auto max-w-[1170px] px-4 sm:px-8 xl:px-0">
-          {/* Прямо передаем данные без проверки на Sanity */}
           <BlogGridContainer blogs={posts} />
         </div>
       </section>

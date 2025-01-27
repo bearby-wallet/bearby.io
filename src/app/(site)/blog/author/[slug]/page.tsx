@@ -1,7 +1,7 @@
 import BlogGridContainer from "@/components/Blog/BlogGridContainer";
 import Breadcrumb from "@/components/Breadcrumb";
 import { getPostsByAuthor } from "@/sanity/sanity-utils";
-import { Author } from "@/types/blog";
+// import { Author } from "@/types/blog";
 import React from "react";
 
 type Props = {

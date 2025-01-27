@@ -1,6 +1,5 @@
 import SingleBlog from "@/components/Blog/SingleBlog";
 import Breadcrumb from "@/components/Breadcrumb";
-import { getPost, getPosts, imageBuilder } from "@/sanity/sanity-utils";
 import { Blog } from "@/types/blog";
 import { PortableText } from "@portabletext/react";
 import Image from "next/image";
