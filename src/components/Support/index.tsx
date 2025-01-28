@@ -4,7 +4,7 @@ import SectionTitle from "../Common/SectionTitle";
 const Support = () => {
   return (
     <>
-      {/* <section id="support" className="scroll-mt-17">
+      <section id="support" className="scroll-mt-17">
         <div className="mx-auto max-w-[1104px] px-4 sm:px-8 xl:px-0">
           <div className="relative z-999 overflow-hidden rounded-[30px] bg-dark px-4 pt-25 sm:px-20 lg:px-27.5">
             <div className="absolute -top-[16%] left-1/2 -z-1 flex w-full max-w-[690px] -translate-x-1/2 justify-center gap-7.5 opacity-40">
@@ -126,7 +126,7 @@ const Support = () => {
             </div>
           </div>
         </div>
-      </section> */}
+      </section>
     </>
   );
 };
