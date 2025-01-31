@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import logo from "../../../public/images/logo/logo.png";
+import logo from "../../../public/images/logo/logo.svg";
 import FooterLinkList from "./FooterLinkList";
 import { companiesLink, productsLink, supportsLink } from "./linksData";
 
@@ -27,7 +27,7 @@ const Footer = () => {
           <div className="flex flex-wrap justify-between">
             <div className="mb-10 w-full max-w-[520px]">
               <Link href="/" className="mb-8.5 inline-block">
-                <Image src={logo} alt="Logo" width={164} height={36} />
+                <Image src={logo} alt="Logo" width={80} height={80} />
               </Link>
 
               {/* <p className="mb-12 xl:w-4/5">
@@ -37,7 +37,7 @@ const Footer = () => {
               </p> */}
               <div className="flex items-center gap-5">
                 <a
-                  href="#"
+                  href="https://chromewebstore.google.com/detail/bearby/papngmkmknnmfhabbckobgfpihpdgplk"
                   aria-label="Chrome"
                   className="duration-300 ease-in hover:text-white"
                 >
@@ -91,62 +91,6 @@ const Footer = () => {
                   </svg>
                 </a>
                 <a
-                  href="#"
-                  aria-label="apple"
-                  className="duration-300 ease-in hover:text-white"
-                >
-                  <svg
-                    width= "24"
-                    height= "24"
-                    viewBox="0 0 512 512"
-                    fill="none"
-                  >
-                    <path
-                    d="M462.595 399.003c-7.743 17.888-16.908 34.353-27.527 49.492c-14.474 20.637-26.326 34.923-35.459 42.855c-14.159 13.021-29.329 19.69-45.573 20.068c-11.662 0-25.726-3.318-42.096-10.05c-16.425-6.7-31.519-10.019-45.32-10.019c-14.475 0-29.999 3.318-46.603 10.019c-16.63 6.731-30.027 10.24-40.27 10.587c-15.578.664-31.105-6.195-46.603-20.606c-9.892-8.628-22.265-23.418-37.088-44.372c-15.903-22.375-28.977-48.322-39.221-77.904c-10.969-31.952-16.469-62.892-16.469-92.846c0-34.313 7.414-63.906 22.265-88.706c11.672-19.92 27.199-35.633 46.631-47.169s40.431-17.414 63.043-17.79c12.373 0 28.599 3.827 48.762 11.349c20.107 7.547 33.017 11.375 38.677 11.375c4.232 0 18.574-4.475 42.887-13.397c22.992-8.274 42.397-11.7 58.293-10.35c43.076 3.477 75.438 20.457 96.961 51.05c-38.525 23.343-57.582 56.037-57.203 97.979c.348 32.669 12.199 59.855 35.491 81.44c10.555 10.019 22.344 17.762 35.459 23.26c-2.844 8.248-5.846 16.149-9.038 23.735zM363.801 10.242c0 25.606-9.355 49.514-28.001 71.643c-22.502 26.307-49.719 41.508-79.234 39.11a79.735 79.735 0 0 1-.594-9.703c0-24.582 10.701-50.889 29.704-72.398c9.488-10.89 21.554-19.946 36.187-27.17C336.464 4.608 350.275.672 363.264-.001c.379 3.423.538 6.846.538 10.242z"
-                    fill="currentColor"
-                    />
-                  </svg>
-                </a>
-                <a
-                  href="#"
-                  aria-label="play-store"
-                  className="duration-300 ease-in hover:text-white"
-                >
-                  <svg
-                    width= "24"
-                    height= "24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                  >
-                    <path
-                    d="m12.954 11.616l2.957-2.957L6.36 3.291c-.633-.342-1.226-.39-1.746-.016zm3.461 3.462l3.074-1.729c.6-.336.929-.812.929-1.34c0-.527-.329-1.004-.928-1.34l-2.783-1.563l-3.133 3.132zM4.1 4.002c-.064.197-.1.417-.1.658v14.705c0 .381.084.709.236.97l8.097-8.098zm8.854 8.855L4.902 20.91c.154.059.32.09.495.09c.312 0 .637-.092.968-.276l9.255-5.197z"
-                    fill="currentColor"
-                    />
-                  </svg>
-                </a>
-                <a
-                  href="#"
-                  aria-label="facebook"
-                  className="duration-300 ease-in hover:text-white"
-                >
-                  <svg
-                    className="fill-current"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M20 3H4a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h8.615v-6.96h-2.338v-2.725h2.338v-2c0-2.325 1.42-3.592 3.5-3.592c.699-.002 1.399.034 2.095.107v2.42h-1.435c-1.128 0-1.348.538-1.348 1.325v1.735h2.697l-.35 2.725h-2.348V21H20a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1"
-                      fill=""
-                    />
-                  </svg>
-                </a>
-
-
-
-                <a
                   href="https://x.com/pay_zil?mx=2"
                   aria-label="twitter"
                   className="duration-300 ease-in hover:text-white"
@@ -165,59 +109,6 @@ const Footer = () => {
                     />
                   </svg>
                 </a>
-                <a
-                  href="#"
-                  aria-label="medium"
-                  className="duration-300 ease-in hover:text-white"
-                >
-                  <svg
-                    className="fill-current"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <g clipPath="url(#clip0_368_11839)">
-                      <path
-                        d="M20 3H4a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1zm-2.046 4.265l-.966.925a.28.28 0 0 0-.106.271v6.801a.28.28 0 0 0 .106.271l.942.926v.204h-4.741v-.204l.977-.948c.097-.096.097-.125.097-.271V9.742l-2.716 6.896h-.368L8.018 9.742v4.622a.644.644 0 0 0 .176.531l1.271 1.541v.203H5.861v-.203l1.271-1.541a.618.618 0 0 0 .164-.531V9.02a.468.468 0 0 0-.152-.395l-1.13-1.36v-.203H9.52l2.71 5.943l2.382-5.943h3.343v.203z"
-                        fill=""
-                      />
-                    </g>
-                    <defs>
-                      <clipPath id="clip0_368_11839">
-                        <rect width="24" height="24" fill="white" />
-                      </clipPath>
-                    </defs>
-                  </svg>
-                </a>
-                <a
-                  href="#"
-                  aria-label="gmail"
-                  className="duration-300 ease-in hover:text-white"
-                >
-                  <svg
-                    className="fill-current"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <g clipPath="url(#clip0_368_11839)">
-                      <path
-                        d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4.7l-8 5.334L4 8.7V6.297l8 5.333l8-5.333V8.7z"
-                        fill=""
-                      />
-                    </g>
-                    <defs>
-                      <clipPath id="clip0_368_11839">
-                        <rect width="24" height="24" fill="white" />
-                      </clipPath>
-                    </defs>
-                  </svg>
-                </a>
-
                 <a
                   href="https://github.com/bearby-wallet"
                   aria-label="github"

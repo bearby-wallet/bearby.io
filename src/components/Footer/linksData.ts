@@ -42,6 +42,12 @@ export const companiesLink: FooterLink[] = [
   },
   {
     id: 15,
+    title: "Term of services",
+    href: "#",
+    newTab: false,
+  },
+  {
+    id: 15,
     title: "Extension Policy",
     href: "#",
     newTab: false,

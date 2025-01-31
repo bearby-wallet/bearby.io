@@ -56,11 +56,14 @@ const FeaturesList = () => {
                     </div>
 
                     <div className="relative hidden aspect-square w-full max-w-[428px] sm:block">
-                      <Image
-                        src="/images/features/logo.png"
+                      <div className="flex items-center justify-center h-full">
+                        <img src="/images/features/logo.svg" alt="logo" className="max-w-full max-h-full"  />
+                      </div>
+                      {/* <Image
+                        src="/images/features/logo.svg"
                         alt="icon"
                         fill
-                      />
+                      /> */}
                     </div>
                   </div>
 

@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-import logo from "../../../public/images/logo/logo.png";
+import logo from "../../../public/images/logo/logo.svg";
 import DropDown from "./DropDown";
 import menuData from "./menuData";
 
@@ -41,7 +41,7 @@ const Header = () => {
         <div className="relative mx-auto max-w-[1170px] flex items-center px-4 sm:px-8 lg:flex xl:px-0">
           <div className="flex items-center justify-start w-1/4">
             <Link href="/">
-              <Image src={logo} alt="Logo" width={164} height={36} />
+              <Image src={logo} alt="Logo" width={80} height={80} />
             </Link>
           </div>
 
