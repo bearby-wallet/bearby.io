@@ -59,11 +59,6 @@ const FeaturesList = () => {
                       <div className="flex items-center justify-center h-full">
                         <img src="/images/features/logo.svg" alt="logo" className="max-w-full max-h-full"  />
                       </div>
-                      {/* <Image
-                        src="/images/features/logo.svg"
-                        alt="icon"
-                        fill
-                      /> */}
                     </div>
                   </div>
 

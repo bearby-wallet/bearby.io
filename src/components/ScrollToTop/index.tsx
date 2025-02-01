@@ -1,3 +1,5 @@
+"use client"; // Эта строка сообщает Next.js, что компонент является клиентским
+
 import { useEffect, useState } from "react";
 
 export default function ScrollToTop() {
@@ -13,7 +15,7 @@ export default function ScrollToTop() {
   };
 
   useEffect(() => {
-    // Button is displayed after scrolling for 500 pixels
+    // Button is displayed after scrolling for 300 pixels
     const toggleVisibility = () => {
       if (window.scrollY > 300) {
         setIsVisible(true);
