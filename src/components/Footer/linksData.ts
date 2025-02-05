@@ -4,7 +4,7 @@ export const companiesLink: FooterLink[] = [
   {
     id: 11,
     title: "Privacy Policy",
-    href: "#",
+    href: "http://localhost:3000/policy",
     newTab: false,
   },
   {

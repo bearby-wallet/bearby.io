@@ -6,7 +6,6 @@ import "../../styles/animate.css";
 import "../../styles/prism-vsc-dark-plus.css";
 import "../../styles/star.css";
 import "../../styles/tailwind.css";
-// Убираем AuthProvider, так как он закомментирован
 import ToasterContext from "../context/ToastContext"; 
 
 export default function RootLayout({
@@ -23,7 +22,6 @@ export default function RootLayout({
           showSpinner={false}
           shadow="none"
         />
-        {/* Убираем AuthProvider */}
         <ToasterContext />
         <Header />
         {children}
