@@ -10,13 +10,13 @@ export const companiesLink: FooterLink[] = [
   {
     id: 15,
     title: "Term of services",
-    href: "#",
+    href: "http://localhost:3000/terms",
     newTab: false,
   },
   {
     id: 15,
     title: "Extension Policy",
-    href: "#",
+    href: "http://localhost:3000/extension-policy",
     newTab: false,
   }
 ];
