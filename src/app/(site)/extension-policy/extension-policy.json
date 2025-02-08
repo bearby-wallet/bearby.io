@@ -26,7 +26,6 @@
   "stores3": "Some UI information such as theme and language",
   "stores4": "Your transactions",
   "stores5": "Network information such as node URL, socket URL, node ID.",
-
   "title6": "Cryptography",
   "p11": "Your financial data, such as (the initial opening phrase), encrypted with modern encryption methods by user password.",
   "title7": "We will use your personal information in the following ways:",

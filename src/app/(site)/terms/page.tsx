@@ -25,13 +25,11 @@ export default function TermsPage() {
 
                 <strong className="text-white">{policyData.subt_title1}</strong>
                 <p className="font-medium">{policyData.p5}</p>
-
-                <strong className="text-white">{policyData.subt_title2}</strong>
+                <strong className="text-white mt-0">{policyData.subt_title2}</strong>
                 <p className="font-medium">{policyData.p7}</p>
                 <p className="font-medium">{policyData.p8}</p>
                 <p className="font-medium">{policyData.p9}</p>
                 <p className="font-medium">{policyData.p10}</p>
-
                 <strong className="text-white">{policyData.subt_title3}</strong>
                 <br></br>
                 <strong className="text-white">{policyData.subt_title4}</strong>

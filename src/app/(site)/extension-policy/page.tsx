@@ -1,7 +1,7 @@
 import policyData from "./extension-policy.json";
 
 export const metadata: Metadata = {
-  title: "Terms | Bearby", 
+  title: "Extension policy| Bearby", 
   description: "This is Terms page for Bearby wallet",
 };
 
@@ -17,17 +17,17 @@ export default function TermsPage() {
                 <h1>{policyData.head_title}</h1>
                 <p className="font-medium">{policyData.last_update}</p>
                 <strong className="text-white">{policyData.title0}</strong>
-                <p className="font-medium">{policyData.p0}</p>
-                <p className="font-medium">{policyData.p1}</p>
-                <p className="font-medium">{policyData.p2}</p>
-                <p className="font-medium">{policyData.p3}</p>
-                <strong className="text-white">{policyData.title1}</strong>
-                <br></br>
-                <ul className="pl-4 space-y-4"> 
-                  <p className="font-medium">{policyData.collections0}</p>
-                  <p className="font-medium">{policyData.collections1}</p>
+                <p style={{ marginBottom: '0,5rem' }} className="font-medium">{policyData.p0}</p>
+                <p style={{ marginBottom: '0,5rem' }} className="font-medium">{policyData.p1}</p>
+                <p style={{ marginBottom: '0,5rem' }} className="font-medium">{policyData.p2}</p>
+                <p style={{ marginBottom: '0,5rem' }} className="font-medium">{policyData.p3}</p>
+
+                <strong className="text-white mt-1 block">{policyData.title1}</strong>
+                <ul style={{ listStyle: 'none', paddingLeft: '1rem', marginTop: '0', marginBottom: '0.1rem' }}>
+                <li style={{ marginBottom: '0.1rem' }}>{policyData.collections0}</li>
+                <li style={{ marginBottom: '0.1rem' }}>{policyData.collections1}</li>
                 </ul>
-                <strong className="text-white">{policyData.title2}</strong>
+                <strong className="text-white block mt-4 mb-0">{policyData.title2}</strong>
                 <p className="font-medium">{policyData.p4}</p>
                 <strong className="text-white">{policyData.title3}</strong>
                 <p className="font-medium">{policyData.p5}</p>
@@ -39,24 +39,22 @@ export default function TermsPage() {
                 <p className="font-medium" style={{ color: '#f0f0f0' }}>
                   {policyData.p10}
                 </p>
-                <strong className="text-white">{policyData.title5}</strong>
-                <br></br>
-                <p className="font-medium">{policyData.stores0}</p>
-                <p className="font-medium">{policyData.stores1}</p>
-                <p className="font-medium">{policyData.stores2}</p>
-                <p className="font-medium">{policyData.stores3}</p>
-                <p className="font-medium">{policyData.stores4}</p>
-                <p className="font-medium">{policyData.stores5}</p>
-                <strong className="text-white">{policyData.title6}</strong>
-                <br></br>
+                <strong className="text-white mb-1 block">{policyData.title5}</strong>
+                <ul style={{ listStyle: 'none', paddingLeft: '1rem', marginTop: '0', marginBottom: '0.1rem' }}>
+                  <li style={{ marginBottom: '0.1rem' }}>{policyData.stores0}</li>
+                  <li style={{ marginBottom: '0.1rem' }}>{policyData.stores1}</li>
+                  <li style={{ marginBottom: '0.1rem' }}>{policyData.stores2}</li>
+                  <li style={{ marginBottom: '0.1rem' }}>{policyData.stores3}</li>
+                  <li style={{ marginBottom: '0.1rem' }}>{policyData.stores4}</li>
+                  <li style={{ marginBottom: '0.1rem' }}>{policyData.stores5}</li>
+                </ul>
+                <strong className="text-white block mt-4 mb-0">{policyData.title6}</strong>
                 <p className="font-medium">{policyData.p11}</p>
                 <strong className="text-white">{policyData.title7}</strong>
-                <br></br>
                 <p className="font-medium">{policyData.p12}</p>
                 <strong className="text-white">{policyData.title8}</strong>
                 <p className="font-medium">{policyData.p13}</p>
                 <strong className="text-white">{policyData.title9}</strong>
-                <br></br>
                 <p className="font-medium">{policyData.p14}</p>
               </div>
             </div>
