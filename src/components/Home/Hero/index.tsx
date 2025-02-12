@@ -1,7 +1,11 @@
 import Image from "next/image";
-import Link from "next/link";
+import { SmartButton } from "@/components/SmartButton";
+import { NextPage } from "next";
 
-const Hero = () => {
+const Hero: NextPage = (props) => {
+  console.log(props);
+  // const userAgent = props;
+
   return (
     <section
       id="home"
@@ -34,8 +38,7 @@ const Hero = () => {
               width={16}
               height={16}
             />
-
-            <span className="hero-subtitle-text">Join massa web3.</span>
+            <SmartButton userAgent={props.userAgent}/>
           </span>
 
           <h1 className="mb-6 text-5xl font-extrabold leading-tight text-white sm:text-5xl xl:text-7xl">

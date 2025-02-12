@@ -1,5 +1,4 @@
 import Image from "next/image";
-import PricingGrids from "./PricingGrids";
 
 const Pricing = () => {
   return (
@@ -8,7 +7,6 @@ const Pricing = () => {
       className="relative z-20 scroll-mt-17 overflow-hidden pt-22.5 lg:pt-27.5 xl:pt-32.5"
     >
       <div className="mx-auto max-w-[1170px] px-4 sm:px-8 xl:px-0">
-        {/* <!-- bg circles --> */}
         <div className="relative top-18">
           <div className="pointer-events-none absolute inset-0 -z-10 -my-55 overflow-hidden">
             <div className="absolute left-1/2 top-0 mx-auto aspect-square w-full max-w-[925px] -translate-x-1/2">
@@ -55,8 +53,6 @@ const Pricing = () => {
           <div className="pricing-grid pricing-grid-border relative h-[250px] w-full max-w-[50px]"></div>
           <div className="pricing-grid pricing-grid-border relative h-[250px] w-full max-w-[50px]"></div>
         </div>
-
-        <PricingGrids />
       </div>
     </section>
   );

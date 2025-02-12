@@ -1,7 +1,6 @@
 import BlogGridContainer from "@/components/Blog/BlogGridContainer";
 import Breadcrumb from "@/components/Breadcrumb";
 import { Metadata } from "next";
-import { integrations, messages } from "../../../../integrations.config";
 
 const posts = [
   { id: 1, title: "Post 1", excerpt: "This is the first post.", slug: { current: "post-1" } },
