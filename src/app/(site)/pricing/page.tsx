@@ -18,7 +18,7 @@ const PricingPage = () => {
         <PricingGrids />
       </section>
 
-      <Faq />
+      {/* <Faq /> */}
     </>
   );
 };
