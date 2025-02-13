@@ -47,8 +47,8 @@ const Header = () => {
               navigationOpen ? "mt-4 !h-auto" : ""
             }`}
           >
-            <nav>
-              <ul className="flex flex-col gap-5 lg:flex-row lg:items-center lg:gap-2">
+            <nav className="overflow-hidden max-w-full whitespace-nowrap">
+              <ul className="flex flex-row gap-5 lg:items-center lg:gap-2">
                 {menuData.map((menuItem, key) => (
                   <li
                     key={key}
@@ -61,10 +61,8 @@ const Header = () => {
                     ) : (
                       <Link
                         href={`${menuItem.path}`}
-                        className={`hover:nav-gradient relative border border-transparent px-4 py-1.5 text-sm hover:text-white ${
-                          pathUrl === menuItem.path
-                            ? "nav-gradient text-white"
-                            : "text-white/80"
+                        className={`hover:nav-gradient relative border border-transparent px-4 py-1.5 text-sm flex items-center gap-2 hover:text-white ${
+                          pathUrl === menuItem.path ? "nav-gradient text-white" : "text-white/80"
                         }`}
                       >
                         {menuItem.title}
