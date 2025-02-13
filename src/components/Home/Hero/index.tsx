@@ -38,7 +38,8 @@ const Hero: NextPage = (props) => {
               width={16}
               height={16}
             />
-            <SmartButton userAgent={props.userAgent}/>
+            {/* <SmartButton userAgent={props.userAgent}/> */}
+            <span className="hero-subtitle-text">Join massa web3.</span>
           </span>
 
           <h1 className="mb-6 text-5xl font-extrabold leading-tight text-white sm:text-5xl xl:text-7xl">
