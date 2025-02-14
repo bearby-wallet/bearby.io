@@ -10,102 +10,85 @@ import menuData from "./menuData";
 const Header = () => {
   const [navigationOpen, setNavigationOpen] = useState(false);
   const [stickyMenu, setStickyMenu] = useState(false);
-
   const pathUrl = usePathname();
 
   // Sticky menu
   const handleStickyMenu = () => {
-    if (window.scrollY >= 80) {
-      setStickyMenu(true);
-    } else {
-      setStickyMenu(false);
-    }
+    setStickyMenu(window.scrollY >= 80);
   };
 
   useEffect(() => {
     window.addEventListener("scroll", handleStickyMenu);
-  });
+    return () => window.removeEventListener("scroll", handleStickyMenu);
+  }, []);
 
   return (
     <>
       <header
-        className={`fixed left-0 top-0 z-[1000] w-full ${
-          stickyMenu
-            ? "before:features-row-border bg-dark/70 !py-4 shadow backdrop-blur-lg transition duration-100 before:absolute before:bottom-0 before:left-0 before:h-[1px] before:w-full lg:!py-0"
-            : "py-7 lg:py-0"
+        className={`fixed left-0 top-0 z-[1000] w-full transition duration-300 ${
+          stickyMenu ? "bg-dark/50 backdrop-blur-md shadow-md py-4" : "bg-transparent py-7"
         }`}
       >
-        <div className="relative mx-auto max-w-[1170px] flex items-center px-4 sm:px-8 lg:flex xl:px-0">
-          <div className="flex items-center justify-start w-1/4">
+        <div className="relative mx-auto flex max-w-[1200px] items-center justify-between px-4 sm:px-8 lg:px-0">
+          {/* Логотип (Слева) */}
+          <div className="flex items-center">
             <Link href="/">
               <Image src={logo} alt="Logo" width={80} height={80} />
             </Link>
           </div>
 
-          <div
-            className={`flex items-center justify-center w-full lg:w-1/2 ${
-              navigationOpen ? "mt-4 !h-auto" : ""
-            }`}
-          >
-            <nav className="overflow-hidden max-w-full whitespace-nowrap">
-              <ul className="flex flex-row gap-5 lg:items-center lg:gap-2">
-                {menuData.map((menuItem, key) => (
-                  <li
-                    key={key}
-                    className={`nav__menu group relative ${
-                      stickyMenu ? "lg:py-4" : "lg:py-7"
-                    }`}
-                  >
-                    {menuItem.submenu ? (
-                      <DropDown menuItem={menuItem} />
-                    ) : (
-                      <Link
-                        href={`${menuItem.path}`}
-                        className={`hover:nav-gradient relative border border-transparent px-4 py-1.5 text-sm flex items-center gap-2 hover:text-white ${
-                          pathUrl === menuItem.path ? "nav-gradient text-white" : "text-white/80"
-                        }`}
-                      >
-                        {menuItem.title}
-                      </Link>
-                    )}
-                  </li>
-                ))}
-              </ul>
-            </nav>
-          </div>
+          {/* Центрированная навигация */}
+          <nav className="hidden lg:flex absolute left-1/2 transform -translate-x-1/2">
+            <ul className="flex gap-6">
+              {menuData.map((menuItem, key) => (
+                <li key={key} className="relative">
+                  {menuItem.submenu ? (
+                    <DropDown menuItem={menuItem} />
+                  ) : (
+                    <Link
+                      href={menuItem.path}
+                      className={`hover:nav-gradient relative px-4 py-2 text-sm flex items-center gap-2 hover:text-white ${
+                        pathUrl === menuItem.path ? "nav-gradient text-white" : "text-white/80"
+                      }`}
+                    >
+                      {menuItem.title}
+                    </Link>
+                  )}
+                </li>
+              ))}
+            </ul>
+          </nav>
 
-          <div className="flex items-center justify-end w-1/4 lg:hidden">
-            <button
-              onClick={() => setNavigationOpen(!navigationOpen)}
-              className="block"
-            >
-              <span className="relative block h-5.5 w-5.5 cursor-pointer">
+          {/* Бургер-меню (Справа) */}
+          <div className="flex items-center lg:hidden">
+            <button onClick={() => setNavigationOpen(!navigationOpen)} className="block">
+              <span className="relative block h-6 w-6 cursor-pointer">
                 <span className="du-block absolute right-0 h-full w-full">
                   <span
-                    className={`relative left-0 top-0 my-1 block h-0.5 rounded-sm bg-white delay-[0] duration-200 ease-in-out ${
-                      !navigationOpen ? "!w-full delay-300" : "w-0"
+                    className={`relative my-1 block h-0.5 rounded-sm bg-white transition-all duration-300 ${
+                      navigationOpen ? "w-0" : "w-full"
                     }`}
                   ></span>
                   <span
-                    className={`relative left-0 top-0 my-1 block h-0.5 rounded-sm bg-white delay-150 duration-200 ease-in-out ${
-                      !navigationOpen ? "delay-400 !w-full" : "w-0"
+                    className={`relative my-1 block h-0.5 rounded-sm bg-white transition-all duration-300 ${
+                      navigationOpen ? "w-0" : "w-full"
                     }`}
                   ></span>
                   <span
-                    className={`relative left-0 top-0 my-1 block h-0.5 rounded-sm bg-white delay-200 duration-200 ease-in-out ${
-                      !navigationOpen ? "!w-full delay-500" : "w-0"
+                    className={`relative my-1 block h-0.5 rounded-sm bg-white transition-all duration-300 ${
+                      navigationOpen ? "w-0" : "w-full"
                     }`}
                   ></span>
                 </span>
                 <span className="du-block absolute right-0 h-full w-full rotate-45">
                   <span
-                    className={`absolute left-2.5 top-0 block h-full w-0.5 rounded-sm bg-white delay-300 duration-200 ease-in-out ${
-                      !navigationOpen ? "!h-0 delay-[0]" : "h-full"
+                    className={`absolute left-2.5 top-0 block h-full w-0.5 rounded-sm bg-white transition-all duration-300 ${
+                      navigationOpen ? "h-full" : "h-0"
                     }`}
                   ></span>
                   <span
-                    className={`delay-400 absolute left-0 top-2.5 block h-0.5 w-full rounded-sm bg-white duration-200 ease-in-out ${
-                      !navigationOpen ? "!h-0 delay-200" : "h-0.5"
+                    className={`absolute left-0 top-2.5 block h-0.5 w-full rounded-sm bg-white transition-all duration-300 ${
+                      navigationOpen ? "h-0.5" : "h-0"
                     }`}
                   ></span>
                 </span>
@@ -113,6 +96,27 @@ const Header = () => {
             </button>
           </div>
         </div>
+
+        {/* Мобильное меню */}
+        {navigationOpen && (
+          <div className="absolute left-0 top-full w-full bg-transparent backdrop-blur-md py-5 transition-all duration-300 lg:hidden">
+            <nav>
+              <ul className="flex flex-col items-center gap-5">
+                {menuData.map((menuItem, key) => (
+                  <li key={key}>
+                    <Link
+                      href={menuItem.path}
+                      className="text-white text-lg hover:text-gray-300"
+                      onClick={() => setNavigationOpen(false)}
+                    >
+                      {menuItem.title}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+          </div>
+        )}
       </header>
     </>
   );
