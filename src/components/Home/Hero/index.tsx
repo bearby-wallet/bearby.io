@@ -5,23 +5,35 @@ import { NextPage } from "next";
 import { useState, useEffect } from "react";
 
 const Hero: NextPage = () => {
-  const [browserLink, setBrowserLink] = useState<string | null>(null);
-  const [browserIcon, setBrowserIcon] = useState<string | null>(null);
+  const [browserName, setBrowserName] = useState<string | null>(null);
+  const [isBrowserDetected, setIsBrowserDetected] = useState(false);
 
   useEffect(() => {
     const userAgent = navigator.userAgent.toLowerCase();
 
     if (userAgent.includes("chrome") && !userAgent.includes("edg") && !userAgent.includes("opr")) {
-      setBrowserLink("https://chromewebstore.google.com/detail/bearby/papngmkmknnmfhabbckobgfpihpdgplk"); // Chrome
-      setBrowserIcon("/images/hero/chrome.svg");
+      setBrowserName("chrome");
     } else if (userAgent.includes("firefox")) {
-      setBrowserLink("https://addons.mozilla.org/en-GB/firefox/addon/bearby/"); // Firefox
-      setBrowserIcon("/images/hero/firefox.svg");
-    } else {
-      setBrowserLink(null);
-      setBrowserIcon(null);
+      setBrowserName("firefox");
     }
+
+    setIsBrowserDetected(true);
   }, []);
+
+  const buttons = [
+    {
+      name: "chrome",
+      label: "Get add-on",
+      link: "https://chromewebstore.google.com/detail/bearby/papngmkmknnmfhabbckobgfpihpdgplk",
+      icon: "/images/hero/chrome.svg",
+    },
+    {
+      name: "firefox",
+      label: "Get add-on",
+      link: "https://addons.mozilla.org/en-GB/firefox/addon/bearby/",
+      icon: "/images/hero/firefox.svg",
+    },
+  ];
 
   return (
     <section id="home" className="relative z-10 overflow-hidden pt-35 md:pt-40 xl:pt-45">
@@ -55,21 +67,25 @@ const Hero: NextPage = () => {
             The most popular and fastest Massa wallet
           </h2>
 
-          {browserLink ? (
-            <a
-              href={browserLink}
-              className="inline-flex items-center mt-6 px-8 py-3 text-lg font-medium rounded-full transition duration-300
-              border-2 border-transparent bg-transparent text-white 
-              bg-gradient-to-r from-blue-500 to-indigo-600 bg-clip-text text-transparent 
-              hover:border-blue-500 hover:text-white hover:bg-none hover:shadow-lg"
-            >
-              {browserIcon && (
-                <Image src={browserIcon} alt="Browser Icon" width={36} height={36} className="mr-2" />
-              )}
-              Get the Extension
-            </a>
-          ) : (
-            <p className="mt-6 text-lg text-white">Browser not supported for extension</p>
+          {/* Кнопки, отцентрированные для мобильных устройств */}
+          {isBrowserDetected && (
+            <div className="flex flex-col sm:flex-row gap-4 mt-6 justify-center items-center">
+              {buttons
+                .filter(btn => !browserName || browserName === btn.name)
+                .map(btn => (
+                  <a
+                    key={btn.name}
+                    href={btn.link}
+                    className="inline-flex items-center justify-center px-5 py-3 text-lg font-medium rounded-lg transition duration-300
+                    bg-purple-800 text-white border-2 border-purple-800
+                    hover:bg-purple-900 hover:border-purple-900
+                    max-w-fit"
+                  >
+                    <Image src={btn.icon} alt={`${btn.name} Icon`} width={24} height={24} className="mr-2" />
+                    {btn.label}
+                  </a>
+                ))}
+            </div>
           )}
         </div>
       </div>
