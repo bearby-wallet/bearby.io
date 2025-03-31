@@ -52,11 +52,6 @@ const Hero: NextPage = () => {
       {/* Hero Content */}
       <div className="relative z-1 mx-auto max-w-[900px] px-4 sm:px-8 xl:px-0">
         <div className="text-left">
-          <span className="hero-subtitle-gradient hover:hero-subtitle-hover relative mb-5 inline-flex items-center gap-2 rounded-full px-4.5 py-2 text-sm font-medium absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-            <Image src="/images/hero/icon-title.svg" alt="icon" width={16} height={16} />
-            <span className="hero-subtitle-text">Join massa web3.</span>
-          </span>
-
           <h1 className="mb-6 text-5xl font-extrabold leading-tight text-white sm:text-5xl xl:text-7xl">
             <span className="block">A portal to the</span>
             <span className="block">decentralised</span>

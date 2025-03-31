@@ -30,14 +30,11 @@ const Header = () => {
         }`}
       >
         <div className="relative mx-auto flex max-w-[1200px] items-center justify-between px-4 sm:px-8 lg:px-0">
-          {/* Логотип (Слева) */}
           <div className="flex items-center">
             <Link href="/">
               <Image src={logo} alt="Logo" width={80} height={80} />
             </Link>
           </div>
-
-          {/* Центрированная навигация */}
           <nav className="hidden lg:flex absolute left-1/2 transform -translate-x-1/2">
             <ul className="flex gap-6">
               {menuData.map((menuItem, key) => (
@@ -58,8 +55,6 @@ const Header = () => {
               ))}
             </ul>
           </nav>
-
-          {/* Бургер-меню (Справа) */}
           <div className="flex items-center lg:hidden">
             <button onClick={() => setNavigationOpen(!navigationOpen)} className="block">
               <span className="relative block h-6 w-6 cursor-pointer">
@@ -96,8 +91,6 @@ const Header = () => {
             </button>
           </div>
         </div>
-
-        {/* Мобильное меню */}
         {navigationOpen && (
           <div className="absolute left-0 top-full w-full bg-transparent backdrop-blur-md py-5 transition-all duration-300 lg:hidden">
             <nav>
