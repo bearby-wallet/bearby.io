@@ -2,7 +2,6 @@ import Team from "@/components/About/Team";
 import Features from "@/components/Home/Features";
 import FeaturesList from "@/components/Home/FeaturesList";
 import Hero from "@/components/Home/Hero";
-import Reviews from "@/components/Home/Reviews";
 import Pricing from "@/components/Pricing";
 import { Metadata } from "next";
 

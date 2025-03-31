@@ -3,50 +3,49 @@ import { Feature } from "@/types/feature";
 const featuresData: Feature[] = [
   {
     id: 1,
-    title: "Unmatched Security",
+    title: "On-Device Key Storage",
     description:
-      "Protect your assets with cutting-edge encryption algorithms, ensuring total safety from cyber threats.",
+      "Bearby stores your keys directly on your device, ensuring full control and security without external dependencies.",
     icon: "/images/features/icon-01.svg",
   },
   {
     id: 2,
-    title: "Private Key Control",
+    title: "Zero Data Collection",
     description:
-      "Stay in charge with full ownership of your private keys, eliminating the need for third-party trust.",
+      "Bearby collects no user data whatsoever, prioritizing your privacy and autonomy at every step.",
     icon: "/images/features/icon-02.svg",
   },
   {
     id: 3,
-    title: "Multi-Signature Transactions",
+    title: "Seamless User Experience",
     description:
-      "Enhance transaction security with multi-signature functionality, requiring multiple approvals for any action.",
+      "Enjoy a smooth and intuitive interface designed for ease of use, backed by robust cryptographic protection.",
     icon: "/images/features/icon-03.svg",
   },
   {
     id: 4,
-    title: "Fast & Reliable Backups",
+    title: "AES-256 + PBKDF2 + BLAKE3 Encryption",
     description:
-      "Easily back up your wallet with encrypted recovery phrases, giving you peace of mind at all times.",
+      "Leverage top-tier encryption with AES-256, PBKDF2, and BLAKE3 for unmatched security of your assets.",
     icon: "/images/features/icon-04.svg",
     rotate: true,
   },
   {
     id: 5,
-    title: "Fraud Detection System",
+    title: "Local Transaction Signing",
     description:
-      "Leverage real-time monitoring powered by AI to identify and prevent fraudulent activities instantly.",
+      "All transactions are signed directly on your hardware, eliminating risks from remote processing.",
     icon: "/images/features/icon-05.svg",
     rotate: true,
   },
   {
     id: 6,
-    title: "Advanced Cryptography",
+    title: "Advanced Cryptographic Layers",
     description:
-      "Benefit from multiple cryptographic layers, ensuring secure storage and transfer of digital assets.",
+      "Benefit from multiple layers of cryptography, ensuring secure storage and transfer of your digital assets.",
     icon: "/images/features/icon-06.svg",
     rotate: true,
   },
 ];
 
 export default featuresData;
-

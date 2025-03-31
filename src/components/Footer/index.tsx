@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import logo from "../../../public/images/logo/logo.svg";
 import FooterLinkList from "./FooterLinkList";
-import { companiesLink, productsLink, supportsLink } from "./linksData";
+import { companiesLink } from "./linksData";
 
 const Footer = () => {
   return (
@@ -138,7 +138,7 @@ const Footer = () => {
               </div>
 
               <p className="mt-5.5 font-medium">
-                ©2022 Khasanshin Rinat Ildarovich, IP.
+                ©2025 Rinat.IP.
               </p>
             </div>
 
