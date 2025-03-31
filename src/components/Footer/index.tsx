@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import logo from "../../../public/images/logo/logo.svg";
 import FooterLinkList from "./FooterLinkList";
-import { companiesLink, productsLink, supportsLink } from "./linksData";
+import { companiesLink } from "./linksData";
 
 const Footer = () => {
   return (
@@ -27,38 +27,71 @@ const Footer = () => {
           <div className="flex flex-wrap justify-between">
             <div className="mb-10 w-full max-w-[520px]">
               <Link href="/" className="mb-8.5 inline-block">
-                <Image src={logo} alt="Logo" width={164} height={36} />
+                <Image src={logo} alt="Logo" width={80} height={80} />
               </Link>
 
-              <p className="mb-12 xl:w-4/5">
+              {/* <p className="mb-12 xl:w-4/5">
                 Build SaaS AI applications using OpenAI and Next.js, this kit
                 comes with pre-configured and pre-built examples, making it
                 easier to quickly kickstart your AI startup.
-              </p>
-
+              </p> */}
               <div className="flex items-center gap-5">
                 <a
-                  href="#"
-                  aria-label="facebook"
+                  href="https://chromewebstore.google.com/detail/bearby/papngmkmknnmfhabbckobgfpihpdgplk"
+                  aria-label="Chrome"
                   className="duration-300 ease-in hover:text-white"
                 >
                   <svg
-                    className="fill-current"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
+                    width= "24"
+                    height= "24"
+                    viewBox="0 0 512 512"
                     fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
                   >
                     <path
-                      d="M13 21.9506C18.0533 21.4489 22 17.1853 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 16.8379 5.43552 20.8734 10 21.8V16H7V13H10V9.79586C10 7.47449 11.9695 5.64064 14.285 5.80603L17 5.99996V8.99996H15C13.8954 8.99996 13 9.89539 13 11V13H17L16 16H13V21.9506Z"
-                      fill=""
+                    d="M0 256c0-46.6 12.47-90.4 34.27-128.9L144.1 318.3C166 357.5 207.9 384 256 384c14.3 0 27.1-2.3 40.8-6.6l-76.3 132.2C95.9 492.3 0 385.3 0 256m365.1 65.6c12.3-19.2 18.9-42.5 18.9-65.6c0-38.2-16.8-72.5-43.3-96h152.7c12 29.6 18.6 62.1 18.6 96c0 141.4-114.6 255.1-256 256zM477.8 128H256c-62.9 0-113.7 44.1-125.5 102.7L54.19 98.47C101 38.53 174 0 256 0c94.8 0 177.5 51.48 221.8 128M168 256c0-48.6 39.4-88 88-88s88 39.4 88 88s-39.4 88-88 88s-88-39.4-88-88"
+                    fill="currentColor"
                     />
                   </svg>
                 </a>
 
                 <a
-                  href="#"
+                  href="https://addons.mozilla.org/en-GB/firefox/addon/bearby/"
+                  aria-label="firefox"
+                  className="duration-300 ease-in hover:text-white"
+                >
+                  <svg
+                    width= "24"
+                    height= "24"
+                    viewBox="0 0 32 32"
+                    fill="none"
+                  >
+                    <path
+                      d="M11.807 9.776c.011 0 .005 0 0 0M8.109 7.927c.011 0 .005 0 0 0m22.12 2.854c-.667-1.604-2.021-3.333-3.079-3.885c.865 1.692 1.365 3.396 1.552 4.661l.005.027c-1.739-4.329-4.681-6.073-7.088-9.871c-.12-.192-.24-.385-.36-.588c-.063-.104-.115-.208-.172-.319a2.774 2.774 0 0 1-.224-.609c0-.02-.015-.036-.036-.041h-.031l-.005.005c-.005 0-.011.005-.011.005s0-.005.005-.011c-3.417 2-4.828 5.505-5.193 7.729a8.308 8.308 0 0 0-3.041.776a.396.396 0 0 0-.197.489a.387.387 0 0 0 .525.224a7.4 7.4 0 0 1 2.651-.687l.089-.011c.125-.005.255-.011.38-.011a7.702 7.702 0 0 1 2.203.307l.125.037c.12.036.235.077.355.12c.083.031.172.063.255.099c.068.025.136.057.203.083c.105.048.209.1.313.152l.14.067c.104.053.204.109.303.167c.063.037.125.073.187.115a7.824 7.824 0 0 1 2.683 2.776c-.817-.572-2.287-1.145-3.697-.895c5.52 2.76 4.036 12.265-3.615 11.905a6.64 6.64 0 0 1-2.448-.568a12.849 12.849 0 0 1-.26-.124c-1.876-.969-3.423-2.803-3.615-5.027c0 0 .708-2.64 5.072-2.64c.475 0 1.824-1.319 1.849-1.699c-.011-.125-2.683-1.187-3.724-2.213c-.557-.547-.817-.812-1.052-1.011a3.745 3.745 0 0 0-.401-.301a7.116 7.116 0 0 1-.041-3.751c-1.579.719-2.803 1.855-3.693 2.855h-.009c-.609-.771-.563-3.313-.532-3.844c-.005-.036-.453.229-.511.271c-.536.385-1.041.813-1.5 1.287a13.468 13.468 0 0 0-1.437 1.719a12.951 12.951 0 0 0-2.057 4.645a18.16 18.16 0 0 0-.249 1.417a7.57 7.57 0 0 0-.052.359a9.734 9.734 0 0 0-.089.881L.7 15.9c-.009.172-.02.339-.031.511v.077c0 8.48 6.875 15.355 15.355 15.355c7.593 0 13.9-5.516 15.135-12.756c.027-.197.047-.395.068-.593c.307-2.631-.031-5.401-.995-7.713z"
+                      fill="currentColor"
+                    />
+                  </svg>
+                </a>
+
+                <a
+                  href="https://t.me/bearbychat"
+                  aria-label="telegram"
+                  className="duration-300 ease-in hover:text-white"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 448 512"
+                    fill="none"
+                  >
+                    <path
+                      fill="currentColor"
+                      d="m446.7 98.6l-67.6 318.8c-5.1 22.5-18.4 28.1-37.3 17.5l-103-75.9l-49.7 47.8c-5.5 5.5-10.1 10.1-20.7 10.1l7.4-104.9l190.9-172.5c8.3-7.4-1.8-11.5-12.9-4.1L117.8 284L16.2 252.2c-22.1-6.9-22.5-22.1 4.6-32.7L418.2 66.4c18.4-6.9 34.5 4.1 28.5 32.2"
+                    />
+                  </svg>
+                </a>
+                <a
+                  href="https://x.com/pay_zil?mx=2"
                   aria-label="twitter"
                   className="duration-300 ease-in hover:text-white"
                 >
@@ -66,19 +99,18 @@ const Footer = () => {
                     className="fill-current"
                     width="24"
                     height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
+                    viewBox="0 0 16 16"
+                    fill="currentColor"
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <path
-                      d="M7.6125 21.5251C16.4625 21.5251 21.2625 14.2126 21.2625 7.87509C21.2625 7.72509 21.2625 7.46259 21.225 7.23759C22.1625 6.56259 22.9875 5.70009 23.625 4.76259C22.725 5.17509 21.825 5.40009 20.8875 5.51259C21.9 4.91259 22.65 3.97509 22.9875 2.8501C22.05 3.3751 21.075 3.78759 19.9125 4.01259C19.0125 3.0751 17.8125 2.4751 16.425 2.4751C13.7625 2.4751 11.5875 4.65009 11.5875 7.31259C11.5875 7.68759 11.625 8.06259 11.7 8.43759C7.8375 8.17509 4.3125 6.26259 1.9125 3.3751C1.5 4.12509 1.275 4.91259 1.275 5.77509C1.275 7.46259 2.1375 8.88759 3.45 9.75009C2.6625 9.71259 1.9125 9.48759 1.275 9.15009C1.275 9.18759 1.275 9.18759 1.275 9.18759C1.275 11.4751 2.925 13.4626 5.1 13.9126C4.6875 14.0251 4.2375 14.0626 3.9 14.0626C3.6 14.0626 3.2625 14.0251 3 13.9501C3.6375 15.8626 5.4 17.2501 7.5 17.2876C5.85 18.5626 3.7875 19.3501 1.575 19.3501C1.125 19.4251 0.75 19.3501 0.375 19.3126C2.4 20.7376 4.9125 21.5251 7.6125 21.5251Z"
+                      d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07l-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z"
                       fill=""
                     />
                   </svg>
                 </a>
-
                 <a
-                  href="#"
+                  href="https://github.com/bearby-wallet"
                   aria-label="github"
                   className="duration-300 ease-in hover:text-white"
                 >
@@ -87,7 +119,7 @@ const Footer = () => {
                     width="24"
                     height="24"
                     viewBox="0 0 24 24"
-                    fill="none"
+                    fill="currentColor"
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <g clipPath="url(#clip0_368_11839)">
@@ -106,17 +138,13 @@ const Footer = () => {
               </div>
 
               <p className="mt-5.5 font-medium">
-                AI Tool, LLC. All rights reserved.
+                ©2025 Rinat.IP.
               </p>
             </div>
 
-            <div className="w-full max-w-[571px]">
-              <div className="flex flex-col gap-10 sm:flex-row sm:justify-between">
-                <FooterLinkList title="Products" links={productsLink} />
-
+            <div className="w-full max-w-[571px] flex justify-end">
+              <div className="flex flex-col items-end gap-10 sm:flex-row sm:justify-between">
                 <FooterLinkList title="Company" links={companiesLink} />
-
-                <FooterLinkList title="Support" links={supportsLink} />
               </div>
             </div>
           </div>

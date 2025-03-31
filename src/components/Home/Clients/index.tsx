@@ -2,7 +2,7 @@
 import "swiper/css";
 import { Autoplay } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
-import SingleClient from "./SingleClient";
+// import SingleClient from "./SingleClient";
 import clientsData from "./clientsData";
 
 const Clients = () => {
@@ -28,7 +28,7 @@ const Clients = () => {
             >
               {clientsData.map((client) => (
                 <SwiperSlide key={client.id}>
-                  <SingleClient client={client} />
+                  {/* <SingleClient client={client} /> */}
                 </SwiperSlide>
               ))}
             </Swiper>

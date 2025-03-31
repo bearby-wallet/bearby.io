@@ -1,0 +1,1785 @@
+Project Path: bearby.io
+
+Source Tree:
+
+```
+bearby.io
+├── tailwind.config.js
+├── bun.lockb
+├── integrations.config.tsx
+├── next.config.js
+├── README.md
+├── public
+│   └── images
+│       ├── favicon.ico
+│       ├── cta
+│       │   └── grid.svg
+│       ├── features
+│       │   ├── icon-04.svg
+│       │   ├── icon-05.svg
+│       │   ├── icon-07.svg
+│       │   ├── icon-06.svg
+│       │   ├── icon-02.svg
+│       │   ├── icon-03.svg
+│       │   ├── icon-01.svg
+│       │   ├── logo.png
+│       │   ├── shape-01.png
+│       │   ├── shape-02.svg
+│       │   ├── shape-03.svg
+│       │   ├── logo.svg
+│       │   ├── shape-04.svg
+│       │   ├── shape-05.svg
+│       │   └── big-icon.svg
+│       ├── 404.svg
+│       ├── user
+│       │   ├── user-06.png
+│       │   ├── user-07.png
+│       │   ├── user-05.png
+│       │   ├── user-04.png
+│       │   ├── user-01.png
+│       │   ├── user-03.png
+│       │   ├── user-02.png
+│       │   ├── user-09.png
+│       │   └── user-08.png
+│       ├── about
+│       │   └── about.svg
+│       ├── blog
+│       │   ├── quote-shape-1.svg
+│       │   └── quote-shape-2.svg
+│       ├── logo
+│       │   └── logo.svg
+│       ├── team
+│       │   └── rinat.jpeg
+│       ├── blur
+│       │   ├── blur-16.svg
+│       │   ├── blur-02.svg
+│       │   ├── blur-03.svg
+│       │   ├── blur-17.svg
+│       │   ├── blur-01.svg
+│       │   ├── blur-15.svg
+│       │   ├── blur-14.svg
+│       │   ├── blur-04.svg
+│       │   ├── blur-10.svg
+│       │   ├── blur-11.svg
+│       │   ├── blur-05.svg
+│       │   ├── blur-13.svg
+│       │   ├── blur-07.svg
+│       │   ├── blur-06.svg
+│       │   ├── blur-12.svg
+│       │   ├── blur-23.svg
+│       │   ├── blur-22.svg
+│       │   ├── blur-20.svg
+│       │   ├── blur-08.svg
+│       │   ├── blur-09.svg
+│       │   ├── blur-21.svg
+│       │   ├── blur-19.svg
+│       │   ├── blur-24.svg
+│       │   └── blur-18.svg
+│       ├── hero
+│       │   ├── hero.svg
+│       │   ├── icon-title.svg
+│       │   ├── chrome.svg
+│       │   └── firefox.svg
+│       └── pricing
+│           ├── pricing-icon-02.svg
+│           ├── pricing-icon-03.svg
+│           ├── pricing-icon-01.svg
+│           ├── pricing-icon-04.svg
+│           ├── photo_3_2025-01-19_10-40-19.jpg
+│           ├── photo_1_2025-01-19_10-40-19.jpg
+│           └── photo_2_2025-01-19_10-40-19.jpg
+├── package.json
+├── tsconfig.json
+├── project-structure.txt
+├── postcss.config.js
+├── output.txt
+└── src
+    ├── types
+    │   ├── aiExample.ts
+    │   ├── blog.ts
+    │   ├── faq.ts
+    │   ├── menu.ts
+    │   ├── footerLink.ts
+    │   ├── review.ts
+    │   ├── team.ts
+    │   ├── feature.ts
+    │   └── client.ts
+    ├── app
+    │   ├── sitemap.js
+    │   ├── favicon.ico
+    │   ├── context
+    │   │   └── ToastContext.tsx
+    │   └── (site)
+    │       ├── terms
+    │       │   ├── terms.json
+    │       │   └── page.tsx
+    │       ├── about
+    │       │   └── page.tsx
+    │       ├── docs
+    │       │   ├── page.tsx
+    │       │   └── [slug]
+    │       │       └── page.tsx
+    │       ├── blog
+    │       │   ├── author
+    │       │   │   └── [slug]
+    │       │   │       └── page.tsx
+    │       │   ├── page.tsx
+    │       │   └── [slug]
+    │       │       └── page.tsx
+    │       ├── layout.tsx
+    │       ├── extension-policy
+    │       │   ├── extension-policy.json
+    │       │   └── page.tsx
+    │       ├── page.tsx
+    │       ├── error
+    │       │   └── page.tsx
+    │       ├── pricing
+    │       │   └── page.tsx
+    │       └── policy
+    │           ├── policy.json
+    │           └── page.tsx
+    ├── markdown
+    │   └── docs
+    │       ├── tailwind-template.mdx
+    │       ├── test-guide.mdx
+    │       ├── style-guide.mdx
+    │       ├── contact-form.mdx
+    │       └── tailwind-component.mdx
+    ├── libs
+    │   ├── markdown.ts
+    │   └── markdownToHtml.ts
+    ├── styles
+    │   ├── prism-vsc-dark-plus.css
+    │   ├── animate.css
+    │   ├── tailwind.css
+    │   └── star.css
+    └── components
+        ├── Home
+        │   ├── Clients
+        │   │   ├── index.tsx
+        │   │   ├── clientsData.ts
+        │   │   └── SingleClient.tsx
+        │   ├── Features
+        │   │   ├── index.tsx
+        │   │   ├── featuresData.ts
+        │   │   └── SingleFeature.tsx
+        │   ├── Hero
+        │   │   └── index.tsx
+        │   ├── FeaturesList
+        │   │   ├── index.tsx
+        │   │   └── HighLighter.tsx
+        │   └── Reviews
+        │       ├── index.tsx
+        │       ├── SingleReview.tsx
+        │       └── reviewsData.ts
+        ├── Footer
+        │   ├── index.tsx
+        │   ├── linksData.ts
+        │   └── FooterLinkList.tsx
+        ├── ScrollToTop
+        │   └── index.tsx
+        ├── SmartButton
+        │   └── index.tsx
+        ├── Faq
+        │   ├── index.tsx
+        │   ├── SingleFaq.tsx
+        │   └── faqData.ts
+        ├── About
+        │   ├── Team
+        │   │   ├── index.tsx
+        │   │   ├── SingleTeam.tsx
+        │   │   └── teamData.ts
+        │   └── AboutSection
+        │       └── index.tsx
+        ├── Docs
+        │   ├── SidebarLink.tsx
+        │   └── DocsContent.tsx
+        ├── Blog
+        │   ├── index.tsx
+        │   ├── SingleBlog.tsx
+        │   └── BlogGridContainer.tsx
+        ├── Common
+        │   ├── Loader.tsx
+        │   └── SectionTitle.tsx
+        ├── Support
+        │   └── index.tsx
+        ├── icons
+        │   ├── firefox.tsx
+        │   └── chrome.tsx
+        ├── Breadcrumb
+        │   └── index.tsx
+        ├── Newsletter
+        │   └── index.tsx
+        ├── Pricing
+        │   ├── index.tsx
+        │   ├── OfferItem.tsx
+        │   └── PricingGrids.tsx
+        └── Header
+            ├── index.tsx
+            ├── menuData.ts
+            └── DropDown.tsx
+
+```
+
+`/Users/rinat/projects/bearby/bearby.io/tailwind.config.js`:
+
+```js
+/** @type {import('tailwindcss').Config} */
+const defaultTheme = require("tailwindcss/defaultTheme");
+
+module.exports = {
+  content: [
+    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+  ],
+  theme: {
+    fontFamily: {
+      "plus-jakarta": ["Plus Jakarta Sans", "sans-serif"],
+    },
+    container: {
+      center: true,
+      padding: {
+        DEFAULT: "1rem",
+        sm: "2rem",
+        xl: "0",
+      },
+    },
+    screens: {
+      xsm: "375px",
+      lsm: "425px",
+      "3xl": "2000px",
+      ...defaultTheme.screens,
+    },
+    extend: {
+      colors: {
+        current: "currentColor",
+        transparent: "transparent",
+        white: "#FFFFFF",
+        dark: {
+          DEFAULT: "#030014",
+          2: "#495270",
+          3: "#918EA0",
+          4: "#8D93A5",
+          5: "#BBBEC9",
+          6: "#191625",
+          7: "#0F0C1F",
+          8: "#100D20",
+        },
+        purple: {
+          DEFAULT: "#8646F4",
+          dark: "#6D28D9",
+          "dark-2": "#5B21B6",
+          light: "#A78BFA",
+          "light-2": "#C4B5FD",
+          "light-3": "#DDD6FE",
+          "light-4": "#EDE9FE",
+          "light-5": "#F5F3FF",
+        },
+        pink: {
+          DEFAULT: "#D345F8",
+          dark: "#C814F6",
+          light: "#DF76FA",
+          "light-2": "#EAA7FC",
+          "light-3": "#F6D8FE",
+          "light-4": "#FCF1FE",
+        },
+      },
+
+      fontSize: {
+        "heading-1": ["60px", "72px"],
+        "heading-2": ["48px", "58px"],
+        "heading-3": ["40px", "48px"],
+        "heading-4": ["30px", "38px"],
+        "heading-5": ["28px", "40px"],
+        "heading-6": ["24px", "30px"],
+        "custom-1": ["45px", "55px"],
+      },
+      spacing: {
+        4.5: "1.125rem",
+        5.5: "1.375rem",
+        6.5: "1.625rem",
+        7.5: "1.875rem",
+        8.5: "2.125rem",
+        9.5: "2.375rem",
+        10.5: "2.625rem",
+        11: "2.75rem",
+        11.5: "2.875rem",
+        12.5: "3.125rem",
+        13: "3.25rem",
+        13.5: "3.375rem",
+        14: "3.5rem",
+        14.5: "3.625rem",
+        15: "3.75rem",
+        15.5: "3.875rem",
+        16: "4rem",
+        16.5: "4.125rem",
+        17: "4.25rem",
+        17.5: "4.375rem",
+        18: "4.5rem",
+        18.5: "4.625rem",
+        19: "4.75rem",
+        19.5: "4.875rem",
+        21: "5.25rem",
+        21.5: "5.375rem",
+        22: "5.5rem",
+        22.5: "5.625rem",
+        24.5: "6.125rem",
+        25: "6.25rem",
+        25.5: "6.375rem",
+        26: "6.5rem",
+        27: "6.75rem",
+        27.5: "6.875rem",
+        29: "7.25rem",
+        29.5: "7.375rem",
+        30: "7.5rem",
+        31: "7.75rem",
+        32.5: "8.125rem",
+        34.5: "8.625rem",
+        35: "8.75rem",
+        36.5: "9.125rem",
+        37.5: "9.375rem",
+        39: "9.75rem",
+        39.5: "9.875rem",
+        40: "10rem",
+        42.5: "10.625rem",
+        45: "11.25rem",
+        46: "11.5rem",
+        47.5: "11.875rem",
+        49: "12.25rem",
+        50: "12.5rem",
+        52: "13rem",
+        52.5: "13.125rem",
+        54: "13.5rem",
+        54.5: "13.625rem",
+        55: "13.75rem",
+        55.5: "13.875rem",
+        59: "14.75rem",
+        60: "15rem",
+        62.5: "15.625rem",
+        65: "16.25rem",
+        67: "16.75rem",
+        67.5: "16.875rem",
+        70: "17.5rem",
+        72.5: "18.125rem",
+        75: "18.75rem",
+        90: "22.5rem",
+        92.5: "23.125rem",
+        94: "23.5rem",
+        100: "25rem",
+        110: "27.5rem",
+        115: "28.75rem",
+        122.5: "30.625rem",
+        125: "31.25rem",
+        127.5: "31.875rem",
+        132.5: "33.125rem",
+        142.5: "35.625rem",
+        150: "37.5rem",
+        166.5: "41.625rem",
+        171.5: "42.875rem",
+        180: "45rem",
+        187.5: "46.875rem",
+        192.5: "48.125rem",
+        203: "50.75rem",
+        230: "57.5rem",
+      },
+      maxWidth: {
+        30: "7.5rem",
+        40: "10rem",
+        50: "12.5rem",
+      },
+      zIndex: {
+        99999: "99999",
+        9999: "9999",
+        999: "999",
+        1: "1",
+      },
+      boxShadow: {
+        button:
+          "inset 0px -6px 15px rgba(156, 178, 255, 0.25), inset 0px 6px 15px rgba(229, 156, 255, 0.25)",
+        dark: "0px 2px 4px rgba(11, 20, 51, 0.05), 0px 6px 24px rgba(11, 20, 51, 0.4)",
+        video:
+          "0px -3px 10px 0px rgba(0, 0, 0, 0.25) inset, 0px 26px 50px 0px rgba(18, 9, 36, 0.10)",
+        1: "0px 1px 2px rgba(166, 175, 195, 0.25)",
+        2: "0px 2px 4px rgba(148, 163, 184, 0.05), 0px 6px 24px rgba(235, 238, 251, 0.4)",
+        3: "0px 2px 16px rgba(13, 10, 44, 0.12)",
+        4: "0px -8px 18px rgba(13, 10, 44, 0.04), 0px 13px 40px rgba(13, 10, 44, 0.22)",
+        5: "0px -18px 38px rgba(85, 106, 235, 0.04), 0px 4px 10px rgba(85, 106, 235, 0.04), 0px 10px 30px rgba(85, 106, 235, 0.12)",
+        6: "0px 34px 26px rgba(13, 10, 44, 0.05), 0px 12px 34px rgba(13, 10, 44, 0.08)",
+      },
+    },
+  },
+  plugins: [],
+};
+
+```
+
+`/Users/rinat/projects/bearby/bearby.io/next.config.js`:
+
+```js
+// /** @type {import('next').NextConfig} */
+// const nextConfig = {
+//   images: {
+//     domains: ["localhost"],
+//     remotePatterns: [
+//       {
+//         protocol: "https",
+//         hostname: "cdn.sanity.io",
+//         port: "",
+//       },
+//     ],
+//   },
+// };
+
+// module.exports = nextConfig;
+
+```
+
+`/Users/rinat/projects/bearby/bearby.io/package.json`:
+
+```json
+{
+  "name": "ai-tool-nextjs",
+  "version": "2.1.0",
+  "private": true,
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "scripts": {
+    "dev": "next dev --turbopack",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@portabletext/react": "^3.0.11",
+    "@types/node": "^20.8.8",
+    "@types/react": "npm:types-react@19.0.0-rc.1",
+    "@types/react-dom": "npm:types-react-dom@19.0.0-rc.1",
+    "autoprefixer": "^10.4.16",
+    "axios": "^1.4.0",
+    "canvas": "^2.10.1",
+    "eslint": "^8.57.0",
+    "eslint-config-next": "15.0.3",
+    "fslightbox-react": "^1.7.6",
+    "gray-matter": "^4.0.3",
+    "next": "^15.1.4",
+    "next-mdx-remote": "^4.4.1",
+    "nextjs-toploader": "^1.5.3",
+    "postcss": "^8.4.38",
+    "prettier": "^3.0.3",
+    "prettier-plugin-tailwindcss": "^0.5.6",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-hot-toast": "^2.4.1",
+    "react-infinite-scroll-component": "^6.1.0",
+    "react-modal-video": "^2.0.1",
+    "remark": "^15.0.1",
+    "remark-html": "^16.0.1",
+    "remark-prism": "^1.3.6",
+    "remark-slug": "^7.0.1",
+    "sanity": "^3.18.1",
+    "styled-components": "^6.1.13",
+    "swiper": "^11.0.7",
+    "tailwindcss": "^3.3.4",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.4.3",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/fslightbox-react": "^1.7.3",
+    "@types/nodemailer": "^6.4.14"
+  },
+  "overrides": {
+    "@types/react": "npm:types-react@19.0.0-rc.1",
+    "@types/react-dom": "npm:types-react-dom@19.0.0-rc.1"
+  }
+}
+
+```
+
+`/Users/rinat/projects/bearby/bearby.io/tsconfig.json`:
+
+```json
+{
+  "compilerOptions": {
+    "target": "es5",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "incremental": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  },
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "exclude": ["node_modules"]
+}
+
+```
+
+`/Users/rinat/projects/bearby/bearby.io/postcss.config.js`:
+
+```js
+module.exports = {
+  plugins: {
+    tailwindcss: {},
+    autoprefixer: {},
+  },
+}
+
+```
+
+`/Users/rinat/projects/bearby/bearby.io/src/types/aiExample.ts`:
+
+```ts
+export type AiExample = {
+  id: number;
+  icon: string;
+  title: string;
+  description: string;
+  rotate?: boolean;
+  path: string;
+};
+
+```
+
+`/Users/rinat/projects/bearby/bearby.io/src/types/blog.ts`:
+
+```ts
+import { PortableTextBlock } from "sanity";
+
+export type Author = {
+  name: string;
+  image: string;
+  bio?: string;
+  slug?: any;
+  _id?: number | string;
+  _ref?: number | string;
+};
+
+export type Blog = {
+  _id: number;
+  title: string;
+  slug: any;
+  metadata?: string;
+  body?: PortableTextBlock[];
+  mainImage?: any;
+  author?: Author;
+  tags?: string[];
+  publishedAt?: string;
+};
+
+```
+
+`/Users/rinat/projects/bearby/bearby.io/src/types/faq.ts`:
+
+```ts
+export type FAQ = {
+  id: number;
+  question: string;
+  answer: string;
+};
+
+```
+
+`/Users/rinat/projects/bearby/bearby.io/src/types/menu.ts`:
+
+```ts
+export type Menu = {
+  id: number;
+  title: string;
+  path?: string;
+  newTab?: boolean;
+  submenu?: Menu[];
+};
+
+```
+
+`/Users/rinat/projects/bearby/bearby.io/src/types/footerLink.ts`:
+
+```ts
+export type FooterLink = {
+  id: number;
+  title: string;
+  href: string;
+  newTab?: boolean;
+};
+
+```
+
+`/Users/rinat/projects/bearby/bearby.io/src/types/review.ts`:
+
+```ts
+export type Review = {
+  id: number;
+  userName: string;
+  userDesignation: string;
+  userImage: string;
+  description: string;
+};
+
+```
+
+`/Users/rinat/projects/bearby/bearby.io/src/types/team.ts`:
+
+```ts
+export type Team = {
+  id: number;
+  name: string;
+  designation: string;
+  image: string;
+  linkedinLink?: string;
+  twitterLink?: string;
+  githubLink?: string;
+};
+```
+
+`/Users/rinat/projects/bearby/bearby.io/src/types/feature.ts`:
+
+```ts
+export type Feature = {
+  id: number;
+  icon: string;
+  title: string;
+  description: string;
+  rotate?: boolean;
+};
+
+```
+
+`/Users/rinat/projects/bearby/bearby.io/src/types/client.ts`:
+
+```ts
+export type Client = {
+  id: number;
+  image: string;
+  title?: string;
+  description?: string;
+};
+
+```
+
+`/Users/rinat/projects/bearby/bearby.io/src/app/sitemap.js`:
+
+```js
+export default async function sitemap() {
+  const routes = ["", "/about", "/pricing", "/blog"].map((route) => ({
+    url: `${process.env.SITE_URL}${route}`,
+    lastModified: new Date().toISOString(),
+  }));
+
+  return [...routes];
+}
+
+```
+
+`/Users/rinat/projects/bearby/bearby.io/src/app/(site)/terms/terms.json`:
+
+```json
+{
+  "head_title": "Terms of Service - Bearby",
+  "title": "Terms of Service",
+  "last_update": "LAST UPDATED – 21ST OF APRIL, 2020",
+  "sub_title0": "1. Acceptance of Terms of Service",
+  "p0": "Khasanshin Rinat Ildarovich, IP, registered under no. 01.02.2021, 661220158399, Duns: 506873901, (“We”, “Us” or “Bearby”) provides a solution/platform for you (“User”/ “You”) to access and manage various functions related to digital assets for different Blockchain-platforms. It allows you to interact with Blockchain-platforms, while keeping You in control over what transactions, operations and activities You may approve, through our website located at https://Bearby.io/ and browser plugin (the “WebSite”) and mobile application (the “App”) – (WebSite and App – collectively referred to as the “Services”), including any text, images, audio, code and other materials (“Content).",
+  "p1": "Please read these Terms of Services (the “Terms” or “Terms of Services”) carefully before using our Services. By using or otherwise accessing the Services, or visiting our WebSite, running our App, clicking to accept or agree to these Terms, you (i) accept and agree to these Terms, (ii) consent to the collection, use, disclosure and other handling of information/data as described in our Privacy Policy and (iii) agree to any revised/updated terms and conditions of Bearby from time to time. If You do not agree to the Terms of Services, then you will not be able to access or use the Services, as well as the Content.",
+  "p2": "Bearby solution",
+  "p3": "Bearby is a non-custodial and agnostic crypto asset management tool designed for blockchain networks (the “Bearby”/ the “Services”). Our solution is a Blockchain-agnostic, cross-platform, non-custodial that helps Users to access and manage various functions related to crypto assets for different Blockchain-platforms, in a fast and secure way. We offer Users the possibility to seamlessly integrate Blockchain services and building blocks into their DApps. It aggregates Blockchain-networks building blocks and services into one powerful and reliable middleware solution.",
+  "p4": "These Terms are accompanied and supplemented by our Privacy Policy available on our WebSite and App.",
+  "subt_title1": "2. Modification of Terms",
+  "p5": "We reserve the right to amend the Terms from time to time. Any updates to the Terms shall be posted on our WebSite or on our mobile App, and shall be immediately effective from that specific date. If you continue to use Bearby following any such changes, it will be considered that you have accepted the updated Terms of Bearby. You shall be responsible for reading and understanding of any such modifications/updates on our Terms of Services.",
+  "subt_title2": "3. Eligibility",
+  "p7": "To be eligible to use Bearby, you must be at least eighteen (18) years old. We recommend that you should use the Services and the Content only when you are familiar with Digital Assets or Blockchain technology and you can be responsible for securely storing your own private key.",
+  "p8": "In the event you are using Bearby on behalf of a legal entity, you warrant to Bearby that: (i) the legal entity is validly organized and running under the laws applicable its jurisdiction; and (ii) you are validly and properly entrusted and authorized to act on the legal entity’s behalf.",
+  "p9": "Please make sure that these Terms are in accordance with all provisions and regulations that apply in your jurisdiction, including owning cryptographic tokens, before using the Bearby. You can use the Services only if this is allowed under the laws of your jurisdiction. By using Bearby you ensure / warrant us that the eligibility criteria are fully met by you/ the entity you are representing.",
+  "p10": "We still may refuse the access or use of Bearby to any person for any of the reasons provided herein, without notice or liability.",
+  "subt_title3": "4. Bearby Account, Install and Set up",
+  "subt_title4": "4.1 Bearby",
+  "p11": "Bearby solution is a middleware service that: (i) provides encrypted private keys that you may use to manage your assets from the Blockchain networks in an easy and secure way; (ii) allows Users to create or restore existing wallets and to add numerous derived accounts/addresses for each Blockchain platform providing Native and JavaScript SDKs for Users to browse decentralized applications (“DApps”) through the mobile App or WebSite; (iii) allows Users to manage their accounts/addresses or to send and receive digital assets; and (iv) provides the access to all transactions detail page and reveal secret phrase.",
+  "subt_title5": "4.2 Validator",
+  "p12": "If Bearby will operate, at any point in time, a validator or nodes to support the decentralised functioning of various Blockchain networks, it can perform the following Services: (i) select validator to delegate to, (ii) delegate to validators to earn staking rewards, (iii) share rewards with delegators (excluding commission), (iv) change delegation, (v) undelegate delegations to validators or (vi) redelegate a portion of your delegation to another validator.",
+  "subt_title6": "4.3 Create or restore Account",
+  "p13": "With Bearby you have the possibility to either create or restore an existing wallet account in order to use the Services. When you create a new wallet an account/address name will be generated automatically. When you restore an existing Wallet you will need to enter the secret phrase in order to access the Services. When you both create or restore a wallet, you are strongly advised to take precautions in order to avoid loss of access to or control over your wallet credentials. We shall assume no responsibility for any loss or damage that may be incurred due to the failed recovery of the wallet or not recording the recovery/backup passphrase (security code, recovery code), loss of data, erroneous transmission of cryptocurrency, loss of recovery passphrase, leaked ID/password to third parties, and hacking by third parties.",
+  "subt_title7": "4.4 Free of charge",
+  "p14": "Bearby does not currently charge any fees for any of the Services. However, we reserve the right to change this decision at any time and, in that event, all fees will be displayed prior to you using the Services.",
+  "subt_title8": "5. Account Password and Security",
+  "subt_title9": "5.1 Private Key",
+  "p15": "The private key is a crucial tool for Users, giving the access to the wallet and allowing the transfer to and from that wallet address. You are solely responsible for maintaining the security of your private key!",
+  "p16": "The User can send or receive digital assets, show the private keys when importing on different wallets, discard the unwanted accounts, and review all the send and receive transactions. For a non-custodial wallet, the User has complete control on their assets and complete responsibility for their private key. The wallet is hierarchical deterministic allowing the User to gather various addresses from numerous Blockchains depending on the number of Blockchains in use and allows to import the private keys from different wallets.",
+  "p17": "Failure to do so may result in the loss of control of assets associated with the wallet. Bearby cannot and will not be liable for any loss or damage arising from your failure to comply with this section.",
+  "subt_title10": "5.2 Password and Secret Phrase",
+  "p18": "When setting up a Bearby account, you will be responsible for keeping your own account secrets, which may be a secret phrase, an account file/text, or other locally stored secret information. Bearby encrypts this information locally with a password/pin code you provide, that Bearby never sends to our servers. You agree (i) to never use the same password/secret phrase for Bearby that you have used for other services/apps, (ii) keep your secret information and password confidential and do not share them with any third parties and (iii) immediately notify Bearby of any unauthorized use of your Bearby account or breach of security. Bearby cannot and will not be liable for any loss or damage arising from your failure to comply with this",
+  "subt_title11": "5.3 Suspicious actions",
+  "p19": "You must immediately notify us of any suspicious or unauthorised use of the Services or any other breach of security.",
+  "subt_title12": "6. Representations, Warranties and Risks",
+  "subt_title13": "6.1 Restrictions and limitations",
+  "p20": "As a User of the Services, except as expressly mentioned in these Terms or as permitted by any local laws, you agree: (i) not to violate any laws when using our Services and to comply in full with all applicable technology control laws and regulations. You agree that you will not use our Services to engage in any illegal activities, including but not limited to, fraud or money laundering or facilitating/ supporting any terrorism activities; (ii) not to create an account under fraudulent user details/credentials that could negatively affect, or inhibit other users to fully benefit from the Services or to use or attempt to use another user’s wallet without authorization; (iii) not to harm our system/App by negligently or intentionally to distribute or upload any material that contains viruses or other harmful malware that may be harmful or dangerous; (iv) not to attempt to circumvent our security or bypass any content filtering or blocking measures that we may make use of, to prevent or restrict access to the Services.",
+  "p21": "Any use of the Services other than as expressly authorized in these Terms is strictly forbidden and will terminate your right to use Bearby.",
+  "subt_title14": "6.2 Warranty",
+  "p22": "Please be aware that certain jurisdiction legislation do not allow the disclaimer of implied warranties, so the foregoing disclaimers may not apply to you. The Services granted through App and Website are provided ,,AS IS” and without warranty of any kind, either express or implied. To the fullest extent permitted by law, we discard all warranties, express or implied, regarding your use of the Services.",
+  "p23": "We do not warrant that the Content accessible via the Services is accurate, complete or free of viruses or any other harmful components. You agree that your use of the wallet/ Services will be at your sole risk. Bearby shall keep no liability or responsibility for any: (i) User error such as forgotten passwords, defective transactions, or mistyped addresses; (ii) any unauthorized access to the Services; (iii) server failure or data loss; (iv) any interruption, viruses, phishing, brute forcing, or other attacks against the Services represents common risk associated with the use of Blockchain technology.",
+  "subt_title15": "6.3 Software",
+  "p24": "Please take into consideration that, Bearby is a software/solution in a progressing field, which comes without any warranty, express or implied. Therefore, in no case shall the authors or copyright holders be liable for any claim, damages or other liability, whether in an action of contract, proceeding from, out of or in connection with the software, the use or other concerns regarding the software.",
+  "p25": "We reserve the right to take no responsibility regarding the security of any data from or related to Bearby, including but not limited to, account data, password or personal key which we do not know or own, in the event of the User choosing to use custom ROMs on their mobile/applications or removing their software restrictions imposed by the operating system, also known as jailbreaking. Please note that this behaviour may be harmful in relation with the common risk associated with the Blockchain networks and may result in the loss of your account.",
+  "p26": "No warning provided by Bearby will evidence or represent an on-going duty to alert You to all of the potential risks of utilizing the Service or Content.",
+  "subt_title16": "6.4 Validator Node",
+  "p27": "We do not guarantee or promise that Bearby will serve as a Validator Node at all times or for any particular period of time. Bearby failure to remain a validator Node shall not constitute a closure of this Terms or to activate any liability or obligation by/of Bearby.",
+  "subt_title17": "6.5 Blockchain risks",
+  "p28": "Bearby is not responsible for any of the risks that come with you using the Blockchain networks, which are not owned by us. You take full responsibility of managing the digital assets agreeing that this technology may be extremely volatile or unproven, their software and providers are regularly subject to hacking attempts potentially resulting in loss of your data. You agree to hold Bearby not responsible/liable for these types of risks, and to waive any right to claim against Bearby for any damages, losses you may suffer due to your use of a Blockchain network or the Service.",
+  "p29": "Bearby has no control over such Blockchain networks which are known as decentralized, peer-to-peer networks supported by independent third parties, beyond our control. We cannot guarantee that any transaction details that you submit will be confirmed and processed. Likewise, you acknowledge that the transaction details you submit may not be completed or delayed, by the Blockchain networks. Once the transaction has been submitted we cannot help you to cancel or modify your transaction as Bearby has no control over any Blockchain network and does not possess the ability to assist any cancellation or modification requests. We will not be held liable for any failed transactions associated with your account.",
+  "subt_title18": "6.6 Risk of cryptographic systems",
+  "p30": "By utilizing the Service or interacting with the Content or platform in any way, you represent that you understand the inherent risks associated with cryptographic systems; and warrant that you have an understanding of the usage and intricacies of native cryptographic tokens of various Blockchain networks, and blockchain-based software systems.",
+  "subt_title19": "6.7 Risk of jurisdiction regulatory actions",
+  "p31": "Bearby could be impacted by one or more regulatory inquiries or regulatory action, which could impede or limit the ability of Bearby to continue to develop, or which could impede or limit User ability to access or use the Services.",
+  "subt_title20": "6.8 Our App",
+  "p32": "You acknowledge that Bearby App is undergoing testing, available on an “AS IS” basis, before its official release. The Services provided via our App is not intended to be relied on for any reason whatsoever or used in a production environment. As such, You acknowledge and accept that the App or the Services: (i) may contain bugs, errors and defects, (ii) may function improperly or be subject to periods of downtime and unavailability, (iii) may result in total or partial loss or corruption of the User data/information and (iv) may be modified at any time, including through the release of subsequent versions, all with or without notice to you.",
+  "subt_title21": "6.9 Taxes",
+  "p33": "It is your duty to determine if any taxes apply to the transactions that you have submitted/carried out using the Services, and it is your responsibility to report and remit the correct tax to the appropriate tax authority. You agree that we are not responsible for determining whether taxes apply to your transactions or for remitting any taxes arising from or related to the transactions made by you in any Blockchain networks.",
+  "subt_title22": "6.10 Force majeure",
+  "p34": "Bearby shall not be held liable for any delays, failures or interruptions of Service which may result directly or indirectly from any cause or condition beyond reasonable control of the parties, unpredictable, absolutely invincible and inevitable. Including but not limited to: any delay or failure, act of military authorities, war act of terrorism, failure of equipment and/or software strike or other labor dispute/strikes, interruption in telecommunications or Internet services or network provider services, fire, other catastrophe, epidemic or pandemic, or any other circumstance which is beyond of our reasonable control.",
+  "subt_title23": "7. Indemnity",
+  "p35": "You agree to defend, indemnify, and hold us harmless from and against any, damages, obligations, claims, losses, liabilities, costs or debt, and expenses, including, but not limited to, attorney’s fees, arising from: (i) your use of the Services; (ii) breach of this Terms; (iii) your violation of any term of this Terms; or (d) your violation of any law or the rights of any third party, including but not limited to intellectual property rights; (e) any harmful act towards any other User of the Services. We will notify you of any such claim, action, or proceeding which is subject to this indemnification upon becoming aware of it.",
+  "subt_title24": "8. Limitation of liability",
+  "p36": "To the fullest extent permitted by applicable law, in no circumstance Bearby or our shareholders, representatives, employees, consultants, lawyers or any other authorised personnel be liable to You or any third party for damages, direct or indirect, consequential, incidental, punitive damages, lost profit and loss of data, or of any kind of damages resulting from: your use of the Services; unauthorised use of your wallet due to your inadequate approach to manage the confidentiality of your data; any interruption of transmission from the Services such as bugs, viruses or the like that are commonly found or that may be transmitted to Services by any third party; any actions we take or fail to take as a result of communications you send to us; human errors; technical malfunctions; failures, including public utility or telephone outages; omissions, interruptions, latency, deletions or defects of any device or network, providers, or software (including, but not limited to, those that do not permit participation in the service); any injury or damage to computer equipment; inability to fully access the WebSite, the App or the Services or any other website; theft, tampering, destruction, or unauthorised access to, images or other content of any kind; data that is processed late or incorrectly or is incomplete or lost; any type of errors, or any combination thereof, as well as any other damages arising from your use of the Wallet/Services, even if we have been advised of the possibility of such damages;.",
+  "p37": "To the fullest extent permitted by applicable law, neither Bearby nor its suppliers or licensors will be liable to You for any direct, indirect, incidental, special, consequential, punitive, exemplary or other damages of any kind, including without limitation damages for loss of profits, goodwill, use, data or other tangible or intangible losses or any other damages based on contract, tort, strict liability or any other theory (even if Bearby had been advised of the possibility of such damages), resulting from the WebSite, the App or Services.",
+  "p38": "You agree that any that may arise from or in connection with the use of wallet/Services or this Terms must be filed within 3 (three) months after such claim arises, otherwise, your claim shall be definitely barred. This rule shall not affect the disclaimers under warranty clause above.",
+  "subt_title25": "9. Intellectual property",
+  "p39": "Bearby App was developed under an open source license and it can be accessed, shared or used by any User. Information regarding Bearby’s current source code can be found at https://github.com/Bearby. Please be aware that it is a copyleft license, which means that all the derivative programs must be distributed under the same terms as the original software.",
+  "p40": "Your access of the Services does not allow you to use the Content for any other purpose than your solely personal, legitimate and non-commercial use or for the scope of the Service. You are banned from using the App/the Services for any other purpose than explained beforehand and you agree that you will not copy, distribute, sell, license, or, in any other way, the Services.",
+  "subt_title26": "10. Termination and discontinuance of services",
+  "p41": "Bearby may terminate or suspend all or part of the Service the right to use Bearby account, terminate or permanently modify any part of the Services, to any User for any reason or for no reason, at any time without prior notice, and without notice or liability for breach of these Terms. We reserve the right to modify or discontinue, for a limited period of time or permanently, a part or whole of the Services, in our sole discretion, with or without prior notice, and at any time.",
+  "p42": "It is your sole responsibility to backup the wallet addresses and private keys. In case of termination of your right to use Bearby, you remain fully bound by the obligations under these Terms. Your access to your wallet/ the Services after termination will depend only on your access to your backup of your private key.",
+  "subt_title27": "11. Final provisions",
+  "subt_title28": "11.1 Governing law. Jurisdiction",
+  "p43": "These Terms shall be governed by the Romanian law. Any disputes that may arise from or in connection with these Terms/this Agreement shall be settled by the Romanian courts of law where Bearby has its headquarters located.",
+  "p44": "We encourage you to send us a message at: support@bearby.io or via https://t.me/bearbychat for any inquiries, complaints, questions or concerns regarding the Services/ Bearby.",
+  "subt_title29": "11.2 Assignment",
+  "p45": "You agree that you cannot assign any rights, liabilities or obligations arising from or in connection with these Terms of Services.",
+  "subt_title30": "11.3 Communication",
+  "p46": "Any questions, complaints or claims from the User’s side with respect to the Services may be addressed to Us using the relevant contact information set in our WebSite/ App."
+}
+```
+
+`/Users/rinat/projects/bearby/bearby.io/src/app/(site)/extension-policy/extension-policy.json`:
+
+```json
+{
+  "last_update": "LAST UPDATED – 21ST OF APRIL, 2020",
+  "head_title": "Privacy policy for Bearby wallet.",
+  "title0": "Bearby recognizes that people who use Bearby value their privacy.",
+  "p0": "This privacy policy (“Policy”) describes how Bearby (“Company”, “we”, “our”, or “us”) collects, uses, shares, and stores personal information of users of this browser plug-in, (the “Site”). This Policy applies to the Site, applications, products and services (collectively, “Services”) on or in which it is posted, linked, or referenced.",
+  "p1": "By using the Services, you accept the terms of this Policy and our Terms of Use, and consent to our collection, use, disclosure, and retention of your information as described in this Policy. If you have not done so already, please also review our terms of use. The terms of use contain provisions that limit our liability to you and require you to resolve any dispute with us on an individual basis and not as part of any class or representative action. IF YOU DO NOT AGREE WITH ANY PART OF THIS PRIVACY POLICY OR OUR TERMS OF USE, THEN PLEASE DO NOT USE ANY OF THE SERVICES.",
+  "p2": "Please note that this Policy does not apply to information collected through third-party websites or services that you may access through the Services or that you submit to us through email, text message or other electronic message or offline.",
+  "p3": "If you are visiting this site from the European Union (EU), see our Notice to EU Data Subjects below for our legal bases for processing and transfer of your data.",
+  "title1": "WHAT WE COLLECT",
+  "collections0": "We get information about you in a range of ways.",
+  "collections1": "Information You Give Us.",
+  "title2": "Information we collect from you includes:",
+  "p4": "Network information regarding transactions; when you participate in market research activities, report a problem with Service, receive customer support or otherwise correspond with us;",
+  "title3": "Information We Get From Others.",
+  "p5": "We may get information about you from other third party sources and we may add this to information we get from your use of the Services. Such information may include:",
+  "p6": "Social Media Widgets: Our Site may include social media features, such as the Facebook “like” button and widgets, such as the “share this” button. These features may collect your personal information and track your use of the Site. These social media features are either hosted by a third party or hosted directly on our Site. Your interactions with these features are governed by the privacy policy of the company providing such functionality.",
+  "p7": "We may use cookies or similar technologies to analyze trends, administer the website, track users’ movements around the website, and to gather demographic information about our user base as a whole. Users can control the use of cookies at the individual browser level. For more information, please see the section entitled “Cookies Policy” below.",
+  "p8": "Information we will never collect. We will never ask you to share your private keys or wallet seed. Never trust anyone or any site that asks you to enter your private keys or wallet seed.",
+  "title4": "USE OF PERSONAL INFORMATION",
+  "p9": "To provide our service",
+  "p10": "Websites cannot see your account information, because websites (dapps) need call request for connection. When user accept connections from website(dapp) then website can see your account informations (zilliqa address).",
+  "title5": "Bearby stores on your device:",
+  "stores0": "Seed phrase words in encrypted by your password",
+  "stores1": "Your import private Keys in encrypted by your password",
+  "stores2": "Your accounts such as addresses and balance account.",
+  "stores3": "Some UI information such as theme and language",
+  "stores4": "Your transactions",
+  "stores5": "Network information such as node URL, socket URL, node ID.",
+  "title6": "Cryptography",
+  "p11": "Your financial data, such as (the initial opening phrase), encrypted with modern encryption methods by user password.",
+  "title7": "We will use your personal information in the following ways:",
+  "p12": "To enable you to access and use the Services To provide and deliver products and services that you may request. To send information, including confirmations, technical notices, updates, security alerts, and support and administrative messages.",
+  "title8": "To comply with law",
+  "p13": "All data that you own (private key, initial phrase) is available only to you, only you can manage your account. If you forget your password or seed phrase words, you will lose your money.",
+  "title9": "Warning of liability",
+  "p14": "We accept no liability for the loss of your finances. Also, if someone wants to receive your data such as (initial passphrase or private keys), do not in any case pass this information to third parties."
+}
+```
+
+`/Users/rinat/projects/bearby/bearby.io/src/app/(site)/policy/policy.json`:
+
+```json
+{
+  "head_title": "Privacy Policy - Bearby",
+  "title": "Privacy & Cookies Policy",
+  "last_update": "LAST UPDATED – 21ST OF APRIL, 2020",
+  "p0": "This Privacy Policy (“Policy”) describes how Khasanshin Rinat Ildarovich, IP, registered under no. 01.02.2021, 661220158399, Duns: 506873901, (“Bearby” or the “controller”) collects, uses, shares, and retain the personal data/information (“data”) of users of our website https://zilpay.io/ (the “WebSite”) and our mobile application (“App”). This Policy applies to the WebSite, App, and other products/ services offered to you (the „User”/ “You”) by Bearby (the “Services”)..",
+  "p1": "This Policy supplements out Terms of Services with regard to any details/aspects regarding the processing of personal data in connection with Bearby.",
+  "p2": "Please note that by downloading our mobile App or running the WebSite you agree to the terms outlined in this Policy.",
+  "p3": "This Policy does not apply to any personal data/ information collected through third-party websites or services that you may access through the Services or that you submit to us through any electronic message/text/ e-mail.",
+  "sub_title4": "ELIGIBILITY",
+  "p5": "The Services are not designed for / directed towards children, as we are sensitive about children’s information. Please note that Bearby is not intended for use by anyone under the age of 18. We do not consciously or intentionally collect any information about children who are under the age of 13.",
+  "sub_title6": "WHAT INFORMATION WE COLLECT<br>We collect information/personal data from you by using different means. Information / personal data we may collect from you include:",
+  "p7": "Contact information – e-mail, or the ID on your social platforms;<br>Usage information/data – about how you use the Service and interact with Bearby;<br>Correspondence with us – information you provide in your responses to our surveys, report a problem with our Services, tracking errors to manage fixing errors, receive customer support or otherwise correspond with us;<br>Marketing information – your preferences for receiving general marketing communications (push-notifications) and details about them.",
+  "p8": "Information automatically collected. Bearby may automatically collect certain information/data about how you use our WebSite or App, such as User’s Internet Protocol (IP) address, device and browser type, operating system, the pages or features of our WebSite / App to which you browsed and the time you have spent on those pages/ features, the frequency of using our Services, and other statistics/analytics. We use this information to manage the Services, to report and fix certain errors, and to improve our Service by offering the User new features, functions and increased functionality.",
+  "p9": "Information we get from others. Bearby may get information about you from other third parties (“Third Party”). We may add this to the information/data we get from you using our Services. Third parties may process analytics information or statistical data through your use of the Services, including but not limited to the type of your operating system, the date and time you access the Services, the period of your use.",
+  "p10": "Our WebSite or App may be linked to your social media platforms (e.g. Facebook, Linked-In), and may collect certain information/data provided by your interactions with these platforms features (your “likes”; “sharing”).",
+  "p11": "We may use cookies or similar technologies to analyze / manage our WebSite/App, track your interactions around the WebSite/App. For more information, please see below “Cookies Policy” section.",
+  "p12": "Collection and processing by the Third Parties of your personal information/data on those platforms/ engines are governed and detailed in the privacy policies of those Third Parties.",
+  "p13": "We will never collect. We do not, in any circumstance, collect or retain your secret phrase or private key associated with your account. The security of your wallet account credentials is your own and personal responsibility and it is highly important to keep both, the secret phrase and the private key, safe and secure.",
+  "sub_title14": "HOW AND WHY WE USE YOUR INFORMATION/DATA",
+  "p15": "We use your information/data for the following purposes/ by the following means:",
+  "p16": "Providing our Services",
+  "p17": "We will use your personal information/data:<br>to allow you access and use the Services;<br>to send information, including confirmations, technical notices, updates on our Services/policies, security alerts, reports, and any support/technical and administrative messages/notifications;<br>to inform us of any errors/bugs that you may encounter when using our Services.",
+  "p18": "To improve our Services. Customer support",
+  "p19": "We may use your personal information/data to operate, maintain, and improve our Services. We may also use your information/data to answer your comments and questions regarding the Services, and to provide you with general customer support.",
+  "p20": "We may share analytics information though Third Party platforms such as Google Analytics, to comprehend how users interact with our Services so that we can further deliver the best experience to you. We may process your analytics information and support information to provide you technical or customer support in response to any inquiries, comments or questions and in order to improve the Service by expanding its features and functionality and tailoring it to our users’ needs and preferences",
+  "p21": "Communicate with you",
+  "p22": "We use your personal information/data to communicate with you about upcoming events, our news, any technical/support or administrative messages, the Services’ features/tools offered by us and our selected partners.",
+  "p23": "Marketing activities",
+  "p24": "We may use or share your personal information/data, with your informed, clear and specific consent, to place you certain push-notifications, send you our general offers and marketing communications, or advertising of several services provided by our affiliated partners (e.g. domain names).",
+  "p25": "You can anytime opt-out from Bearby or its affiliated partners marketing communications by disabling notification functions on your device.",
+  "p26": "Compliance with the law. Defence our rights",
+  "p27": "We use your personal information/ data which may be necessary to comply with the applicable laws, lawful requests and legal processes (e.g. answers/providing information to/during official requests/investigations from government authorities). We may use some personal information/ data to defence our rights when you complain against us.",
+  "p28": "Compliance with fraud prevention and safety requirements",
+  "p29": "We may use your personal information/ data to protect, investigate, and deter against fraudulent, unauthorized, or any illegal activity you may be subject/ encounter.",
+  "sub_title30": "SHARING PERSONAL INFORMATION/ DATA",
+  "p31": "We do not share, rent, trade, or sell your personal information/ data that you provide us with other third parties/ organizations without your express and specific consent, except as described in this Policy. We may disclose personal information/ data to the following third parties:",
+  "p32": "Affiliates. We may disclose your data to our affiliated companies for purposes consistent with this Policy.<br>Buyers/ successors of our business/assets. We may share personal information/ data when our shareholders/management will decide to carry out a sale or transfer of all or a part of our business or assets (including any merger, spin-off, financing, acquisition, or bankruptcy transaction or proceeding).<br>Government authorities. We may share personal information/data to comply with the legal requirements (including, protection and safety of health/ human being; financial systems and transactions etc). Likewise, we may share information/data to respond to lawful requests and legal processes.<br>Our advisors and service providers. We may share information/ data with our advisors and service providers, e.g. which may include third party companies and individuals to administer and provide the Service on our behalf (such as customer support, hosting, email delivery and database management services), as well as lawyers, bankers, insurers, auditors etc.<br>Other Third Parties. You may allow us to share your data with other entities or persons of your choice. Third Parties will process the data according to their privacy policies.",
+  "sub_title33": "CROSS-BORDER DATA TRANSFER",
+  "p34": "Please be aware that your personal data may be transferred to, processed, and stored in third countries outside EEA (e.g. the United States). Data protection laws in these third countries outside the EU may be different from those in your country of residence. You consent to the transfer your information, including personal information/ data, to each of these countries as set forth in this Policy by visiting our WebSite or using App/our Services.",
+  "p35": "Whenever we transfer your personal information/data out of the EEA to the other third countries outside the EEA not deemed by the European Commission to provide an adequate level of personal information protection, the transfer will be based on data transfer mechanisms regulated under EU Regulation no. 679/2016 on the protection of natural persons with regard to the processing of personal data and on the free movement of such data – “EU Regulation 679/2016”), and recognized by the European Commission as providing adequate protection for personal data.",
+  "p36": "Please contact us if you want further information on the specific mechanisms used by us when transferring your personal information out of the EEA.",
+  "sub_title37": "HOW LONG WE KEEP YOUR INFORMATION/ DATA",
+  "p38": "We will hold your personal information/data on our systems for as long as required to make you available Services. We reserve the right to retain your data for a longer period in case of a complaint or if we reasonably believe there is a likelihood of litigation in respect to our relationship with you.",
+  "p39": "There may be some circumstances when you can ask us to delete your information/ data, so please consider the fact that we also may retain some non-personally identifiable information for statistical purposes in which case we may use this information indefinitely without further notice to you.",
+  "p40": "As a non-custodial solution, Bearby does not store any information/ data on its servers. The information/data are stored in the memory/storage asset of the User’s devices.",
+  "sub_title41": "HOW YOUR DATA IS SECURED",
+  "p42": "We take the protection of Users’ information/ data very seriously. We employ industry standard security measures to reduce the risks of unauthorised access to Bearby wallet on use of the Services and to deal with any data breaches. We will notify you of any personal data breach where we are legally required to do so.",
+  "p43": "However, the security of information transmitted through the internet can never be guaranteed. We are not responsible for any interception or interruption of any communications through the internet or for changes to or losses of information/ data. Users of our Services are responsible for maintaining the security of any password, user ID or other type of authentication. In order to protect you and your data, we may suspend your use of any of the Services, without notice, pending an investigation, if any breach of security has occurred.",
+  "p44": "You acknowledge that the procedures/mechanisms employed by us do not provide absolute security and you cannot expect that the Service will be immune from any risks associated with the common risks from the use of blockchain networks. Any information that you choose to provide to us is made at your own risk.",
+  "sub_title45": "CHOICES REGARDING YOUR PERSONAL DATA",
+  "p46": "As data subject, you can exercise the following rights regulated by the data protection legislation (including, EU Regulation 679/2016):",
+  "p47": "Right of access. We will provide you with a copy of any data we hold about you;<br>Right to modify. We will modify your data if any of them are incorrect or inaccurate;<br>Right of erasure. Delete your personal information/data – if erasure is not technically possible or we consider that we have a reasonable legal ground to retain your data that you ask us to erase we will inform you accordingly;<br>Portability right. We may transfer your data to another service provider; this applies only while processing the User’s data on their consent, and only by automatic means.<br>Right to object. You may object to processing of your data. We will comply with your request except when we have a legitimate interest for processing or we need to continue processing your data to exercise or defend a legal claim.<br>Complain. You can contact/complaint to the Romanian supervision authority which data are available at www.dataprotection.ro",
+  "p48": "You can exercise any of your rights at any time by reaching out to us using the information from the Contact section set out here. When you write to us making a request to exercise your above rights we are entitled to identify you first, and ask you to provide identification details to help us to verify your identity. It will help us in the process of giving you a fast and accurate answer to your request if you clearly point out which right you wish to exercise and the reason for exercising it. We reserve the right to delay auctioning on your request if you do not provide us with enough information/details. Only when you have provided us with the exact information we can proceed to process your request.",
+  "p49": "Tracking technologies<br>Regular cookies may generally be disabled or removed by tools available as part of most commercial browsers, and in some instances blocked in the future by selecting certain settings. For more information please see below our “Cookies Policy”.",
+  "p50": "Contact details:<br>If you have any inquiries, questions or concerns about this Policy, you may reach us at support@Bearby.io or via https://t.me/Bearbychat.",
+  "sub_title51": "COOKIES POLICY",
+  "p52": "This Policy provides detailed information about how and when we use cookies when using the different technologies.",
+  "p53": "You acknowledge the fact that the information collected by third-party Cookies is governed by their privacy policies and Bearby is not responsible for their approach in relation to their use of Cookies.",
+  "sub_title54": "DO WE USE COOKIES?",
+  "p55": "A cookie (“Cookie”) is a small amount of information in the shape of a text file that is placed on your hard drive by a website. Cookies contain information such as the name of the domain from which the cookie has come, that can later be read by a web server. They come in different formats including, cookies that will only be used if you use certain features or select certain preferences, temporary cookies, persistent cookies, third-party cookies. You can check out more about each type of cookie by viewing our cookie list mentioned below.",
+  "p56": "We also use functional Cookies enabling certain parts of the WebSite to work properly and your preferences to remain in history. Cookies are either “session” Cookies which are deleted when you end your browser session, or “persistent,” which remain until their deletion by you (discussed below) or the party who served the cookie. Full details on all of the Cookies used on the Site are available at our Cookie Disclosure table below.",
+  "sub_title57": "WHY DO WE USE COOKIES?",
+  "p58": "We generally use Cookies for the following purposes:<br>to improve our Services;<br>to serve you with our news, offers, other commercial communications sent through push-notifications/other means;<br>to better understand the interests/behaviour of our Users in the WebSite /App, as well as other platforms managed by our affiliated partners.",
+  "p59": "Please note that some of the Cookies are necessary to provide our Services. Analysis Cookies, among other aspects, collect information on how visitors use our Service, the content and the effectiveness of the services provided by our affiliated partners. Moreover, Google Analytics helps us to understand the trends of our Services. We may receive reports based on the use of these technologies by our service/analytics providers on an individual and aggregated basis.",
+  "sub_title60": "CHOOSE YOUR COOKIES",
+  "p61": "You can activate or deactivate the use of Cookies/select your Cookies into the WebSite browser. The Cookies we use are designed to optimise your experience regarding the use of our Services. Please note that if you decline the use of Cookies, some functions may be unavailable and we will not be able to provide you the Services at the fullest capacity.",
+  "p62": "For more details on how to use Cookies, and their settings, access the “Help” option located within your web browser. Additionally, you can check the following links if you choose to opt-out of any Cookies//clear local storage, specific to each type of browser:<br><a href=\"https://support.microsoft.com/en-us/help/17442/windows-internet-explorer-delete-manage-cookies\">Cookie settings for Internet Explorer</a><br><a href=\"https://support.mozilla.org/en-US/kb/enhanced-tracking-protection-firefox-desktop?redirectlocale=en-US&amp;redirectslug=enable-and-disable-cookies-website-preferences\">Cookie settings for Firefox</a><br><a href=\"https://support.google.com/chrome/answer/95647?hl=en\">Cookie settings for Chrome</a><br><a href=\"https://support.apple.com/guide/safari/manage-cookies-and-website-data-sfri11471/mac\">Cookie settings for Safari Web and iOS</a>",
+  "p63": "For more details about Cookies, or how to control, activate/ deactivate or delete them, please visit http://www.aboutcookies.org for detailed guidance. In addition, certain third party advertising networks, including Google, allow users to opt-out or to customize preferences on your internet browsing.",
+  "p64": "We may link the information collected by Cookies with other information we collect from you pursuant to this Policy and use this information.",
+  "sub_title65": "TYPES OF COOKIES AND LOCAL STORAGE POLICY",
+  "p66": "We use local storage to assign you a unique user ID for purposes of communication with you. Local storage are deleted when the WebSite that stored them deletes them. You can also delete local storage from your browser at any time you like by visiting your web browser settings.",
+  "p67": "We use the following cookies:",
+  "p68": "Twitter<br>Purpose: Target users with personalised ads<br>Retention period: 1 year<br>Description: Twitter tracks users to target them with personalised ads<br>Used names:<br>Sharing: Privacy statement<br>Linkedin<br>Purpose: Tracking purposes<br>Description: LinkedIn tracks users to target them with personalised ads<br>Used names:<br>Sharing: Privacy statement<br>Google Fonts<br>Purpose: Display of fonts on our website<br>Retention period: 365 days<br>Description: We use the Google Fonts API to display fonts on our website. The Google fonts API requests your IP address when visiting our website.<br>Used names:<br>tcb_google_fonts<br>Sharing: Privacy statement<br>Purpose: reCaptcha will check if the website visitor is human, not a bot<br>Retention period: 2 Weeks<br>Description: Actively monitors user actions across the entire property and returns a score which represents the probability if it is a human or a bot.<br>Used names:<br>API Call<br>Sharing: Privacy statement"
+}
+```
+
+`/Users/rinat/projects/bearby/bearby.io/src/markdown/docs/tailwind-template.mdx`:
+
+```mdx
+---
+title: Using Tailwind Templates
+description: Using Tailwind Templates Downloaded from GrayGrids
+date: 2023-1-20
+---
+
+## \***\*Introduction\*\***
+
+This documentation covers the instruction on how to install and use the Tailwind CSS templates, and answers to any problems and issues you may face while using the templates.
+
+If you have any question that is beyond the scope of this documentation feel free to [Open a Support Ticket](https://uideck.com/support/) or reach out to us on [Discord](https://pimjo.com/discord).
+
+We will get back to you ASAP.
+
+The Tailwind templates are built with plain HTML and Tailwind CSS and a few Vanilla JS scripts. And we used Alpine JS for interactions like slider, video, and image popup.
+
+## **Downloading Templates:**
+
+You can download all available templates that are available under the big bundle, by visiting your account.
+
+You can download it anytime you want, as long as you have an account with us.
+
+## **Directory Structure:**
+
+When you download a template and extract it you’ll get a folder that looks like this:
+
+```json
+|-- Template Folder
+    |-- src
+    |    |-- css
+    |       |-- All CSS Files
+    |    |-- js
+    |       |-- All JS Files
+    |    |-- images
+    |       |-- All Images
+    |    |-- partials
+    |       |-- HTML Common Sections Like Header, Footer etc
+    |    |-- index.html and All HTML Pages Files
+    |
+    |
+    |-- All Config files
+```
+
+If you want to customize the template just go to the `src` folder, and you’ll find all the files you need to customize.
+
+## **Installing Tempaltes:**
+
+To use the Tailwind template first we will have to install the dependencies and plugins included in the template.
+
+**Note**: Before we install the plugins make sure you have Node.js installed on your machine. Otherwise, the commands won’t work.
+
+Here are the steps you’ll have to take to install the templates:
+
+**Step#1:** Download the template from GrayGrids. When you download the template, you’ll get a zip file.
+
+**Step#2**: Unzip/Extract the zip file. After you’ve extracted it you’ll find all the files and assets you’ll need.
+
+**Step#3**: Now open up the Terminal/Command Line in the project folder. And run this command to install the plugins and the dependencies:
+
+```jsx
+npm install
+```
+
+It’ll take a few seconds to install. After installation is done, run this command to start the project:
+
+```jsx
+npm run start
+```
+
+When it starts it’ll automatically open up the project on `[localhost:3000](http://localhost:3000)`.
+
+Now you can change the default content and add your own content, and see the changes on the browser immediately.
+
+## **Deploying to server**
+
+To deploy the Template, you’ll have to generate the `build` folder. You can do that by running this command:
+
+```jsx
+npm run build
+```
+
+It’ll give you a `build` folder, now you can just upload it on your server and your website will be live.
+
+```
+
+`/Users/rinat/projects/bearby/bearby.io/src/markdown/docs/test-guide.mdx`:
+
+```mdx
+#fdsafdsfs
+
+```
+
+`/Users/rinat/projects/bearby/bearby.io/src/markdown/docs/style-guide.mdx`:
+
+```mdx
+---
+title: Style Guide
+description: Using Bootstrap Templates Downloaded from GrayGrids
+date: 2023-1-22
+---
+
+This Style Guide is followed for this template.
+
+# H1 This the Heading One
+
+## H2 This the Heading Two
+
+### H3 This the Heading Three
+
+#### H4 This the Heading Four
+
+##### H5 This the Heading Five
+
+P this is normal paragraph style
+
+```
+
+`/Users/rinat/projects/bearby/bearby.io/src/markdown/docs/contact-form.mdx`:
+
+```mdx
+---
+title: Configuring Contact Form
+description: Configuring Contact Form That Comes with Templates
+date: 2023-1-23
+---
+
+## Introduction
+
+This part of the documentation shows you how you can configure a contact form with Tailwind CSS Templates and Bootstrap Templates.
+
+## Using PHP Contact Form:
+
+For Bootstrap templates, we used to provide a PHP script that only can be used for PHP servers,
+
+if `phpmailer` function is up and running smoothly.
+
+Here is how it works: Just **replace the email address with your own** from
+
+```bash
+assets->php>contact.php
+```
+
+This procedure should work if everything is configured properly on the server side.
+
+## Using FormBold: A universal Form API (Recommended):
+
+[FormBold](https://formbold.com/) is a powerful form API and serverless form backend that works with all hosting, SSG, and frameworks.
+
+We highly recommend, using a serverless end-point ([FormBold](https://formbold.com/)) to make contact form dynamic. Since most users nowadays don't use PHP servers.
+
+Here’s how to connect [FormBold](https://formbold.com/) API with your contact form:
+
+**Step#1**: Create an account on [FormBold](https://formbold.com/) and create a Form.
+
+**Step#2**: Integrate the API into your contact Form using this code. Make sure your Form’s method is set to **POST**
+
+```html
+<form action="https://formbold.com/s/unique_form_id" method="POST">
+  <input type="email" placeholder="email" name="email" />
+  <input type="text" placeholder="subject" name="subject" />
+  <textarea name="message" placeholder="message"></textarea>
+
+  <button type="submit">Send Message</button>
+</form>
+```
+
+You’ll find the `unique_form_id` in the [FormBold](https://formbold.com/) dashboard under \***\*Settings>Integration.\*\***
+
+Copy and paste it to the **action** attribute.
+
+This is just the basic setup, FormBold has a lot of great features like re-captcha for spam protection, and the ability to integrate it with other apps like Webhook, Slack, Notion, and GoogleSheet.
+Learn more about [FormBold](https://formbold.com/) [here](https://formbold.com/).
+
+```
+
+`/Users/rinat/projects/bearby/bearby.io/src/markdown/docs/tailwind-component.mdx`:
+
+```mdx
+---
+title: Using Tailwind Components
+description: How to use Tailwind UI Components from GrayGrids
+date: 2023-1-21
+---
+
+## Basic Use and Download
+
+GrayGrids offers essential Tailwind UI components with the All-Access Plan. You can use them by copy-pasting them to your existing Tailwind projects, or you can build completely new projects with them.
+
+You can also download offline files from the downloads section of your account.
+
+## Configuration:
+
+We can use GrayGrids with an existing Tailwind project or we can start from scratch. We will go walk you through both of the processes.
+
+### 1. Starting from scratch
+
+We are going to show you how to start a project with GrayGrids from scratch. We first will set up a Tailwind CSS project then we will include GrayGrids in it.
+
+Here are the steps you can take to start a GrayGrids project from scratch:
+
+**Step#1**: Install Tailwind and generate the config file.
+
+```sh
+npm install -D tailwindcss
+npx tailwindcss init
+```
+
+**Step#2**: Install TailGrids
+
+```sh
+npm i tailgrids
+```
+
+**Step#3**: Update the config file with GrayGrids config.
+
+```js
+module.exports = {
+  content: ["./*.html", "./ecommerce/*.html", "./assets/**/*.js"],
+  theme: {},
+  variants: {
+    extend: {},
+  },
+  plugins: [require("tailgrids/plugin")],
+};
+```
+
+**Step#4**: Add Tailwind CSS directives to your CSS. Create a CSS file named **input.css** in the root of your project or the **src** directory. Then include this code at the top of the file.
+
+```css
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+```
+
+**Step#5**: Generate the CSS file with the build command.
+
+To do that first we will have to add the script to the **package.json** file. Make sure you’ve provided the correct path of the **input.css** file. if it’s in the root keep the script as is, if it’s under the **src** include that before the slash.
+
+```json
+"scripts": {
+    "build": "npx tailwindcss -i ./input.css -o ./dist/output.css --watch"
+  },
+```
+
+Then we will have to run the build command:
+
+```sh
+npm run build
+```
+
+**Step#6**: Include the compiled CSS file in the Html file. We’ve compiled the file in the **dist** folder.
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/dist/output.css" rel="stylesheet" />
+  </head>
+  <body>
+    <h1 class="text-3xl font-bold underline">Hello world!</h1>
+  </body>
+</html>
+```
+
+Now you can just copy and paste the components from GrayGrids and build websites.
+
+### 1. Use GrayGrids with the existing Tailwind Project.
+
+……….
+
+Our Tailwind components are powered by [TailGrids](https://tailgrids.com/), you can learn more about TailGrids from [TailGrids Docs](https://tailgrids.com/docs) too.
+
+```
+
+`/Users/rinat/projects/bearby/bearby.io/src/libs/markdown.ts`:
+
+```ts
+import fs from "fs";
+import matter from "gray-matter";
+import { join } from "path";
+
+const postsDirectory = join(process.cwd(), "src/markdown/docs");
+
+export function getPostSlugs() {
+  return fs.readdirSync(postsDirectory);
+}
+
+export function getPostBySlug(slug: string, fields: string[] = []) {
+  const realSlug = slug.replace(/\.mdx$/, "");
+  const fullPath = join(postsDirectory, `${realSlug}.mdx`);
+  const fileContents = fs.readFileSync(fullPath, "utf8");
+  const { data, content } = matter(fileContents);
+
+  type Items = {
+    [key: string]: string;
+  };
+
+  const items: Items = {};
+
+  // Ensure only the minimal needed data is exposed
+  fields.forEach((field) => {
+    if (field === "slug") {
+      items[field] = realSlug;
+    }
+    if (field === "content") {
+      items[field] = content;
+    }
+
+    if (typeof data[field] !== "undefined") {
+      items[field] = data[field];
+    }
+  });
+
+  return items;
+}
+
+export function getAllPosts(fields: string[] = []) {
+  const slugs = getPostSlugs();
+  const posts = slugs
+    .map((slug) => getPostBySlug(slug, fields))
+    // sort posts by date in descending order
+    .sort((post1, post2) => (post1.date > post2.date ? -1 : 1));
+
+  return posts;
+}
+
+```
+
+`/Users/rinat/projects/bearby/bearby.io/src/libs/markdownToHtml.ts`:
+
+```ts
+import fs from "fs";
+import matter from "gray-matter";
+import { join } from "path";
+import { remark } from "remark";
+import html from "remark-html";
+
+export default async function markdownToHtml(markdown: string) {
+  const result = await remark().use(html).process(markdown);
+  return result.toString();
+}
+
+export function getPostBySlug(slug: string, fields = [], dirName: string) {
+  const postsDirectory = join(process.cwd(), `./markdown/${dirName}`);
+  const realSlug = slug.replace(/\.mdx$/, "");
+  const fullPath = join(postsDirectory, `${realSlug}.mdx`);
+  const fileContents = fs.readFileSync(fullPath, "utf8");
+  const { data, content } = matter(fileContents);
+
+  const items: any = {};
+
+  // Ensure only the minimal needed data is exposed
+  fields.forEach((field) => {
+    if (field === "slug") {
+      items[field] = realSlug;
+    }
+    if (field === "content") {
+      items[field] = content;
+    }
+
+    if (typeof data[field] !== "undefined") {
+      items[field] = data[field];
+    }
+  });
+
+  return items;
+}
+
+```
+
+`/Users/rinat/projects/bearby/bearby.io/src/components/Home/Clients/clientsData.ts`:
+
+```ts
+import { Client } from "@/types/client";
+
+const clientsData: Client[] = [
+  {
+    id: 36,
+    image: "/images/clients/client-01.svg",
+  },
+  {
+    id: 4,
+    image: "/images/clients/client-02.svg",
+  },
+  {
+    id: 407,
+    image: "/images/clients/client-03.svg",
+  },
+  {
+    id: 29,
+    image: "/images/clients/client-04.svg",
+  },
+  {
+    id: 99,
+    image: "/images/clients/client-05.svg",
+  },
+  {
+    id: 79,
+    image: "/images/clients/client-06.svg",
+  },
+  {
+    id: 51,
+    image: "/images/clients/client-07.svg",
+  },
+  {
+    id: 59,
+    image: "/images/clients/client-01.svg",
+  },
+  {
+    id: 92,
+    image: "/images/clients/client-02.svg",
+  },
+  {
+    id: 87,
+    image: "/images/clients/client-03.svg",
+  },
+  {
+    id: 27,
+    image: "/images/clients/client-04.svg",
+  },
+  {
+    id: 52,
+    image: "/images/clients/client-05.svg",
+  },
+  {
+    id: 64,
+    image: "/images/clients/client-06.svg",
+  },
+  {
+    id: 97,
+    image: "/images/clients/client-07.svg",
+  },
+  {
+    id: 32,
+    image: "/images/clients/client-01.svg",
+  },
+  {
+    id: 13,
+    image: "/images/clients/client-02.svg",
+  },
+  {
+    id: 35,
+    image: "/images/clients/client-03.svg",
+  },
+  {
+    id: 67,
+    image: "/images/clients/client-04.svg",
+  },
+  {
+    id: 11,
+    image: "/images/clients/client-05.svg",
+  },
+  {
+    id: 76,
+    image: "/images/clients/client-06.svg",
+  },
+  {
+    id: 2,
+    image: "/images/clients/client-07.svg",
+  },
+  {
+    id: 47,
+    image: "/images/clients/client-03.svg",
+  },
+];
+export default clientsData;
+
+```
+
+`/Users/rinat/projects/bearby/bearby.io/src/components/Home/Features/featuresData.ts`:
+
+```ts
+import { Feature } from "@/types/feature";
+
+const featuresData: Feature[] = [
+  {
+    id: 1,
+    title: "Unmatched Security",
+    description:
+      "Protect your assets with cutting-edge encryption algorithms, ensuring total safety from cyber threats.",
+    icon: "/images/features/icon-01.svg",
+  },
+  {
+    id: 2,
+    title: "Private Key Control",
+    description:
+      "Stay in charge with full ownership of your private keys, eliminating the need for third-party trust.",
+    icon: "/images/features/icon-02.svg",
+  },
+  {
+    id: 3,
+    title: "Multi-Signature Transactions",
+    description:
+      "Enhance transaction security with multi-signature functionality, requiring multiple approvals for any action.",
+    icon: "/images/features/icon-03.svg",
+  },
+  {
+    id: 4,
+    title: "Fast & Reliable Backups",
+    description:
+      "Easily back up your wallet with encrypted recovery phrases, giving you peace of mind at all times.",
+    icon: "/images/features/icon-04.svg",
+    rotate: true,
+  },
+  {
+    id: 5,
+    title: "Fraud Detection System",
+    description:
+      "Leverage real-time monitoring powered by AI to identify and prevent fraudulent activities instantly.",
+    icon: "/images/features/icon-05.svg",
+    rotate: true,
+  },
+  {
+    id: 6,
+    title: "Advanced Cryptography",
+    description:
+      "Benefit from multiple cryptographic layers, ensuring secure storage and transfer of digital assets.",
+    icon: "/images/features/icon-06.svg",
+    rotate: true,
+  },
+];
+
+export default featuresData;
+
+
+```
+
+`/Users/rinat/projects/bearby/bearby.io/src/components/Home/Reviews/reviewsData.ts`:
+
+```ts
+import { Review } from "@/types/review";
+
+const reviewsData: Review[] = [
+  {
+    id: 100,
+    userName: "Marc Herrera",
+    userDesignation: "@Shane",
+    userImage: "/images/user/user-01.png",
+    description:
+      "ruler characteristic present neighborhood sister available caught then over pound threw page anywhere secret mark whenever went disease dollar hearing partly plenty somewhere aware",
+  },
+  {
+    id: 19,
+    userName: "Alfred Montgomery",
+    userDesignation: "@Olivia",
+    userImage: "/images/user/user-02.png",
+    description:
+      "local month pale negative last real card north plane thumb seldom gently lie shot floor animal introduced straw fellow applied ago anyway closer bag",
+  },
+  {
+    id: 45,
+    userName: "Marvin Williamson",
+    userDesignation: "@Jeanette",
+    userImage: "/images/user/user-03.png",
+    description:
+      "state poet carried toward weak corner answer till give play seven bridge finest morning wool or although who twenty elephant slide swam being mix",
+  },
+  {
+    id: 38,
+    userName: "David Hudson",
+    userDesignation: "@Hilda",
+    userImage: "/images/user/user-04.png",
+    description:
+      "quiet type situation between cattle oxygen could tank class chose social thumb while indicate receive into equally right engineer morning thee promised quite hurry",
+  },
+  {
+    id: 8,
+    userName: "Hannah Ruiz",
+    userDesignation: "@Mitchell",
+    userImage: "/images/user/user-05.png",
+    description:
+      "freedom public door tall most getting hungry order green only worry parallel obtain yard honor there pitch broke fifth globe development musical push shirt",
+  },
+  {
+    id: 21,
+    userName: "Jay Alexander",
+    userDesignation: "@Chris",
+    userImage: "/images/user/user-06.png",
+    description:
+      "success remain while fruit shut wait plate instrument experiment shaking layers avoid heat directly dangerous example must family research scared baby did aid least",
+  },
+  {
+    id: 63,
+    userName: "Fred Graham",
+    userDesignation: "@Allie",
+    userImage: "/images/user/user-07.png",
+    description:
+      "reader halfway choose nails trail kitchen conversation eventually electric courage noun roar construction chose outer oxygen there yard spent pot sport exercise young recall",
+  },
+  {
+    id: 28,
+    userName: "Chris Cunningham",
+    userDesignation: "@Blake",
+    userImage: "/images/user/user-08.png",
+    description:
+      "crew this composed believed memory stopped close important had recent rocket layers nose tube valley built busy apartment imagine born stiff acres positive press",
+  },
+  {
+    id: 73,
+    userName: "Polly Webster",
+    userDesignation: "@Adelaide",
+    userImage: "/images/user/user-09.png",
+    description:
+      "seven morning title himself been ice may plural complete not badly anyway principal rain wood have accept busy down like widely one shallow tent",
+  },
+  {
+    id: 14,
+    userName: "Gerald Bowers",
+    userDesignation: "@Corey",
+    userImage: "/images/user/user-06.png",
+    description:
+      "couple window storm probably away hunt canal dirt such pencil science establish palace are myself entire feel pleasant milk island nearer ring merely imagine",
+  },
+  {
+    id: 801,
+    userName: "Dylan Cole",
+    userDesignation: "@Lina",
+    userImage: "/images/user/user-07.png",
+    description:
+      "yet during worried measure stiff sport against baseball melted remove team whispered writing cross back lamp smaller not bank shout scale bring naturally though",
+  },
+
+  {
+    id: 3,
+    userName: "Tyler Brooks",
+    userDesignation: "@Daisy",
+    userImage: "/images/user/user-01.png",
+    description:
+      "may tight moment figure ready whose married branch tip feathers field station feet union pole night broke tell difficulty lunch complete gentle relationship again",
+  },
+  {
+    id: 74,
+    userName: "Winifred Pratt",
+    userDesignation: "@Virginia",
+    userImage: "/images/user/user-02.png",
+    description:
+      "replied spider system standard daily practical party heat aboard aloud author instrument frozen mouth tower corner location alive friendly locate farm bad machinery lamp",
+  },
+  {
+    id: 25,
+    userName: "Esther Webster",
+    userDesignation: "@Jorge",
+    userImage: "/images/user/user-03.png",
+    description:
+      "sort noon composed progress believed threw mother lift mental many silk equally scientist small most correct occasionally title outer blew old stood life around",
+  },
+  {
+    id: 98,
+    userName: "Maude Haynes",
+    userDesignation: "@Fannie",
+    userImage: "/images/user/user-04.png",
+    description:
+      "add structure neighbor fine never acres regular definition earlier once such require yet break leather do sheet hidden easily report met sat climb underline",
+  },
+  {
+    id: 46,
+    userName: "Lela Moran",
+    userDesignation: "@Connor",
+    userImage: "/images/user/user-05.png",
+    description:
+      "shells house team shop inch gold mile jungle friendly believed driver court remarkable feature is ability diagram which partly lower already bee push prize",
+  },
+  {
+    id: 18,
+    userName: "Bertha McGuire",
+    userDesignation: "@Dollie",
+    userImage: "/images/user/user-08.png",
+    description:
+      "coat west similar series copy future include saw bigger bare program paper return musical mad machinery chose art claws stood instant mistake actual heart",
+  },
+  {
+    id: 81,
+    userName: "Celia Day",
+    userDesignation: "@Edward",
+    userImage: "/images/user/user-09.png",
+    description:
+      "structure spent mean touch since flew island thought burn book question mice silence spell everybody night ought chosen give fair felt together brief ship",
+  },
+  {
+    id: 5,
+    userName: "Vera Pearson",
+    userDesignation: "@Roxie",
+    userImage: "/images/user/user-01.png",
+    description:
+      "beauty eleven chosen business butter previous four crowd slipped tower cast swam afternoon club salt window explain shade free went complex ought related let",
+  },
+  {
+    id: 8,
+    userName: "Allie Hodges",
+    userDesignation: "@Ricardo",
+    userImage: "/images/user/user-02.png",
+    description:
+      "weight duck mountain fill upon pie bar sense grow previous unknown hardly group stop writing biggest until lack cotton influence build barn lunch environment",
+  },
+  {
+    id: 80,
+    userName: "Lula Gross",
+    userDesignation: "@Lizzie",
+    userImage: "/images/user/user-03.png",
+    description:
+      "statement bread later discussion stand other exist plural post action by partly anybody additional die without if hollow frame below silk cell either above",
+  },
+  {
+    id: 44,
+    userName: "Mike Romero",
+    userDesignation: "@Leonard",
+    userImage: "/images/user/user-04.png",
+    description:
+      "softly distant ear gentle press sale on fear nose although spoken loud bee firm development settlers blood sad official obtain medicine science rain pour",
+  },
+  {
+    id: 74,
+    userName: "Aiden Alexander",
+    userDesignation: "@Adelaide",
+    userImage: "/images/user/user-05.png",
+    description:
+      "early correctly memory entirely enjoy disease shoe whether minerals front constantly offer hung comfortable fix exciting phrase represent rocket plate track ago north center",
+  },
+  {
+    id: 11,
+    userName: "Agnes Adams",
+    userDesignation: "@Lucile",
+    userImage: "/images/user/user-06.png",
+    description:
+      "shaking count former arm directly definition mud possible ranch book muscle potatoes fun properly telephone metal name only serious seldom bound hay porch palace",
+  },
+  {
+    id: 7,
+    userName: "Gertrude Salazar",
+    userDesignation: "@Jeffery",
+    userImage: "/images/user/user-07.png",
+    description:
+      "studied sitting wave what keep glass measure evening smooth pattern story meet green poem wheel wheat shoe gift shelf eat contain swimming sad capital",
+  },
+  {
+    id: 101,
+    userName: "Steven McCarthy",
+    userDesignation: "@Shawn",
+    userImage: "/images/user/user-08.png",
+    description:
+      "partly which life teacher loose dangerous soon world journey instance immediately judge start rubbed library satisfied control tool what fur although rush room young",
+  },
+  {
+    id: 82,
+    userName: "Max Larson",
+    userDesignation: "@Lillian",
+    userImage: "/images/user/user-09.png",
+    description:
+      "wild laid whether younger tin mine are shoe softly apart gate nearby gas fell his cell jump announced national symbol pitch pond mysterious herself",
+  },
+];
+
+export default reviewsData;
+
+```
+
+`/Users/rinat/projects/bearby/bearby.io/src/components/Footer/linksData.ts`:
+
+```ts
+import { FooterLink } from "@/types/footerLink";
+
+export const companiesLink: FooterLink[] = [
+  {
+    id: 11,
+    title: "Privacy Policy",
+    href: "http://localhost:3000/policy",
+    newTab: false,
+  },
+  {
+    id: 15,
+    title: "Term of services",
+    href: "http://localhost:3000/terms",
+    newTab: false,
+  },
+  {
+    id: 15,
+    title: "Extension Policy",
+    href: "http://localhost:3000/extension-policy",
+    newTab: false,
+  }
+];
+
+```
+
+`/Users/rinat/projects/bearby/bearby.io/src/components/Faq/faqData.ts`:
+
+```ts
+import { FAQ } from "@/types/faq";
+
+const faqData: FAQ[] = [
+  {
+    id: 74,
+    question: "What Is AI Tool Content Writing Tool?",
+    answer:
+      "Build SaaS AI applications using OpenAI and Next.js, this kit comes with pre-configured and pre-built examples, making it easier to quickly kickstart your AI startup.",
+  },
+  {
+    id: 100,
+    question: "Is there a limit on how much content I can generate?",
+    answer:
+      "Build SaaS AI applications using OpenAI and Next.js, this kit comes with pre-configured and pre-built examples, making it easier to quickly kickstart your AI startup.",
+  },
+  {
+    id: 7,
+    question: "Is it helpful for Digital Marketer or Content Writer?",
+    answer:
+      "Build SaaS AI applications using OpenAI and Next.js, this kit comes with pre-configured and pre-built examples, making it easier to quickly kickstart your AI startup.",
+  },
+  {
+    id: 67,
+    question: "What Languages does it supports?",
+    answer:
+      "Build SaaS AI applications using OpenAI and Next.js, this kit comes with pre-configured and pre-built examples, making it easier to quickly kickstart your AI startup.",
+  },
+  {
+    id: 9,
+    question: "What is SEO Writing AI and how do I use it?",
+    answer:
+      "Build SaaS AI applications using OpenAI and Next.js, this kit comes with pre-configured and pre-built examples, making it easier to quickly kickstart your AI startup.",
+  },
+];
+
+export default faqData;
+
+```
+
+`/Users/rinat/projects/bearby/bearby.io/src/components/About/Team/teamData.ts`:
+
+```ts
+import { Team } from "@/types/team";
+
+const teamData: Team[] = [
+  {
+    id: 76,
+    name: "Rinat Khasanshin",
+    designation: "CO-FOUNDER & CEO",
+    image: "/images/team/rinat.jpeg",
+    linkedinLink: "https://www.linkedin.com/in/arc-warden/",
+    twitterLink: "https://twitter.com/lich666black",
+    githubLink: "https://github.com/hicaru",
+  },
+];
+
+export default teamData;
+
+```
+
+`/Users/rinat/projects/bearby/bearby.io/src/components/Header/menuData.ts`:
+
+```ts
+import { Menu } from "@/types/menu";
+
+const menuData: Menu[] = [
+  {
+    id: 1,
+    title: "Home",
+    newTab: false,
+    path: "/",
+  },
+  {
+    id: 2,
+    title: "About",
+    newTab: false,
+    path: "/about",
+  },
+  // {
+  //   id: 4,
+  //   title: "Blog",
+  //   newTab: false,
+  //   path: "/blog",
+  // },
+  {
+    id: 3,
+    title: "Docs",
+    newTab: false,
+    path: "/docs",
+  },
+];
+
+export default menuData;
+
+```
