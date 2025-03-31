@@ -14,7 +14,7 @@ const PricingGrids = ({ pricingData }: { pricingData: any[] }) => {
         {/* Small Plan */}
         <div className="relative overflow-hidden rounded-3xl bg-dark flex-1">
           <Image
-            src="/images/pricing/photo_3_2025-01-19_10-40-19.jpg"
+            src="/images/pricing/0.webp"
             alt="Small Plan"
             width={500}  
             height={300} 
@@ -25,7 +25,7 @@ const PricingGrids = ({ pricingData }: { pricingData: any[] }) => {
         {/* Medium Plan */}
         <div className="relative overflow-hidden rounded-3xl bg-dark flex-1">
           <Image
-            src="/images/pricing/photo_2_2025-01-19_10-40-19.jpg"
+            src="/images/pricing/1.webp"
             alt="Medium Plan"
             width={500}  
             height={300} 
@@ -36,7 +36,7 @@ const PricingGrids = ({ pricingData }: { pricingData: any[] }) => {
         {/* Large Plan */}
         <div className="relative overflow-hidden rounded-3xl bg-dark flex-1">
           <Image
-            src="/images/pricing/photo_1_2025-01-19_10-40-19.jpg"
+            src="/images/pricing/2.webp"
             alt="Large Plan"
             width={500}  
             height={300} 

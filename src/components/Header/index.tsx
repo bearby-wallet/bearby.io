@@ -43,7 +43,7 @@ const Header = () => {
                     <DropDown menuItem={menuItem} />
                   ) : (
                     <Link
-                      href={menuItem.path}
+                      href={menuItem.path ?? ""}
                       className={`hover:nav-gradient relative px-4 py-2 text-sm flex items-center gap-2 hover:text-white ${
                         pathUrl === menuItem.path ? "nav-gradient text-white" : "text-white/80"
                       }`}

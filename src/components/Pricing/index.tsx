@@ -46,7 +46,7 @@ const Pricing = () => {
             ))}
         </div>
 
-        <PricingGrids />
+        <PricingGrids pricingData={[]}/>
       </div>
     </section>
   );

@@ -11,7 +11,7 @@ const menuData: Menu[] = [
     id: 3,
     title: "Docs",
     newTab: false,
-    path: "/docs",
+    path: "/docs/beabry-introduction",
   },
 ];
 
