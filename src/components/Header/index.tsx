@@ -98,7 +98,7 @@ const Header = () => {
                 {menuData.map((menuItem, key) => (
                   <li key={key}>
                     <Link
-                      href={menuItem.path}
+                      href={menuItem.path ?? ""}
                       className="text-white text-lg hover:text-gray-300"
                       onClick={() => setNavigationOpen(false)}
                     >

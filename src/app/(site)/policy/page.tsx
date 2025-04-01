@@ -1,3 +1,4 @@
+import { Metadata } from "next";
 import policyData from "./policy.json";
 
 export const metadata: Metadata = {
@@ -75,11 +76,8 @@ export default function PolicyPage() {
                 <p className="font-medium">{policyData.p47}</p>
                 <p className="font-medium">{policyData.p48}</p>
 
-                <strong className="text-white">{policyData.sub_title49}</strong>
                 <p className="font-medium">{policyData.p50}</p>
-                <p className="font-medium">{policyData.p51}</p>
 
-                <strong className="text-white">{policyData.sub_title52}</strong>
                 <p className="font-medium">{policyData.p53}</p>
 
                 <strong className="text-white">{policyData.sub_title54}</strong>
