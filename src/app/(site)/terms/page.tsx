@@ -1,3 +1,4 @@
+import { Metadata } from "next";
 import policyData from "./terms.json";
 
 export const metadata: Metadata = {

@@ -15,7 +15,7 @@ const PricingPage = () => {
     <>
       <Breadcrumb pageTitle="Pricing Page" />
       <section className="pb-20 pt-17.5 lg:pb-25 lg:pt-22.5 xl:pt-27.5">
-        <PricingGrids />
+        <PricingGrids pricingData={[]} />
       </section>
 
       {/* <Faq /> */}
