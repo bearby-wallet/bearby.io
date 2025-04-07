@@ -4,7 +4,7 @@ import { Metadata } from 'next';
 
 export async function generateMetadata({ params }): Promise<Metadata> {
   const locale = params.locale;
-  const t = await getTranslations({ locale, namespace: 'Policy' });
+  const t = await getTranslations({ locale, namespace: 'policy' });
 
   return {
     title: `${t('title')} | Bearby`,
@@ -49,7 +49,7 @@ const SubTitleHTML = ({ text }: { text: string }) => {
 };
 
 export default function PolicyPage() {
-  const t = useTranslations('Policy');
+  const t = useTranslations('policy');
 
   // Все ключи, которые нужно отобразить
   const contentOrder = [
