@@ -2,10 +2,10 @@ import { useTranslations } from 'next-intl';
 import { getTranslations } from 'next-intl/server';
 import { Metadata } from 'next';
 
-export async function generateMetadata({ params }): Promise<Metadata> {
-  const locale = params.locale;
-  const t = await getTranslations({ locale, namespace: 'policy' });
 
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: 'extension-policy' });
   return {
     title: `${t('title')} | Bearby`,
   };
