@@ -34,7 +34,7 @@ export default async function LocaleLayout({
         <ToasterContext />
         <Header />
         {children}
-        <Footer />
+        <Footer locale={locale}/> 
         <ScrollToTop />
       </body>
     </html>

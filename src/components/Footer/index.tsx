@@ -1,10 +1,15 @@
+"use client";
 import Image from "next/image";
 import Link from "next/link";
 import logo from "../../../public/images/logo/logo.svg";
 import FooterLinkList from "./FooterLinkList";
-import { companiesLink } from "./linksData";
+import { getFooterLinks } from "./linksData";
 
-const Footer = () => {
+type FooterProps = {
+  locale: string;
+};
+
+const Footer = ({ locale }: FooterProps) => {
   return (
     <>
       <footer className="relative z-10 pb-17.5 lg:pb-22.5 xl:pb-27.5">
@@ -144,7 +149,7 @@ const Footer = () => {
 
             <div className="w-full max-w-[571px] flex justify-end">
               <div className="flex flex-col items-end gap-10 sm:flex-row sm:justify-between">
-                <FooterLinkList title="Company" links={companiesLink} />
+                <FooterLinkList title="Company" links={getFooterLinks(locale)} />
               </div>
             </div>
           </div>

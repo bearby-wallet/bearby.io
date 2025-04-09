@@ -8,11 +8,9 @@ export default getRequestConfig(async ({ requestLocale }) => {
     ? requested
     : routing.defaultLocale;
 
-  // Загружаем нужные namespace-файлы по текущему locale
   const policy = await import(`../../messages/${locale}/policy.json`);
   const extensionPolicy = await import(`../../messages/${locale}/extension-policy.json`);
 
-  // Объединяем по namespace'ам
   return {
     locale,
     messages: {

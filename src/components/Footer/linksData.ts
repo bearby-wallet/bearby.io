@@ -1,22 +1,25 @@
+// src/components/Footer/linksData.ts
 import { FooterLink } from "@/types/footerLink";
 
-export const companiesLink: FooterLink[] = [
-  {
-    id: 11,
-    title: "Privacy Policy",
-    href: "http://localhost:3000/policy",
-    newTab: false,
-  },
-  {
-    id: 15,
-    title: "Term of services",
-    href: "http://localhost:3000/terms",
-    newTab: false,
-  },
-  {
-    id: 15,
-    title: "Extension Policy",
-    href: "http://localhost:3000/extension-policy",
-    newTab: false,
-  }
-];
+export function getFooterLinks(locale: string): FooterLink[] {
+  return [
+    {
+      id: 11,
+      title: "Privacy Policy",
+      href: `/${locale}/policy`,
+      newTab: false,
+    },
+    {
+      id: 15,
+      title: "Term of services",
+      href: `/${locale}/terms`,
+      newTab: false,
+    },
+    {
+      id: 16,
+      title: "Extension Policy",
+      href: `/${locale}/extension-policy`,
+      newTab: false,
+    },
+  ];
+}
