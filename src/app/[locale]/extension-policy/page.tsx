@@ -11,7 +11,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 }
 
 export default function ExtensionPolicyPage() {
-  const t = useTranslations('extension-policy'); // Убедитесь, что это правильный namespace
+  const t = useTranslations('extension-policy');
 
   return (
     <>

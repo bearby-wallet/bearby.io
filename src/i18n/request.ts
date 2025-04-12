@@ -10,12 +10,15 @@ export default getRequestConfig(async ({ requestLocale }) => {
 
   const policy = await import(`../../messages/${locale}/policy.json`);
   const extensionPolicy = await import(`../../messages/${locale}/extension-policy.json`);
+  const termsPolicy = await import(`../../messages/${locale}/terms.json`);
+
 
   return {
     locale,
     messages: {
       policy: policy.default,
       'extension-policy': extensionPolicy.default,
+      'terms': termsPolicy.default,
     },
   };
 });

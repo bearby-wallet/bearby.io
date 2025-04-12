@@ -1,19 +1,17 @@
-"use client";
 import Image from "next/image";
 import Link from "next/link";
 import logo from "../../../public/images/logo/logo.svg";
 import FooterLinkList from "./FooterLinkList";
 import { getFooterLinks } from "./linksData";
+import { getTranslations } from "next-intl/server";
+import { getLocalizedContent } from '@/i18n/utils';
 
-type FooterProps = {
-  locale: string;
-};
-
-const Footer = ({ locale }: FooterProps) => {
+const Footer = async ({ locale }: { locale: string }) => {
+  const t = await getTranslations('footer');
+  const footerLinks = getFooterLinks(locale, t);
   return (
     <>
       <footer className="relative z-10 pb-17.5 lg:pb-22.5 xl:pb-27.5">
-        {/* <!-- bg shapes --> */}
         <div className="absolute bottom-0 left-0 -z-1 flex w-full flex-col gap-3 opacity-50">
           <div className="footer-bg-gradient h-[1.24px] w-full"></div>
           <div className="footer-bg-gradient h-[2.47px] w-full"></div>
@@ -25,7 +23,6 @@ const Footer = ({ locale }: FooterProps) => {
           <div className="footer-bg-gradient h-[9.90px] w-full"></div>
           <div className="footer-bg-gradient h-[13px] w-full"></div>
         </div>
-
         <div className="relative mx-auto max-w-[1170px] px-4 pt-17.5 sm:px-8 xl:px-0">
           <div className="footer-divider-gradient absolute left-0 top-0 h-[1px] w-full"></div>
 
@@ -35,11 +32,6 @@ const Footer = ({ locale }: FooterProps) => {
                 <Image src={logo} alt="Logo" width={80} height={80} />
               </Link>
 
-              {/* <p className="mb-12 xl:w-4/5">
-                Build SaaS AI applications using OpenAI and Next.js, this kit
-                comes with pre-configured and pre-built examples, making it
-                easier to quickly kickstart your AI startup.
-              </p> */}
               <div className="flex items-center gap-5">
                 <a
                   href="https://chromewebstore.google.com/detail/bearby/papngmkmknnmfhabbckobgfpihpdgplk"
@@ -149,7 +141,7 @@ const Footer = ({ locale }: FooterProps) => {
 
             <div className="w-full max-w-[571px] flex justify-end">
               <div className="flex flex-col items-end gap-10 sm:flex-row sm:justify-between">
-                <FooterLinkList title="Company" links={getFooterLinks(locale)} />
+              <FooterLinkList title={t('company')} links={footerLinks} />
               </div>
             </div>
           </div>
