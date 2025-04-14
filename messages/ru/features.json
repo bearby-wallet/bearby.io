@@ -1,28 +1,19 @@
 {
-  "features": {
-    "feature1": {
-      "title": "On-Device Key Storage",
-      "description": "Bearby stores your keys directly on your device, ensuring full control and security without external dependencies."
-    },
-    "feature2": {
-      "title": "Zero Data Collection",
-      "description": "Bearby collects no user data whatsoever, prioritizing your privacy and autonomy at every step."
-    },
-    "feature3": {
-      "title": "Seamless User Experience",
-      "description": "Enjoy a smooth and intuitive interface designed for ease of use, backed by robust cryptographic protection."
-    },
-    "feature4": {
-      "title": "AES-256 + PBKDF2 + BLAKE3 Encryption",
-      "description": "Leverage top-tier encryption with AES-256, PBKDF2, and BLAKE3 for unmatched security of your assets."
-    },
-    "feature5": {
-      "title": "Local Transaction Signing",
-      "description": "All transactions are signed directly on your hardware, eliminating risks from remote processing."
-    },
-    "feature6": {
-      "title": "Advanced Cryptographic Layers",
-      "description": "Benefit from multiple layers of cryptography, ensuring secure storage and transfer of your digital assets."
-    }
-  }
+  "title1": "Локальное хранение ключей",
+  "description1": "Bearby хранит ваши ключи непосредственно на устройстве, обеспечивая полный контроль и безопасность без внешних зависимостей.",
+  
+  "title2": "Отсутствие сбора данных",
+  "description2": "Bearby не собирает никаких пользовательских данных, гарантируя вашу конфиденциальность и автономность на всех этапах.",
+  
+  "title3": "Плавный пользовательский опыт",
+  "description3": "Интуитивно понятный интерфейс с простым управлением и мощной криптографической защитой.",
+  
+  "title4": "Шифрование AES-256 + PBKDF2 + BLAKE3",
+  "description4": "Многоуровневое шифрование с использованием AES-256, PBKDF2 и BLAKE3 для максимальной защиты ваших активов.",
+  
+  "title5": "Локальное подписание транзакций",
+  "description5": "Все транзакции подписываются непосредственно на вашем устройстве, исключая риски удалённой обработки.",
+  
+  "title6": "Продвинутая криптографическая защита",
+  "description6": "Многослойная криптография для безопасного хранения и передачи цифровых активов."
 }

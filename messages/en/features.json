@@ -1,28 +1,19 @@
 {
-  "features": {
-    "feature1": {
-      "title": "On-Device Key Storage",
-      "description": "Bearby stores your keys directly on your device, ensuring full control and security without external dependencies."
-    },
-    "feature2": {
-      "title": "Zero Data Collection",
-      "description": "Bearby collects no user data whatsoever, prioritizing your privacy and autonomy at every step."
-    },
-    "feature3": {
-      "title": "Seamless User Experience",
-      "description": "Enjoy a smooth and intuitive interface designed for ease of use, backed by robust cryptographic protection."
-    },
-    "feature4": {
-      "title": "AES-256 + PBKDF2 + BLAKE3 Encryption",
-      "description": "Leverage top-tier encryption with AES-256, PBKDF2, and BLAKE3 for unmatched security of your assets."
-    },
-    "feature5": {
-      "title": "Local Transaction Signing",
-      "description": "All transactions are signed directly on your hardware, eliminating risks from remote processing."
-    },
-    "feature6": {
-      "title": "Advanced Cryptographic Layers",
-      "description": "Benefit from multiple layers of cryptography, ensuring secure storage and transfer of your digital assets."
-    }
-  }
+  "title1": "On-Device Key Storage",
+  "description1": "Bearby stores your keys directly on your device, ensuring full control and security without external dependencies.",
+  
+  "title2": "Zero Data Collection",
+  "description2": "Bearby collects no user data whatsoever, prioritizing your privacy and autonomy at every step.",
+  
+  "title3": "Seamless User Experience",
+  "description3": "Enjoy a smooth and intuitive interface designed for ease of use, backed by robust cryptographic protection.",
+  
+  "title4": "AES-256 + PBKDF2 + BLAKE3 Encryption",
+  "description4": "Leverage top-tier encryption with AES-256, PBKDF2, and BLAKE3 for unmatched security of your assets.",
+  
+  "title5": "Local Transaction Signing",
+  "description5": "All transactions are signed directly on your hardware, eliminating risks from remote processing.",
+  
+  "title6": "Advanced Cryptographic Layers",
+  "description6": "Benefit from multiple layers of cryptography, ensuring secure storage and transfer of your digital assets."
 }

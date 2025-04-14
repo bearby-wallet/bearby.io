@@ -4,19 +4,19 @@ export function getFooterLinks(locale: string, t: (key: string) => string): Foot
   return [
     {
       id: 11,
-      title: t("privacyPolicy") || "Privacy Policy",
+      title: t("privacyPolicy"),
       href: `/${locale}/policy`,
       newTab: false,
     },
     {
       id: 15,
-      title: t("terms") || "Term of services",
+      title: t("termsOfService"),
       href: `/${locale}/terms`, 
       newTab: false,
     },
     {
       id: 16,
-      title: t("extensionPolicy") || "Extension Policy",
+      title: t("extensionPolicy"),
       href: `/${locale}/extension-policy`,
       newTab: false,
     },

@@ -1,6 +1,6 @@
 {
-    "company": "Entreprise",
-    "privacyPolicy": "Politique de confidentialité",
-    "termsOfService": "Conditions d'utilisation", 
-    "extensionPolicy": "Politique de l’extension"
-  }
+  "company": "Компания",
+  "privacyPolicy": "Политика конфиденциальности",
+  "termsOfService": "Условия использования",
+  "extensionPolicy": "Политика расширения"
+}

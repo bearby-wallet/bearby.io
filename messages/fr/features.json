@@ -1,28 +1,19 @@
 {
-  "features": {
-    "feature1": {
-      "title": "On-Device Key Storage",
-      "description": "Bearby stores your keys directly on your device, ensuring full control and security without external dependencies."
-    },
-    "feature2": {
-      "title": "Zero Data Collection",
-      "description": "Bearby collects no user data whatsoever, prioritizing your privacy and autonomy at every step."
-    },
-    "feature3": {
-      "title": "Seamless User Experience",
-      "description": "Enjoy a smooth and intuitive interface designed for ease of use, backed by robust cryptographic protection."
-    },
-    "feature4": {
-      "title": "AES-256 + PBKDF2 + BLAKE3 Encryption",
-      "description": "Leverage top-tier encryption with AES-256, PBKDF2, and BLAKE3 for unmatched security of your assets."
-    },
-    "feature5": {
-      "title": "Local Transaction Signing",
-      "description": "All transactions are signed directly on your hardware, eliminating risks from remote processing."
-    },
-    "feature6": {
-      "title": "Advanced Cryptographic Layers",
-      "description": "Benefit from multiple layers of cryptography, ensuring secure storage and transfer of your digital assets."
-    }
-  }
+  "title1": "Stockage des clés sur l'appareil",
+  "description1": "Bearby conserve vos clés directement sur votre appareil, garantissant un contrôle total et une sécurité sans dépendances externes.",
+  
+  "title2": "Aucune collecte de données",
+  "description2": "Bearby ne collecte aucune donnée utilisateur, préservant votre vie privée et votre autonomie à chaque étape.",
+  
+  "title3": "Expérience utilisateur fluide",
+  "description3": "Profitez d'une interface intuitive et agréable, conçue pour une utilisation facile, avec une protection cryptographique robuste.",
+  
+  "title4": "Chiffrement AES-256 + PBKDF2 + BLAKE3",
+  "description4": "Bénéficiez d'un chiffrement de haute sécurité avec AES-256, PBKDF2 et BLAKE3 pour une protection inégalée de vos actifs.",
+  
+  "title5": "Signature locale des transactions",
+  "description5": "Toutes les transactions sont signées directement sur votre appareil, éliminant les risques liés au traitement à distance.",
+  
+  "title6": "Couches cryptographiques avancées",
+  "description6": "Profitez de multiples couches de cryptographie pour un stockage et un transfert sécurisés de vos actifs numériques."
 }
