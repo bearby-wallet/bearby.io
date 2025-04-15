@@ -1,13 +1,16 @@
+import { getTranslations } from "next-intl/server";
 import SectionTitle from "../Common/SectionTitle";
 import Image from "next/image";
 
-const PricingGrids = ({ pricingData }: { pricingData: any[] }) => {
+const PricingGrids = async ({ pricingData }: { pricingData: any[] }) => {
+  const t = await getTranslations("pricing_grids");
+
   return (
     <div className="mx-auto px-4 sm:px-8 xl:px-0">
       <SectionTitle
-        subTitle="Seamless Integration"
-        title="The Best Way to Join the Massa Ecosystem."
-        paragraph="Bearby provides a Simple Way to Connect any website to the Massa Ecosystem."
+        subTitle={t("subtitle")}
+        title={t("title")}
+        paragraph={t("paragraph")}
       />
       
       <div className="wow fadeInUp pricing-item-border relative z-20 overflow-hidden rounded-3xl bg-dark px-8 pb-10 pt-12.5 xl:px-10 flex flex-col sm:flex-row gap-4">
@@ -16,9 +19,9 @@ const PricingGrids = ({ pricingData }: { pricingData: any[] }) => {
           <Image
             src="/images/pricing/0.webp"
             alt="Small Plan"
-            width={500}  
-            height={300} 
-            className="object-cover w-full h-full" 
+            width={500}
+            height={300}
+            className="object-cover w-full h-full"
           />
         </div>
 
@@ -27,9 +30,9 @@ const PricingGrids = ({ pricingData }: { pricingData: any[] }) => {
           <Image
             src="/images/pricing/1.webp"
             alt="Medium Plan"
-            width={500}  
-            height={300} 
-            className="object-cover w-full h-full" 
+            width={500}
+            height={300}
+            className="object-cover w-full h-full"
           />
         </div>
 
@@ -38,9 +41,9 @@ const PricingGrids = ({ pricingData }: { pricingData: any[] }) => {
           <Image
             src="/images/pricing/2.webp"
             alt="Large Plan"
-            width={500}  
-            height={300} 
-            className="object-cover w-full h-full" 
+            width={500}
+            height={300}
+            className="object-cover w-full h-full"
           />
         </div>
 
