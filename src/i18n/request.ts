@@ -15,6 +15,7 @@ export default getRequestConfig(async ({ requestLocale }) => {
   const footer = await import(`../../messages/${locale}/footer.json`);
   const menu = await import(`../../messages/${locale}/menu.json`);
   const hero = await import(`../../messages/${locale}/hero.json`);
+  const featuresList = await import(`../../messages/${locale}/features_list.json`);
 
   return {
     locale,
@@ -26,6 +27,7 @@ export default getRequestConfig(async ({ requestLocale }) => {
       footer: footer.default,
       menu: menu.default,
       hero: hero.default,
+      features_list: featuresList.default,
     },
   };
 });

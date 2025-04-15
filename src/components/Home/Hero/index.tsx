@@ -63,7 +63,6 @@ const Hero: NextPage = () => {
             {t("subtitle")}
           </h2>
 
-          {/* Кнопки, отцентрированные для мобильных устройств */}
           {isBrowserDetected && (
             <div className="flex flex-col sm:flex-row gap-4 mt-6 justify-center items-center">
               {buttons
