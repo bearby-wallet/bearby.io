@@ -1,17 +1,16 @@
-import { hasLocale } from 'next-intl';
-import { notFound } from 'next/navigation';
-import { routing } from '@/i18n/routing';
-
-import Footer from '@/components/Footer';
-import Header from '@/components/Header';
-import ScrollToTop from '@/components/ScrollToTop';
-import NextTopLoader from 'nextjs-toploader';
-import ToasterContext from '../context/ToastContext';
-
-import '../../styles/animate.css';
-import '../../styles/prism-vsc-dark-plus.css';
-import '../../styles/star.css';
-import '../../styles/tailwind.css';
+import { hasLocale } from "next-intl";
+import { notFound } from "next/navigation";
+import { routing } from "@/i18n/routing";
+import { NextIntlClientProvider } from "next-intl";
+import Footer from "@/components/Footer";
+import Header from "@/components/Header";
+import ScrollToTop from "@/components/ScrollToTop";
+import NextTopLoader from "nextjs-toploader";
+import ToasterContext from "../context/ToastContext";
+import "../../styles/animate.css";
+import "../../styles/prism-vsc-dark-plus.css";
+import "../../styles/star.css";
+import "../../styles/tailwind.css";
 
 export default async function LocaleLayout({
   children,
@@ -26,17 +25,27 @@ export default async function LocaleLayout({
     notFound();
   }
 
+  let messages;
+  try {
+    const menuMessages = (await import(`../../../messages/${locale}/menu.json`)).default;
+    messages = { menu: menuMessages }; // Соответствует request.ts
+  } catch (error) {
+    console.error(`Failed to load messages for locale ${locale}:`, error);
+    notFound();
+  }
+
   return (
     <html lang={locale}>
       <body>
         <NextTopLoader color="#8646F4" crawlSpeed={300} showSpinner={false} shadow="none" />
         <ToasterContext />
-        <Header />
-        {children}
-        <Footer locale={locale} />
-        <ScrollToTop />
+        <NextIntlClientProvider locale={locale} messages={messages}>
+          <Header />
+          {children}
+          <Footer locale={locale} />
+          <ScrollToTop />
+        </NextIntlClientProvider>
       </body>
     </html>
   );
 }
-

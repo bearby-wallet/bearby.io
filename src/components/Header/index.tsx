@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
+import { useTranslations } from "next-intl";
 import logo from "../../../public/images/logo/logo.svg";
 import DropDown from "./DropDown";
 import menuData from "./menuData";
@@ -11,6 +12,15 @@ const Header = () => {
   const [navigationOpen, setNavigationOpen] = useState(false);
   const [stickyMenu, setStickyMenu] = useState(false);
   const pathUrl = usePathname();
+  const t = useTranslations("menu");
+  const locale = pathUrl.split("/")[1] || "en";
+
+  // Локализованные данные меню
+  const localizedMenuData = menuData.map((item) => ({
+    ...item,
+    title: item.id === 1 ? t("home") : t("docs"),
+    path: item.path === "/" ? `/${locale}` : `/${locale}${item.path}`,
+  }));
 
   // Sticky menu
   const handleStickyMenu = () => {
@@ -31,13 +41,13 @@ const Header = () => {
       >
         <div className="relative mx-auto flex max-w-[1200px] items-center justify-between px-4 sm:px-8 lg:px-0">
           <div className="flex items-center">
-            <Link href="/">
+            <Link href={`/${locale}`}>
               <Image src={logo} alt="Logo" width={80} height={80} />
             </Link>
           </div>
           <nav className="hidden lg:flex absolute left-1/2 transform -translate-x-1/2">
             <ul className="flex gap-6">
-              {menuData.map((menuItem, key) => (
+              {localizedMenuData.map((menuItem, key) => (
                 <li key={key} className="relative">
                   {menuItem.submenu ? (
                     <DropDown menuItem={menuItem} />
@@ -95,7 +105,7 @@ const Header = () => {
           <div className="absolute left-0 top-full w-full bg-transparent backdrop-blur-md py-5 transition-all duration-300 lg:hidden">
             <nav>
               <ul className="flex flex-col items-center gap-5">
-                {menuData.map((menuItem, key) => (
+                {localizedMenuData.map((menuItem, key) => (
                   <li key={key}>
                     <Link
                       href={menuItem.path ?? ""}

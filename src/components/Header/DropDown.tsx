@@ -1,24 +1,42 @@
+"use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
+import { useTranslations } from "next-intl";
 import { Menu } from "@/types/menu";
 
 const DropDown = ({ menuItem }: { menuItem: Menu }) => {
   const [dropdownToggler, setDropdownToggler] = useState(false);
   const pathUrl = usePathname();
+  const t = useTranslations("menu");
+  const locale = pathUrl.split("/")[1] || "en";
+
+  // Локализованный заголовок
+  const localizedTitle =
+    menuItem.id === 1 ? t("home") : menuItem.id === 3 ? t("docs") : menuItem.title;
+
+  // Локализованный путь
+  const localizedPath =
+    menuItem.path === "/" ? `/${locale}` : `/${locale}${menuItem.path || ""}`;
+
+  // Локализованные элементы подменю (если они есть)
+  const localizedSubmenu = menuItem.submenu?.map((item) => ({
+    ...item,
+    title: t(item.title.toLowerCase().replace(/\s+/g, "_")),
+    path: item.path ? `/${locale}${item.path}` : "#",
+  }));
+
   return (
     <>
       {menuItem.title !== "Pages" ? (
         <Link
           onClick={() => setDropdownToggler(!dropdownToggler)}
           className={`hover:nav-gradient relative flex items-center justify-between gap-3 border border-transparent px-4 py-1.5 text-sm hover:text-white ${
-            pathUrl === menuItem.path
-              ? "nav-gradient text-white"
-              : "text-white/80"
+            pathUrl === localizedPath ? "nav-gradient text-white" : "text-white/80"
           }`}
-          href={`${menuItem.path ? menuItem.path : ""}`}
+          href={localizedPath}
         >
-          {menuItem.title}
+          {localizedTitle}
           <span>
             <svg
               className="h-3 w-3 cursor-pointer fill-current"
@@ -33,12 +51,10 @@ const DropDown = ({ menuItem }: { menuItem: Menu }) => {
         <button
           onClick={() => setDropdownToggler(!dropdownToggler)}
           className={`hover:nav-gradient relative flex items-center justify-between gap-3 border border-transparent px-4 py-1.5 text-sm hover:text-white ${
-            pathUrl === menuItem.path
-              ? "nav-gradient text-white"
-              : "text-white/80"
+            pathUrl === localizedPath ? "nav-gradient text-white" : "text-white/80"
           }`}
         >
-          {menuItem.title}
+          {localizedTitle}
           <span>
             <svg
               className="h-3 w-3 cursor-pointer fill-current"
@@ -52,8 +68,8 @@ const DropDown = ({ menuItem }: { menuItem: Menu }) => {
       )}
 
       <ul className={`dropdown ${dropdownToggler ? "flex" : ""}`}>
-        {menuItem?.submenu &&
-          menuItem?.submenu.map((item, key) => (
+        {localizedSubmenu &&
+          localizedSubmenu.map((item, key) => (
             <li key={key}>
               <Link
                 href={item.path || "#"}

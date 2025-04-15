@@ -13,6 +13,7 @@ export default getRequestConfig(async ({ requestLocale }) => {
   const termsPolicy = await import(`../../messages/${locale}/terms.json`);
   const features = await import(`../../messages/${locale}/features.json`);
   const footer = await import(`../../messages/${locale}/footer.json`);
+  const menu = await import(`../../messages/${locale}/menu.json`);
 
   return {
     locale,
@@ -22,6 +23,7 @@ export default getRequestConfig(async ({ requestLocale }) => {
       terms: termsPolicy.default,
       features: features.default,
       footer: footer.default,
+      menu: menu.default,
     },
   };
 });
