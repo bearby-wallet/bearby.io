@@ -28,7 +28,11 @@ export default async function LocaleLayout({
   let messages;
   try {
     const menuMessages = (await import(`../../../messages/${locale}/menu.json`)).default;
-    messages = { menu: menuMessages }; // Соответствует request.ts
+    const heroMessages = (await import(`../../../messages/${locale}/hero.json`)).default;
+    messages = {
+      menu: menuMessages,
+      hero: heroMessages,
+    };
   } catch (error) {
     console.error(`Failed to load messages for locale ${locale}:`, error);
     notFound();

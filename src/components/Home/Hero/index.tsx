@@ -1,12 +1,13 @@
 "use client";
-
 import Image from "next/image";
 import { NextPage } from "next";
 import { useState, useEffect } from "react";
+import { useTranslations } from "next-intl";
 
 const Hero: NextPage = () => {
   const [browserName, setBrowserName] = useState<string | null>(null);
   const [isBrowserDetected, setIsBrowserDetected] = useState(false);
+  const t = useTranslations("hero");
 
   useEffect(() => {
     const userAgent = navigator.userAgent.toLowerCase();
@@ -23,13 +24,13 @@ const Hero: NextPage = () => {
   const buttons = [
     {
       name: "chrome",
-      label: "Get add-on",
+      label: t("button_label"),
       link: "https://chromewebstore.google.com/detail/bearby/papngmkmknnmfhabbckobgfpihpdgplk",
       icon: "/images/hero/chrome.svg",
     },
     {
       name: "firefox",
-      label: "Get add-on",
+      label: t("button_label"),
       link: "https://addons.mozilla.org/en-GB/firefox/addon/bearby/",
       icon: "/images/hero/firefox.svg",
     },
@@ -53,21 +54,21 @@ const Hero: NextPage = () => {
       <div className="relative z-1 mx-auto max-w-[900px] px-4 sm:px-8 xl:px-0">
         <div className="text-left">
           <h1 className="mb-6 text-5xl font-extrabold leading-tight text-white sm:text-5xl xl:text-7xl">
-            <span className="block">A portal to the</span>
-            <span className="block">decentralised</span>
-            <span className="block">world</span>
+            <span className="block">{t("title_part1")}</span>
+            <span className="block">{t("title_part2")}</span>
+            {t("title_part3") && <span className="block">{t("title_part3")}</span>}
           </h1>
 
           <h2 className="mb-6 text-4xl font-extrabold leading-tight text-white sm:text-5xl xl:text-3xl">
-            The most popular and fastest Massa wallet
+            {t("subtitle")}
           </h2>
 
           {/* Кнопки, отцентрированные для мобильных устройств */}
           {isBrowserDetected && (
             <div className="flex flex-col sm:flex-row gap-4 mt-6 justify-center items-center">
               {buttons
-                .filter(btn => !browserName || browserName === btn.name)
-                .map(btn => (
+                .filter((btn) => !browserName || browserName === btn.name)
+                .map((btn) => (
                   <a
                     key={btn.name}
                     href={btn.link}
