@@ -1,9 +1,9 @@
-export type Team = {
+export interface Team {
   id: number;
-  name: string;
-  designation: string;
+  name_key: string;
+  designation_key: string;
   image: string;
-  linkedinLink?: string;
-  twitterLink?: string;
-  githubLink?: string;
-};
+  linkedinLink: string;
+  twitterLink: string;
+  githubLink: string;
+}

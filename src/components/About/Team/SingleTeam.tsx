@@ -1,14 +1,17 @@
 import { Team } from "@/types/team";
+import { getTranslations } from "next-intl/server";
 import Image from "next/image";
 
-const SingleTeam = ({ team }: { team: Team }) => {
-  const { name, designation, image, linkedinLink, twitterLink, githubLink } = team;
+const SingleTeam = async ({ team }: { team: Team }) => {
+  const t = await getTranslations("team");
+  const name = t(`members.${team.id}.name`);
+  const designation = t(`members.${team.id}.designation`);
 
   return (
     <div className="wow fadeInUp group text-center">
       <div className="team-img-gradient group-hover:before:gradient-3 relative mx-auto mb-7.5 h-50 w-full max-w-50 rounded-full">
         <Image
-          src={image}
+          src={team.image}
           alt={name}
           fill
           className="rounded-full object-cover object-center"
@@ -20,7 +23,7 @@ const SingleTeam = ({ team }: { team: Team }) => {
       <div className="flex items-center justify-center gap-5">
         <a
           aria-label="social icon"
-          href={linkedinLink}
+          href={team.linkedinLink}
           className="duration-300 ease-in hover:text-white"
         >
           <svg
@@ -40,7 +43,7 @@ const SingleTeam = ({ team }: { team: Team }) => {
 
         <a
           aria-label="social icon"
-          href={twitterLink}
+          href={team.twitterLink}
           className="duration-300 ease-in hover:text-white"
         >
           <svg
@@ -59,7 +62,7 @@ const SingleTeam = ({ team }: { team: Team }) => {
         </a>
         <a
           aria-label="social icon"
-          href={githubLink}
+          href={team.githubLink}
           className="duration-300 ease-in hover:text-white"
         >
           <svg
