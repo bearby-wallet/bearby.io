@@ -18,6 +18,8 @@ export default getRequestConfig(async ({ requestLocale }) => {
   const featuresList = await import(`../../messages/${locale}/features_list.json`);
   const pricingGrids = await import(`../../messages/${locale}/pricing_grids.json`);
   const team = await import(`../../messages/${locale}/team.json`);
+  const docs = await import(`../../messages/${locale}/docs.json`);
+
 
   return {
     locale,
@@ -32,6 +34,7 @@ export default getRequestConfig(async ({ requestLocale }) => {
       features_list: featuresList.default,
       pricing_grids: pricingGrids.default,
       team: team.default,
+      docs: docs.default,
     },
   };
 });

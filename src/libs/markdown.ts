@@ -1,48 +1,61 @@
-import fs from "fs";
-import matter from "gray-matter";
-import { join } from "path";
+import fs from 'fs/promises';
+import path from 'path';
+import matter from 'gray-matter';
 
-const postsDirectory = join(process.cwd(), "src/markdown/docs");
+const postsDirectory = path.join(process.cwd(), 'src/markdown/docs');
 
-export function getPostSlugs() {
-  return fs.readdirSync(postsDirectory);
+export async function getPostSlugs(locale: string): Promise<string[]> {
+  const localePath = path.join(postsDirectory, locale);
+  const files = await fs.readdir(localePath);
+  return files.filter((file) => file.endsWith('.mdx'));
 }
 
-export function getPostBySlug(slug: string, fields: string[] = []) {
-  const realSlug = slug.replace(/\.mdx$/, "");
-  const fullPath = join(postsDirectory, `${realSlug}.mdx`);
-  const fileContents = fs.readFileSync(fullPath, "utf8");
+function extractFields(fileContents: string, slug: string, fields: string[]) {
   const { data, content } = matter(fileContents);
+  const item: Record<string, string> = {};
 
-  type Items = {
-    [key: string]: string;
-  };
+  for (const field of fields) {
+    if (field === 'slug') item[field] = slug;
+    if (field === 'content') item[field] = content;
+    if (typeof data[field] !== 'undefined') item[field] = data[field];
+  }
 
-  const items: Items = {};
-
-  // Ensure only the minimal needed data is exposed
-  fields.forEach((field) => {
-    if (field === "slug") {
-      items[field] = realSlug;
-    }
-    if (field === "content") {
-      items[field] = content;
-    }
-
-    if (typeof data[field] !== "undefined") {
-      items[field] = data[field];
-    }
-  });
-
-  return items;
+  return item;
 }
 
-export function getAllPosts(fields: string[] = []) {
-  const slugs = getPostSlugs();
-  const posts = slugs
-    .map((slug) => getPostBySlug(slug, fields))
-    // sort posts by date in descending order
-    .sort((post1, post2) => (post1.date > post2.date ? -1 : 1));
+export async function getPostBySlug(locale: string, slug: string, fields: string[] = []) {
+  const realSlug = slug.replace(/\.mdx$/, '');
+  let fullPath = path.join(postsDirectory, locale, `${realSlug}.mdx`);
 
-  return posts;
+  try {
+    const fileContents = await fs.readFile(fullPath, 'utf8');
+    return extractFields(fileContents, realSlug, fields);
+  } catch (err) {
+    if (locale !== 'en') {
+      const fallbackPath = path.join(postsDirectory, 'en', `${realSlug}.mdx`);
+      try {
+        const fallbackContents = await fs.readFile(fallbackPath, 'utf8');
+        return extractFields(fallbackContents, realSlug, fields);
+      } catch (fallbackError) {
+        console.error(`Fallback also failed for slug "${slug}":`, fallbackError);
+        throw err; // rethrow original
+      }
+    } else {
+      throw err;
+    }
+  }
+}
+
+export async function getAllPosts(fields: string[], locale: string) {
+  const slugs = await getPostSlugs(locale);
+  const posts = await Promise.all(
+    slugs.map((slug) => getPostBySlug(locale, slug, fields))
+  );
+
+  return posts.sort((a, b) => {
+    if (a.date && b.date) {
+      return a.date > b.date ? -1 : 1;
+    }
+    return 0;
+  });
 }

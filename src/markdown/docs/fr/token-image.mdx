@@ -1,0 +1,201 @@
+---
+title: Bearby CDN
+description: metadata of FT tokens.
+date: 2025-04-30
+---
+
+# Bearby Cryptometa Documentation
+
+## Introduction
+
+Cryptometa is a public repository that Bearby wallet uses to display token information and compute token scores. This repository allows token creators and the community to add and update token metadata, ensuring accurate and consistent token representation within the Bearby wallet interface.
+
+## Repository Structure
+
+The cryptometa repository is organized as follows:
+
+```
+cryptometa
+├── LICENSE
+├── README.md
+├── ft
+│   ├── AS1nqHKXpnFXqhDExTskXmBbbVpVpUbCQVtNSXLCqUDSUXihdWRq
+│   │   ├── dark.svg
+│   │   ├── light.svg
+│   │   └── meta.json
+│   ├── AS11111111111111111111116iowaD
+│   │   ├── dark.svg
+│   │   ├── light.svg
+│   │   └── meta.json
+│   └── AS111111111111111111111Awmv8x
+│       ├── dark.svg
+│       ├── light.svg
+│       └── meta.json
+└── source_code.txt
+```
+
+The key components are:
+
+- `ft` directory: Contains subdirectories for each fungible token, named after the token's contract address
+- Each token directory has three essential files:
+  - `meta.json`: Contains token metadata
+  - `dark.svg`: SVG icon for dark mode themes
+  - `light.svg`: SVG icon for light mode themes
+
+## How to Add Your Token
+
+Follow these steps to add your token to the Bearby wallet:
+
+### 1. Fork the Repository
+
+First, fork the Cryptometa repository to your GitHub account.
+
+### 2. Create a New Token Directory
+
+Inside the `ft` directory, create a new folder named exactly after your token's contract address (e.g., `AS1nqHKXpnFXqhDExTskXmBbbVpVpUbCQVtNSXLCqUDSUXihdWRq`).
+
+### 3. Prepare Token Icons
+
+Create two SVG icons for your token:
+
+- `dark.svg`: The token icon optimized for dark mode interfaces
+- `light.svg`: The token icon optimized for light mode interfaces
+
+Guidelines for icons:
+- Use SVG format for better scaling
+- Keep file size under 100KB
+- Recommended dimensions: 128x128 pixels
+- Make sure both icons are clearly visible in their respective themes
+- Transparent background is recommended
+
+### 4. Create the Meta.json File
+
+Create a `meta.json` file in your token directory with the following structure:
+
+```json
+{
+  "name": "Your Token Name",
+  "symbol": "TOKEN",
+  "description": "A brief description of your token and its purpose",
+  "decimals": 9,
+  "supply": 1000000000,
+  "web": "https://yourwebsite.com",
+  "email": "contact@yourproject.com",
+  "whitepaper": "https://yourwebsite.com/whitepaper.pdf",
+  "holders": true,
+  "publicTeam": true,
+  "product": true,
+  "links": {
+    "github": "https://github.com/yourproject",
+    "linkedin": "https://linkedin.com/company/yourproject",
+    "x": "https://x.com/yourproject",
+    "coinmarketcap": "https://coinmarketcap.com/currencies/yourtoken",
+    "coingecko": "https://coingecko.com/en/coins/yourtoken",
+    "medium": "https://medium.com/@yourproject",
+    "blog": "https://yourwebsite.com/blog",
+    "telegram": "https://t.me/yourproject",
+    "discord": "https://discord.gg/yourproject",
+    "facebook": "https://facebook.com/yourproject",
+    "reddit": "https://reddit.com/r/yourproject",
+    "youtube": "https://youtube.com/c/yourproject",
+    "instagram": "https://instagram.com/yourproject"
+  }
+}
+```
+
+### 5. Submit a Pull Request
+
+Once you've added your token directory with all required files, commit the changes and submit a pull request to the main Cryptometa repository.
+
+## Required and Optional Fields
+
+The `meta.json` file contains several fields that help the Bearby wallet evaluate and display your token. Here's a breakdown of the fields and their importance:
+
+| Field               | Required | Points | Notes                                                     |
+|---------------------|----------|--------|-----------------------------------------------------------|
+| name                | Yes      | -      | The full name of your token                               |
+| symbol              | Yes      | -      | The token ticker symbol                                   |
+| description         | No       | -      | A brief description of the project                        |
+| decimals            | No       | -      | Number of decimal places for the token                    |
+| supply              | No       | -      | Total token supply                                        |
+| web                 | No       | 5      | Project website (should use https)                        |
+| email               | No       | -      | Contact email for the team                                |
+| whitepaper          | No       | 10     | Link to a comprehensive whitepaper                        |
+| holders             | No       | 10     | Set to `true` if more than 1000 holders without airdrops  |
+| publicTeam          | No       | 20     | Set to `true` if team members have public profiles        |
+| product             | No       | 30     | Set to `true` if there's a usable product with activity   |
+
+### Link Fields
+
+The `links` object can include the following properties:
+
+| Link Field       | Points | Notes                                                     |
+|------------------|--------|-----------------------------------------------------------|
+| research         | 10     | Links to Binance Research, TokenData, or similar          |
+| github           | 10     | Organization or account with related project repositories |
+| linkedin         | 10     | Should have team members visible on the page              |
+| x                | 5      | Project's X/Twitter account                               |
+| coinmarketcap    | -      | CoinMarketCap listing page                                |
+| coingecko        | -      | CoinGecko listing page                                    |
+| medium           | -      | Project's Medium publication                              |
+| blog             | -      | Project's blog                                            |
+| telegram         | -      | Official Telegram group                                   |
+| discord          | -      | Official Discord server                                   |
+| facebook         | -      | Official Facebook page                                    |
+| reddit           | -      | Official subreddit                                        |
+| youtube          | -      | Official YouTube channel                                  |
+| instagram        | -      | Official Instagram account                                |
+
+## Token Score Calculation
+
+Bearby uses the information in the `meta.json` file to compute a score for each token. This score helps users identify more trustworthy and established tokens.
+
+The maximum possible score is 110 points, distributed as follows:
+- Website (https): 5 points
+- Whitepaper: 10 points
+- 1000+ holders: 10 points
+- Public team: 20 points
+- Working product: 30 points
+- Research links: 10 points
+- GitHub with related repositories: 10 points
+- LinkedIn with visible team: 10 points
+- X/Twitter presence: 5 points
+
+Tokens with higher scores will be considered more trustworthy in the Bearby wallet interface.
+
+## Review Process
+
+After submitting your pull request, the Bearby team will review your submission to ensure it meets all requirements. They may request additional information or changes before approving your token.
+
+The review process typically includes:
+1. Verification of token contract address
+2. Validation of token metadata
+3. Review of the token icons for quality and appropriateness
+4. Confirmation of links and other provided information
+
+## Updating Existing Token Information
+
+To update information for an existing token:
+
+1. Fork the repository
+2. Make the necessary changes to the token's files
+3. Submit a pull request with a clear explanation of the changes
+
+## Best Practices
+
+- Ensure all links are valid and point to official resources
+- Use high-quality SVG icons for best display in the wallet
+- Provide accurate and comprehensive information in the meta.json file
+- Keep descriptions concise but informative
+- Update your token information when significant changes occur
+
+## Important Notes
+
+- The Bearby team has the final say in approving tokens and their scores to protect users
+- Misleading information may result in rejection or removal of your token
+- Higher-scoring tokens may receive more visibility in the wallet interface
+- Regular updates to your token information are encouraged as your project evolves
+
+## Support
+
+If you have questions about adding your token or need assistance with the process, you can reach out to the Bearby team through their official channels.
