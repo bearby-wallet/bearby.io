@@ -1,6 +1,7 @@
 'use client';
 import { useState } from "react";
-import { MDXRemote } from "next-mdx-remote";
+// import { MDXRemote } from "next-mdx-remote";
+import MDXRemote from './ClientMDXRemote';
 import type { MDXRemoteSerializeResult } from "next-mdx-remote";
 import { Highlight, themes } from "prism-react-renderer";
 
