@@ -52,9 +52,17 @@ const DocsContent = ({ content }: DocsContentProps) => {
               {children}
             </td>
           ),
+          // Заменим p на div, чтобы избежать вложения в <p>
+          p: ({ children, ...props }) => (
+            <div {...props}>{children}</div> // Заменим <p> на <div>
+          ),
           div: ({ children, ...props }) => (
-            <div {...props}>
-              {children}
+            <div {...props}>{children}</div>
+          ),
+          // Для <pre> тоже нужно явно обрабатывать
+          pre: ({ children, ...props }) => (
+            <div className="code-block-wrapper" {...props}>
+              <pre>{children}</pre>
             </div>
           ),
         }}
@@ -82,13 +90,17 @@ const CodeBlock: React.FC<CodeBlockProps> = ({ code, language }) => {
       <Highlight theme={themes.dracula} code={code} language={language}>
         {({ className, style, tokens, getLineProps, getTokenProps }) => (
           <pre className={className} style={style}>
-            {tokens.map((line, i) => (
-              <div {...getLineProps({ line, key: i })}>
-                {line.map((token, key) => (
-                  <span {...getTokenProps({ token, key })} />
-                ))}
-              </div>
-            ))}
+            {tokens.map((line, i) => {
+              const lineProps = getLineProps({ line });
+              return (
+                <div key={i} {...lineProps} style={{ display: 'block' }}>
+                  {line.map((token, key) => {
+                    const tokenProps = getTokenProps({ token });
+                    return <span key={key} {...tokenProps} />;
+                  })}
+                </div>
+              );
+            })}
           </pre>
         )}
       </Highlight>
