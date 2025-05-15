@@ -1,237 +1,237 @@
 ---
 title: Bearby Web3
-description: A comprehensive guide to the Bearby Web3 library for interacting with the Bearby wallet and Massa blockchain
+description: Un guide complet de la bibliothèque Bearby Web3 pour interagir avec le portefeuille Bearby et la blockchain 
 date: 2025-04-31
 ---
 
 
-# Bearby Web3 Library
+# Bibliothèque Bearby Web3
 
 ## Introduction
 
-Bearby Web3 is the main web3 module for the Bearby wallet, designed to allow developers to easily interact with the Massa blockchain through the Bearby wallet interface. This library provides a comprehensive set of tools and APIs to build web3 applications on Massa blockchain.
+Bearby Web3 est le module web3 principal pour le portefeuille Bearby, conçu pour permettre aux développeurs d'interagir facilement avec la blockchain Massa via l'interface du portefeuille Bearby. Cette bibliothèque fournit un ensemble complet d'outils et d'APIs pour développer des applications web3 sur la blockchain Massa.
 
 ## Installation
 
 ```bash
-# Using yarn
+# Avec yarn
 yarn add @hicaru/bearby.js
 
-# Using npm
+# Avec npm
 npm install @hicaru/bearby.js
 ```
 
-## Core Modules
+## Modules Principaux
 
-The Bearby Web3 library consists of the following core modules:
+La bibliothèque Bearby Web3 se compose des modules principaux suivants :
 
 | Module | Description |
 |--------|-------------|
-| `web3.wallet` | Manages wallet connection, accounts, signing operations, and network information |
-| `web3.contract` | Handles smart contract interactions (deploy, call, read) |
-| `web3.massa` | Provides direct access to Massa blockchain JsonRPC methods |
+| web3.wallet | Gère la connexion au portefeuille, les comptes, les opérations de signature et les informations réseau |
+| web3.contract | Gère les interactions avec les contrats intelligents (déploiement, appel, lecture) |
+| web3.massa | Fournit un accès direct aux méthodes JsonRPC de la blockchain Massa |
 
-## Getting Started
+## Premiers Pas
 
-The library is designed to work exclusively in browser environments and provides a global bearby object after initialization.
+La ocurant est conçue pour fonctionner exclusivement dans des environnements de navigateur et fournit un objet global bearby après l'initialisation.
 
 ```javascript
 import { web3 } from '@hicaru/bearby.js';
 
-// Now you can access the web3 object
-console.log(web3.wallet.connected); // Check if wallet is connected
+// Vous pouvez maintenant accéder à l'objet web3
+console.log(web3.wallet.connected); // Vérifie si le portefeuille est connecté
 ```
 
-## Module: web3.wallet
+## Module : web3.wallet
 
-The wallet module handles all wallet-related operations, including connections, account management, and transaction signing.
+Le module portefeuille gère toutes les opérations liées au portefeuille, y compris les connexions, la gestion des comptes et la signature des transactions.
 
-### Properties
+### Propriétés
 
-| Property | Type | Description |
-|----------|------|-------------|
-| `connected` | `boolean` | Indicates if the website is currently connected to the wallet |
-| `enabled` | `boolean` | Indicates if the wallet is unlocked |
-| `installed` | `boolean` | Indicates if the Bearby wallet extension is installed |
-| `account` | `Account` | Provides access to the current account and related methods |
-| `network` | `Network` | Provides access to the current network and related methods |
-| `blockchain` | `Blockchain` | Provides access to blockchain data like current period |
+| Propriété   | Type | Description |
+|------------|------|-------------|
+| connected | boolean | Indique si le site web est actuellement connecté au portefeuille |
+| enabled | boolean | Indique si le portefeuille est déverrouillé |
+| installed| boolean | Indique si l'extension du portefeuille Bearby est installée |
+| account | Account | Fournit un accès au compte actuel et aux méthodes associées |
+| network | Network | Fournit un accès au réseau actuel et aux méthodes associées |
+| blockchain | Blockchain | Fournit un accès aux données de la blockchain, comme la période actuelle |
 
-### Methods
+### Méthodes
 
-#### `connect()`
+#### connect()
 
-Initiates a connection between the website and the Bearby wallet. Shows a popup dialog where the user can approve or reject the connection.
+Initie une connexion entre le site web et le portefeuille Bearby. Affiche une fenêtre contextuelle où l'utilisateur peut approuver ou rejeter la connexion.
 
 ```javascript
 try {
   const connected = await web3.wallet.connect();
   if (connected) {
-    console.log("Connected to Bearby wallet!");
-    console.log("Current address:", web3.wallet.account.base58);
+    console.log("Connecté au portefeuille Bearby !");
+    console.log("Adresse actuelle:", web3.wallet.account.base58);
   }
 } catch (error) {
-  console.error("Connection failed:", error.message);
+  console.error("Échec de la connexion:", error.message);
 }
 ```
 
-#### `disconnect()`
+#### disconnect()
 
-Disconnects the website from the Bearby wallet.
+Déconnecte le site web du portefeuille Bearby.
 
 ```javascript
 try {
   const disconnected = await web3.wallet.disconnect();
-  console.log("Disconnected from Bearby wallet:", disconnected);
+  console.log("Déconnecté du portefeuille Bearby:", disconnected);
 } catch (error) {
-  console.error("Disconnection failed:", error.message);
+  console.error("Échec de la déconnexion:", error.message);
 }
 ```
 
-#### `signMessage(message)`
+#### signMessage(message)
 
-Signs a message using the current account.
+Signe un message en utilisant le compte actuel.
 
 ```javascript
 try {
-  const signedMessage = await web3.wallet.signMessage("Hello, Massa!");
+  const signedMessage = await web3.wallet.signMessage("Bonjour, Massa !");
   console.log("Signature:", signedMessage.signature);
-  console.log("Public key:", signedMessage.publicKey);
-  console.log("Original message:", signedMessage.message);
+  console.log("Clé publique:", signedMessage.publicKey);
+  console.log("Message original:", signedMessage.message);
 } catch (error) {
-  console.error("Signing failed:", error.message);
+  console.error("Échec de la signature:", error.message);
 }
 ```
 
-#### `signTransaction(transaction)`
+#### signTransaction(transaction)
 
-Signs a transaction using the current account. The transaction must be an instance of the `Transaction` class.
+Signe une transaction en utilisant le compte actuel. La transaction doit être une instance de la classe Transaction
 
 ```javascript
 import { Transaction } from '@hicaru/bearby.js';
-// or create a transaction using web3.contract or web3.massa methods
+// ou créez une transaction en utilisant les méthodes web3.contract ou web3.massa
 
 try {
   const txHash = await web3.wallet.signTransaction(transaction);
-  console.log("Transaction hash:", txHash);
+  console.log("Hash de la transaction:", txHash);
 } catch (error) {
-  console.error("Transaction signing failed:", error.message);
+  console.error("Échec de la signature de la transaction:", error.message);
 }
 ```
 
-#### `isMassaAddress(address)`
+#### isMassaAddress(address)
 
-Validates if an address is a valid Massa blockchain address.
+Vérifie si une adresse est une adresse valide de la blockchain Massa.
 
 ```javascript
 const isValid = await web3.wallet.isMassaAddress("A12KqAUVvPZAAybdmJijkKbynfJeDUsfztEUh8JCSx6DPjczdYLt");
-console.log("Is valid Massa address:", isValid);
+console.log("Est une adresse Massa valide:", isValid);
 ```
 
-#### `requestPubKey()`
+#### requestPubKey()
 
-Requests the public key of the currently connected account.
+Demande la clé publique du compte actuellement connecté.
 
 ```javascript
 try {
   const pubKey = await web3.wallet.requestPubKey();
-  console.log("Public key:", pubKey);
+  console.log("Clé publique :", pubKey);
 } catch (error) {
-  console.error("Failed to get public key:", error.message);
+  console.error("Échec de l'obtention de la clé publique :", error.message);
 }
 ```
 
-### Account Subscription
+### Abonnement au Compte
 
-The account object allows you to subscribe to changes to the current account.
+L'objet compte permet de s'abonner aux modifications du compte actuel.
 
 ```javascript
-// Subscribe to account changes
+// S'abonner aux modifications du compte
 const observer = web3.wallet.account.subscribe((base58, accounts) => {
-  console.log("Active account:", base58);
-  console.log("Available accounts:", accounts);
+  console.log("Compte actif :", base58);
+  console.log("Comptes disponibles :", accounts);
 });
 
-// Don't forget to unsubscribe when not needed anymore to avoid memory leaks
+// N'oubliez pas de vous désabonner lorsque cela n'est plus nécessaire pour éviter les fuites de mémoire
 observer.unsubscribe();
 ```
 
-### Network Subscription
+### Abonnement au Réseau
 
-The network object allows you to subscribe to network changes.
+L'objet réseau permet de s'abonner aux modifications du réseau.
 
 ```javascript
-// Subscribe to network changes
+// S'abonner aux modifications du réseau
 const observer = web3.wallet.network.subscribe((networkName) => {
-  console.log("Current network:", networkName);
+  console.log("Réseau actuel :", networkName);
 });
 
-// Don't forget to unsubscribe when not needed anymore
+// N'oubliez pas de vous désabonner lorsque cela n'est plus nécessaire
 observer.unsubscribe();
 ```
 
-### Blockchain Subscription
+### Abonnement à la Blockchain
 
-The blockchain object allows you to subscribe to blockchain period updates.
+L'objet blockchain permet de s'abonner aux mises à jour de la période de la blockchain.
 
 ```javascript
-// Subscribe to period changes
+// S'abonner aux modifications de la période
 const observer = web3.wallet.blockchain.subscribe((period) => {
-  console.log("Current period:", period);
+  console.log("Période actuelle :", period);
 });
 
-// Don't forget to unsubscribe when not needed anymore
+// N'oubliez pas de vous désabonner lorsque cela n'est plus nécessaire
 observer.unsubscribe();
 ```
 
 ## Module: web3.contract
 
-The contract module provides methods for interacting with smart contracts on the Massa blockchain.
+Le module contrat fournit des méthodes pour interagir avec les contrats intelligents sur la blockchain Massa.
 
-### Methods
+### Méthodes
 
-#### `deploy(params)`
+#### deploy(params)
 
-Deploys a smart contract to the Massa blockchain.
+Déploie un contrat intelligent sur la blockchain Massa.
 
 ```javascript
 try {
   const txHash = await web3.contract.deploy({
-    fee: 0, // Transaction fee
-    maxGas: 4_200_000_000, // Maximum gas for contract deployment
-    maxCoins: 0.1 * 10**9, // Maximum coins to be spent
-    coins: 100000000n, // Coins to attach to the contract deployment
-    parameters: [ // Constructor parameters (optional)
+    fee: 0, // Frais de transaction
+    maxGas: 4_200_000_000, // Gaz maximum pour le déploiement du contrat
+    maxCoins: 0.1 * 10**9, // Maximum de pièces à dépenser
+    coins: 100000000n, // Pièces à attacher au déploiement du contrat
+    parameters: [ // Paramètres du constructeur (facultatif)
       {
         type: web3.contract.types.STRING,
-        value: "Hello, World!"
+        value: "Bonjour, le monde !"
       }
     ],
-    deployerBase64: "AGFzbQEAAAABWA9gAX8Bf2AAAGACf38AAAAAAAAAAAIAAAACAAAAA=", // Base64 encoded deployer bytecode
-    contractDataBase64: "AGFzbQEAAAABKQhgAX8AYAJ/fbWFw" // Base64 encoded contract bytecode
+    deployerBase64: "AGFzbQEAAAABWA9gAX8Bf2AAAGACf38AAAAAAAAAAAIAAAACAAAAA=", // Code binaire du déployeur encodé en Base64
+    contractDataBase64: "AGFzbQEAAAABKQhgAX8AYAJ/fbWFw" // Code binaire du contrat encodé en Base64
   });
-  console.log("Deployment transaction hash:", txHash);
+  console.log("Hash de la transaction de déploiement :", txHash);
 } catch (error) {
-  console.error("Contract deployment failed:", error.message);
+  console.error("Échec du déploiement du contrat :", error.message);
 }
 ```
 
-#### `call(params)`
+#### call(params)
 
-Calls a function on a deployed smart contract.
+Appelle une fonction sur un contrat intelligent déployé.
 
 ```javascript
 try {
   const txHash = await web3.contract.call({
-    fee: 0, // Transaction fee
-    maxGas: 2000000, // Maximum gas for the function call
-    coins: 0, // Coins to attach to the function call
-    targetAddress: 'A12KqAUVvPZAAybdmJijkKbynfJeDUsfztEUh8JCSx6DPjczdYLt', // Contract address
-    functionName: 'transfer', // Function to call
-    parameters: [ // Function parameters
+    fee: 0, // Frais de transaction
+    maxGas: 2000000, // Gaz maximum pour l'appel de fonction
+    coins: 0, // Pièces à attacher à l'appel de fonction
+    targetAddress: 'A12KqAUVvPZAAybdmJijkKbynfJeDUsfztEUh8JCSx6DPjczdYLt', // Adresse du contrat
+    functionName: 'transfer', // Fonction à appeler
+    parameters: [ // Paramètres de la fonction
       {
         type: web3.contract.types.STRING,
-        value: "Hello, World!"
+        value: "Bonjour, le monde !"
       },
       {
         type: web3.contract.types.BOOL,
@@ -247,19 +247,19 @@ try {
       }
     ]
   });
-  console.log("Function call transaction hash:", txHash);
+  console.log("Hash de la transaction d'appel de fonction :", txHash);
 } catch (error) {
-  console.error("Function call failed:", error.message);
+  console.error("Échec de l'appel de fonction :", error.message);
 }
 ```
 
-Alternatively, you can use `unsafeParameters` with the Massa Args serializer:
+Alternativement, vous pouvez utiliser unsafeParameters avec le sérialiseur Args de Massa :
 
 ```javascript
 import { Args } from "@massalabs/massa-web3";
 
 const args = new Args()
-  .addString("Hello word")
+  .addString("Bonjour le monde")
   .addBool(true)
   .addF64(0.3);
 
@@ -271,51 +271,52 @@ try {
     functionName: 'transfer',
     unsafeParameters: args.serialize()
   });
-  console.log("Function call transaction hash:", txHash);
+  console.log("Hash de la transaction d'appel de fonction :", txHash);
 } catch (error) {
-  console.error("Function call failed:", error.message);
+  console.error("Échec de l'appel de fonction :", error.message);
 }
 ```
 
-#### `readSmartContract(params)`
+#### readSmartContract(params)
 
-Performs a read-only call to a smart contract function.
+Effectue un appel en lecture seule à une fonction de contrat intelligent.
 
 ```javascript
 try {
   const data = await web3.contract.readSmartContract({
-    fee: 0, // Transaction fee (not needed for read-only calls)
-    maxGas: 200000, // Maximum gas for the read operation
-    simulatedGasPrice: 0, // Gas price for simulation
-    targetAddress: 'A12KqAUVvPZAAybdmJijkKbynfJeDUsfztEUh8JCSx6DPjczdYLt', // Contract address
-    targetFunction: "balanceOf", // Function to call
-    parameter: [] // Function parameters
+    fee: 0, // Frais de transaction (non requis pour les appels en lecture seule)
+    maxGas: 200000, // Gaz maximum pour l'opération de lecture
+    simulatedGasPrice: 0, // Prix du gaz pour la simulation
+    targetAddress: 'A12KqAUVvPZAAybdmJijkKbynfJeDUsfztEUh8JCSx6DPjczdYLt', // Adresse du contrat
+    targetFunction: "balanceOf", // Fonction à appeler
+    parameter: [] // Paramètres de la fonction
   });
-  console.log("Read result:", data);
+  console.log("Résultat de la lecture :", data);
 } catch (error) {
-  console.error("Read failed:", error.message);
+  console.error("Échec de la lecture :", error.message);
 }
 ```
 
-#### `getFilteredSCOutputEvent(filter)`
+#### getFilteredSCOutputEvent(filter)
 
-Retrieves events emitted by a smart contract based on a filter.
+Récupère les événements émis par un contrat intelligent en fonction d'un filtre.
 
 ```javascript
 try {
   const eventsFilter = {
-    start: null, // Starting slot
-    end: null, // Ending slot
-    original_caller_address: null, // Original caller address filter
-    original_operation_id: 'txHash', // Transaction hash filter
-    emitter_address: null, // Contract address filter
+    start: null, // Slot de départ
+    end: null, // Slot de fin
+    original_caller_address: null, // Filtre d'adresse de l'appelant original
+    original_operation_id: 'txHash', // Filtre de hash de transaction
+    emitter_address: null, // Filtre d'adresse du contrat
   };
   
   const response = await web3.contract.getFilteredSCOutputEvent(eventsFilter);
   
   if (response && response.result && response.result[0] && response.result[0].data) {
     const eventData = String(response.result[0].data);
-    console.log("Event data:", eventData);
+    console.log("Données de l'événement :", eventData);
   }
 } catch (error) {
-  console.error("Failed to get events:", error.mes
+  console.error("Échec de la récupération des événements :", error.message);
+}

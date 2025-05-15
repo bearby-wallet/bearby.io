@@ -36,15 +36,15 @@ cryptometa
 
 Les principaux composants sont :
 
-- Répertoire `ft` : Contient des sous-répertoires pour chaque jeton fongible, nommés d’après l’adresse du contrat du jeton.
+- Répertoire "ft" : Contient des sous-répertoires pour chaque jeton fongible, nommés d’après l’adresse du contrat du jeton.
 - Chaque répertoire de jeton contient trois fichiers essentiels :
-  - `meta.json` : Contient les métadonnées du jeton.
-  - `dark.svg` : Icône SVG pour les thèmes en mode sombre.
-  - `light.svg` : Icône SVG pour les thèmes en mode clair.
+  - "meta.json" : Contient les métadonnées du jeton.
+  - "dark.svg" : Icône SVG pour les thèmes en mode sombre.
+  - "light.svg" : Icône SVG pour les thèmes en mode clair.
 
 ## Comment Ajouter Votre Jeton
 
-Suivez ces étapes pour ajouter votre jeton au portefeuille Bearby :
+Suivez ces étapes pour ajouter votre jeton au portefeuille Bearby:
 
 ### 1. Forker le Référentiel
 
@@ -52,14 +52,14 @@ Tout d’abord, forkez le référentiel Cryptometa sur votre compte GitHub.
 
 ### 2. Créer un Nouveau Répertoire de Jeton
 
-Dans le répertoire `ft`, créez un nouveau dossier nommé exactement d’après l’adresse du contrat de votre jeton (par exemple, `AS1nqHKXpnFXqhDExTskXmBbbVpVpUbCQVtNSXLCqUDSUXihdWRq`).
+Dans le répertoire "ft", créez un nouveau dossier nommé exactement d’après l’adresse du contrat de votre jeton (par exemple, `AS1nqHKXpnFXqhDExTskXmBbbVpVpUbCQVtNSXLCqUDSUXihdWRq`).
 
 ### 3. Préparer les Icônes du Jeton
 
 Créez deux icônes SVG pour votre jeton :
 
-- `dark.svg` : L’icône du jeton optimisée pour les interfaces en mode sombre.
-- `light.svg` : L’icône du jeton optimisée pour les interfaces en mode clair.
+- "dark.svg" : L’icône du jeton optimisée pour les interfaces en mode sombre.
+- "light.svg" : L’icône du jeton optimisée pour les interfaces en mode clair.
 
 Directives pour les icônes :
 - Utilisez le format SVG pour une meilleure mise à l’échelle.
@@ -70,7 +70,7 @@ Directives pour les icônes :
 
 ### 4. Créer le Fichier Meta.json
 
-Créez un fichier `meta.json` dans le répertoire de votre jeton avec la structure suivante :
+Créez un fichier "meta.json" dans le répertoire de votre jeton avec la structure suivante :
 
 ```json
 {
@@ -109,42 +109,42 @@ Une fois que vous avez ajouté le répertoire de votre jeton avec tous les fichi
 
 ## Champs Obligatoires et Optionnels
 
-Le fichier meta.json contient plusieurs champs qui aident le portefeuille Bearby à évaluer et afficher votre jeton. Voici une répartition des champs et de leur importance :
+Le fichier meta.json contient plusieurs champs qui aident le portefeuille Bearby à évaluer et afficher votre jeton. Voici une répartition des champs et de leur importance:
 
-| Champ               | Obligatoire | Points | Notes                                                     |
-|---------------------|----------|--------|-----------------------------------------------------------|
-| name                | Oui      | -      | Le nom complet de votre jeton                            |
-| symbol              | Oui      | -      | Le symbole du jeton                       |
-| description         | Non       | -      | Une brève description du projet                        |
-| decimals            | Non       | -      | Nombre de décimales pour le jeton                   |
-| supply              | Non       | -      | Offre totale de jetons                                        |
-| web                 | Non       | 5      | Site web du projet (doit utiliser https)                        |
-| email               | Non       | -      | Email de contact de l’équipe                                |
-| whitepaper          | Non       | 10     | Lien vers un livre blanc complet                        |
-| holders             | Non       | 10     | Définir à true si plus de 1000 détenteurs sans airdrops  |
-| publicTeam          | Non       | 20     | Définir à true si les membres de l’équipe sont publics        |
-| product             | Non       | 30     | Définir à true s’il existe un produit utilisable   |
+| Champ        | Obligatoire | Points | Notes                                                    |
+|--------------|-------------|--------|----------------------------------------------------------|
+| name         | Oui         | -      | Le nom complet de votre jeton                            |
+| symbol       | Oui         | -      | Le symbole du jeton                                      |
+| description  | Non         | -      | Une brève description du projet                          |
+| decimals     | Non         | -      | Nombre de décimales pour le jeton                        |
+| supply       | Non         | -      | Offre totale de jetons                                   |
+| web          | Non         | 5      | Site web du projet (doit utiliser https)                 |
+| email        | Non         | -      | Email de contact de l’équipe                             |
+| whitepaper   | Non         | 10     | Lien vers un livre blanc complet                         |
+| holders      | Non         | 10     | true si plus de 1000 détenteurs sans airdrops            |
+| publicTeam   | Non         | 20     | true si les membres de l’équipe sont publics             |
+| product      | Non         | 30     | true s’il existe un produit utilisable                   |
 
 ### Champs de Liens
 
 L’objet links peut inclure les propriétés suivantes:
 
-| Champ de Lien       | Points | Notes                                                     |
+| Champ de Lien    | Points | Notes                                                  |
 |------------------|--------|-----------------------------------------------------------|
-| research         | 10     | Liens vers Binance Research, TokenData, ou similaire          |
-| github           | 10     | Organisation ou compte avec des dépôts liés au projet |
-| linkedin         | 10     | Doit afficher les membres de l’équipe              |
-| x                | 5      | Compte X/Twitter du projet                               |
-| coinmarketcap    | -      | Page de listing CoinMarketCap                                |
-| coingecko        | -      | Page de listing CoinGecko                                    |
+| research         | 10     | Liens vers Binance Research, TokenData, ou similaire      |
+| github           | 10     | Organisation ou compte avec des dépôts liés au projet     |
+| linkedin         | 10     | Doit afficher les membres de l’équipe                     |
+| x                | 5      | Compte X/Twitter du projet                                |
+| coinmarketcap    | -      | Page de listing CoinMarketCap                             |
+| coingecko        | -      | Page de listing CoinGecko                                 |
 | medium           | -      | Publication Medium du projet                              |
 | blog             | -      | Blog du projet                                            |
-| telegram         | -      | Groupe Telegram officiel                                   |
-| discord          | -      | Serveur Discord officiel                                   |
-| facebook         | -      | Page Facebook officielle                                    |
+| telegram         | -      | Groupe Telegram officiel                                  |
+| discord          | -      | Serveur Discord officiel                                  |
+| facebook         | -      | Page Facebook officielle                                  |
 | reddit           | -      | Subreddit officiel                                        |
-| youtube          | -      | OChaîne YouTube officielle                                  |
-| instagram        | -      | Compte Instagram officiel                                |
+| youtube          | -      | OChaîne YouTube officielle                                |
+| instagram        | -      | Compte Instagram officiel                                 |
 
 ## Calcul du Score des Jetons
 
