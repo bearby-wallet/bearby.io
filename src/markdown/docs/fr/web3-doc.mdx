@@ -25,15 +25,15 @@ npm install @hicaru/bearby.js
 
 La bibliothèque Bearby Web3 se compose des modules principaux suivants :
 
-| Module | Description |
-|--------|-------------|
-| web3.wallet | Gère la connexion au portefeuille, les comptes, les opérations de signature et les informations réseau |
-| web3.contract | Gère les interactions avec les contrats intelligents (déploiement, appel, lecture) |
-| web3.massa | Fournit un accès direct aux méthodes JsonRPC de la blockchain Massa |
+| Module          | Description                                                                        |
+|-----------------|------------------------------------------------------------------------------------|
+| `web3.wallet`   | Gère la connexion au portefeuille, les comptes, les opérations de signature et les informations réseau |
+| `web3.contract` | Gère les interactions avec les contrats intelligents (déploiement, appel, lecture) |
+| `web3.massa`    | Fournit un accès direct aux méthodes JsonRPC de la blockchain Massa                |
 
 ## Premiers Pas
 
-La ocurant est conçue pour fonctionner exclusivement dans des environnements de navigateur et fournit un objet global bearby après l'initialisation.
+La bibliothèque est conçue pour fonctionner exclusivement dans des environnements de navigateur et fournit un objet global bearby après l'initialisation.
 
 ```javascript
 import { web3 } from '@hicaru/bearby.js';
@@ -48,14 +48,15 @@ Le module portefeuille gère toutes les opérations liées au portefeuille, y co
 
 ### Propriétés
 
-| Propriété   | Type | Description |
-|------------|------|-------------|
-| connected | boolean | Indique si le site web est actuellement connecté au portefeuille |
-| enabled | boolean | Indique si le portefeuille est déverrouillé |
-| installed| boolean | Indique si l'extension du portefeuille Bearby est installée |
-| account | Account | Fournit un accès au compte actuel et aux méthodes associées |
-| network | Network | Fournit un accès au réseau actuel et aux méthodes associées |
-| blockchain | Blockchain | Fournit un accès aux données de la blockchain, comme la période actuelle |
+| Propriété   | Type         | Description                                                                 |
+|-------------|--------------|-----------------------------------------------------------------------------|
+| `connected` | `boolean`    | Indique si le site web est actuellement connecté au portefeuille            |
+| `enabled`   | `boolean`    | Indique si le portefeuille est déverrouillé                                 |
+| `installed` | `boolean`    | Indique si l'extension du portefeuille Bearby est installée                 |
+| `account`   | `Account`    | Fournit un accès au compte actuel et aux méthodes associées                 |
+| `network`   | `Network`    | Fournit un accès au réseau actuel et aux méthodes associées                 |
+| `blockchain`| `Blockchain` | Fournit un accès aux données de la blockchain, comme la période actuelle    |
+
 
 ### Méthodes
 

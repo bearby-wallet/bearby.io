@@ -3,6 +3,7 @@ title: Bearby Web3
 description: Подробное руководство по библиотеке Bearby Web3 для взаимодействия с кошельком Bearby и блокчейном Massa
 date: 2025-04-31
 ---
+# Библиотека Bearby Web3
 
 ## Введение
 
@@ -23,11 +24,12 @@ npm install @hicaru/bearby.js
 
 Библиотека Bearby Web3 включает в себя следующие основные модули:
 
-| Модуль | Описание |
-|--------|----------|
-| `web3.wallet` | Управление подключением кошелька, аккаунтами, подписями и информацией о сети |
-| `web3.contract` | Взаимодействие со смарт-контрактами (развёртывание, вызов, чтение) |
-| `web3.massa` | Прямой доступ к методам JsonRPC блокчейна Massa |
+| Модуль         | Описание                                                                             |
+|----------------|--------------------------------------------------------------------------------------|
+| `web3.wallet`  | Управление подключением кошелька, аккаунтами, подписями и информацией о сети        |
+| `web3.contract`| Взаимодействие со смарт-контрактами (развёртывание, вызов, чтение)                  |
+| `web3.massa`   | Прямой доступ к методам JsonRPC блокчейна Massa                                     |
+
 
 ## Начало работы
 
@@ -39,3 +41,281 @@ import { web3 } from '@hicaru/bearby.js';
 // Теперь можно использовать объект web3
 console.log(web3.wallet.connected); // Проверка подключения кошелька
 ```
+
+## Модуль: web3.wallet
+
+Модуль кошелька отвечает за все операции, связанные с кошельком, включая подключение, управление счетами и подпись транзакций.
+
+### Свойства
+
+| Свойство    | Тип         | Описание                                                                 |
+|-------------|-------------|--------------------------------------------------------------------------|
+| `connected` | `boolean`   | Указывает, подключен ли веб-сайт к кошельку                             |
+| `enabled`   | `boolean`   | Указывает, разблокирован ли кошелёк                                     |
+| `installed` | `boolean`   | Указывает, установлено ли расширение кошелька Bearby                    |
+| `account`   | `Account`   | Предоставляет доступ к текущему счёту и связанным методам               |
+| `network`   | `Network`   | Предоставляет доступ к текущей сети и связанным методам                 |
+| `blockchain`| `Blockchain`| Предоставляет доступ к данным блокчейна, таким как текущий период       |
+
+
+### Методы
+
+#### `connect()`
+
+Инициирует подключение между веб-сайтом и кошельком Bearby. Отображает всплывающее окно, в котором пользователь может одобрить или отклонить подключение.
+
+```javascript
+try {
+  const connected = await web3.wallet.connect();
+  if (connected) {
+    console.log("Подключено к кошельку Bearby!");
+    console.log("Текущий адрес:", web3.wallet.account.base58);
+  }
+} catch (error) {
+  console.error("Ошибка подключения:", error.message);
+}
+```
+
+#### `disconnect()`
+
+Отключает веб-сайт от кошелька Bearby.
+
+```javascript
+try {
+  const disconnected = await web3.wallet.disconnect();
+  console.log("Отключено от кошелька Bearby:", disconnected);
+} catch (error) {
+  console.error("Ошибка отключения:", error.message);
+}
+```
+
+#### `signMessage(message)`
+
+Подписывает сообщение с использованием текущего счета.
+
+```javascript
+try {
+  const signedMessage = await web3.wallet.signMessage("Привет, Massa!");
+  console.log("Подпись:", signedMessage.signature);
+  console.log("Публичный ключ:", signedMessage.publicKey);
+  console.log("Исходное сообщение:", signedMessage.message);
+} catch (error) {
+  console.error("Ошибка подписи:", error.message);
+}
+```
+
+#### `signTransaction(transaction)`
+
+Подписывает транзакцию с использованием текущего счета. Транзакция должна быть экземпляром класса Transaction.
+
+```javascript
+import { Transaction } from '@hicaru/bearby.js';
+// или создайте транзакцию с использованием методов web3.contract или web3.massa
+
+try {
+  const txHash = await web3.wallet.signTransaction(transaction);
+  console.log("Хэш транзакции:", txHash);
+} catch (error) {
+  console.error("Ошибка подписи транзакции:", error.message);
+}
+```
+
+#### `isMassaAddress(address)`
+
+Проверяет, является ли адрес действительным адресом блокчейна Massa.
+
+```javascript
+const isValid = await web3.wallet.isMassaAddress("A12KqAUVvPZAAybdmJijkKbynfJeDUsfztEUh8JCSx6DPjczdYLt");
+console.log("Является ли действительным адресом Massa:", isValid);
+```
+
+#### `requestPubKey()`
+
+Запрашивает публичный ключ текущего подключенного счета.
+
+```javascript
+try {
+  const pubKey = await web3.wallet.requestPubKey();
+  console.log("Публичный ключ:", pubKey);
+} catch (error) {
+  console.error("Не удалось получить публичный ключ:", error.message);
+}
+```
+
+### Подписка на счет
+
+Объект счета позволяет подписаться на изменения текущего счета.
+
+```javascript
+// Подписка на изменения счета
+const observer = web3.wallet.account.subscribe((base58, accounts) => {
+  console.log("Активный счет:", base58);
+  console.log("Доступные счета:", accounts);
+});
+
+// Не забудьте отписаться, когда это больше не нужно, чтобы избежать утечек памяти
+observer.unsubscribe();
+```
+
+### Подписка на сеть
+
+Объект сети позволяет подписаться на изменения сети.
+
+```javascript
+// Подписка на изменения сети
+const observer = web3.wallet.network.subscribe((networkName) => {
+  console.log("Текущая сеть:", networkName);
+});
+
+// Не забудьте отписаться, когда это больше не нужно
+observer.unsubscribe();
+```
+
+### Подписка на блокчейн
+
+```javascript
+// Подписка на изменения периода
+const observer = web3.wallet.blockchain.subscribe((period) => {
+  console.log("Текущий период:", period);
+});
+
+// Не забудьте отписаться, когда это больше не нужно
+observer.unsubscribe();
+```
+
+## Module: web3.contract
+
+Модуль контракта предоставляет методы для взаимодействия с умными контрактами на блокчейне Massa.
+
+### Методы
+
+#### `deploy(params)`
+
+Разворачивает умный контракт на блокчейне Massa.
+
+```javascript
+try {
+  const txHash = await web3.contract.deploy({
+    fee: 0, // Комиссия за транзакцию
+    maxGas: 4_200_000_000, // Максимальный газ для развертывания контракта
+    maxCoins: 0.1 * 10**9, // Максимальное количество монет для расхода
+    coins: 100000000n, // Монеты, прикрепленные к развертыванию контракта
+    parameters: [ // Параметры конструктора (опционально)
+      {
+        type: web3.contract.types.STRING,
+        value: "Привет, мир!"
+      }
+    ],
+    deployerBase64: "AGFzbQEAAAABWA9gAX8Bf2AAAGACf38AAAAAAAAAAAIAAAACAAAAA=", // Байт-код развертывателя, закодированный в Base64
+    contractDataBase64: "AGFzbQEAAAABKQhgAX8AYAJ/fbWFw" // Байт-код контракта, закодированный в Base64
+  });
+  console.log("Хэш транзакции развертывания:", txHash);
+} catch (error) {
+  console.error("Ошибка развертывания контракта:", error.message);
+}
+```
+
+#### `call(params)`
+
+Вызывает функцию в развернутом умном контракте.
+
+```javascript
+try {
+  const txHash = await web3.contract.call({
+    fee: 0, // Комиссия за транзакцию
+    maxGas: 2000000, // Максимальный газ для вызова функции
+    coins: 0, // Монеты, прикрепленные к вызову функции
+    targetAddress: 'A12KqAUVvPZAAybdmJijkKbynfJeDUsfztEUh8JCSx6DPjczdYLt', // Адрес контракта
+    functionName: 'transfer', // Имя функции для вызова
+    parameters: [ // Параметры функции
+      {
+        type: web3.contract.types.STRING,
+        value: "Привет, мир!"
+      },
+      {
+        type: web3.contract.types.BOOL,
+        value: true
+      },
+      {
+        type: web3.contract.types.F64,
+        value: 32
+      },
+      {
+        type: web3.contract.types.U256,
+        value: '435435345234324324324323243242398854684'
+      }
+    ]
+  });
+  console.log("Хэш транзакции вызова функции:", txHash);
+} catch (error) {
+  console.error("Ошибка вызова функции:", error.message);
+}
+```
+
+Альтернативно, вы можете использовать unsafeParameters с сериализатором Args от Massa:
+
+```javascript
+import { Args } from "@massalabs/massa-web3";
+
+const args = new Args()
+  .addString("Привет, мир")
+  .addBool(true)
+  .addF64(0.3);
+
+try {
+  const txHash = await web3.contract.call({
+    maxGas: 2000000,
+    coins: 0,
+    targetAddress: 'A12KqAUVvPZAAybdmJijkKbynfJeDUsfztEUh8JCSx6DPjczdYLt',
+    functionName: 'transfer',
+    unsafeParameters: args.serialize()
+  });
+  console.log("Хэш транзакции вызова функции:", txHash);
+} catch (error) {
+  console.error("Ошибка вызова функции:", error.message);
+}
+```
+
+#### `readSmartContract(params)`
+
+Выполняет вызов функции умного контракта только для чтения.
+
+```javascript
+try {
+  const data = await web3.contract.readSmartContract({
+    fee: 0, // Комиссия за транзакцию (не требуется для вызовов только для чтения)
+    maxGas: 200000, // Максимальный газ для операции чтения
+    simulatedGasPrice: 0, // Цена газа для симуляции
+    targetAddress: 'A12KqAUVvPZAAybdmJijkKbynfJeDUsfztEUh8JCSx6DPjczdYLt', // Адрес контракта
+    targetFunction: "balanceOf", // Имя функции для вызова
+    parameter: [] // Параметры функции
+  });
+  console.log("Результат чтения:", data);
+} catch (error) {
+  console.error("Ошибка чтения:", error.message);
+}
+```
+
+#### `getFilteredSCOutputEvent(filter)`
+
+Извлекает события, эмитированные умным контрактом, на основе фильтра.
+
+```javascript
+try {
+  const eventsFilter = {
+    start: null, // Начальный слот
+    end: null, // Конечный слот
+    original_caller_address: null, // Фильтр адреса исходного вызывающего
+    original_operation_id: 'txHash', // Фильтр хэша транзакции
+    emitter_address: null, // Фильтр адреса контракта
+  };
+  
+  const response = await web3.contract.getFilteredSCOutputEvent(eventsFilter);
+  
+  if (response && response.result && response.result[0] && response.result[0].data) {
+    const eventData = String(response.result[0].data);
+    console.log("Данные события:", eventData);
+  }
+} catch (error) {
+  console.error("Не удалось получить события:", error.message);
+}

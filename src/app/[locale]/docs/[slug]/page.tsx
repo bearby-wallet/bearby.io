@@ -6,6 +6,7 @@ import { getAllPosts, getPostBySlug, getPostSlugs } from "@/libs/markdown";
 import { Metadata } from 'next';
 import { routing } from '@/i18n/routing';
 import { serialize } from "next-mdx-remote/serialize";
+import remarkGfm from 'remark-gfm';
 
 type Params = { slug: string; locale: string };
 
@@ -77,7 +78,11 @@ export default async function DocsPage({ params }: { params: Promise<Params> }) 
 
   let serializedContent = null;
   if (typeof post.content === "string") {
-    serializedContent = await serialize(post.content);
+    serializedContent = await serialize(post.content, {
+      mdxOptions: {
+        remarkPlugins: [remarkGfm],
+      },
+    });
   }
 
   return (
@@ -86,7 +91,7 @@ export default async function DocsPage({ params }: { params: Promise<Params> }) 
         <div className="-mx-4 flex flex-wrap">
           <div className="w-full px-4 lg:w-1/4">
             <div className="sticky top-[74px] rounded-lg bg-white/5 p-4 transition-all">
-              <h2 className="text-lg font-semibold mb-4">{t('title')}</h2>
+              {/* <h2 className="text-lg font-semibold mb-4">{t('title')}</h2> */}
               <ul className="space-y-2">
                 {posts.map((post, key) => (
                   <SidebarLink post={post} locale={locale} key={key} />

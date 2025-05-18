@@ -1,6 +1,5 @@
 'use client';
 import { useState } from "react";
-// import { MDXRemote } from "next-mdx-remote";
 import MDXRemote from './ClientMDXRemote';
 import type { MDXRemoteSerializeResult } from "next-mdx-remote";
 import { Highlight, themes } from "prism-react-renderer";
@@ -17,21 +16,18 @@ const DocsContent = ({ content }: DocsContentProps) => {
         components={{
           code: ({ children, className, ...props }) => {
             const code = children?.toString().trim() || "";
-            const language = className?.match(/language-(\w+)/)?.[1] || "jsx";
+            const language = className?.match(/language-(\w+)/)?.[1];
+            if (language) {
+              return (
+                <CodeBlock code={code} language={language} {...props} />
+              );
+            }
             return (
-              <CodeBlock code={code} language={language} {...props} />
+              <code className="bg-zinc-800 text-zinc-100 px-1 py-0.5 rounded" {...props}>
+                {code}
+              </code>
             );
           },
-          table: ({ children, ...props }) => (
-            <table className="table-auto border-collapse border border-gray-600" {...props}>
-              {children}
-            </table>
-          ),
-          thead: ({ children, ...props }) => (
-            <thead className="bg-gray-800" {...props}>
-              {children}
-            </thead>
-          ),
           tbody: ({ children, ...props }) => (
             <tbody {...props}>
               {children}
@@ -52,14 +48,12 @@ const DocsContent = ({ content }: DocsContentProps) => {
               {children}
             </td>
           ),
-          // Заменим p на div, чтобы избежать вложения в <p>
           p: ({ children, ...props }) => (
-            <div {...props}>{children}</div> // Заменим <p> на <div>
+            <div {...props}>{children}</div> 
           ),
           div: ({ children, ...props }) => (
             <div {...props}>{children}</div>
           ),
-          // Для <pre> тоже нужно явно обрабатывать
           pre: ({ children, ...props }) => (
             <div className="code-block-wrapper" {...props}>
               <pre>{children}</pre>

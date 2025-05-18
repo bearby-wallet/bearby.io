@@ -111,40 +111,42 @@ Une fois que vous avez ajouté le répertoire de votre jeton avec tous les fichi
 
 Le fichier meta.json contient plusieurs champs qui aident le portefeuille Bearby à évaluer et afficher votre jeton. Voici une répartition des champs et de leur importance:
 
-| Champ        | Obligatoire | Points | Notes                                                    |
-|--------------|-------------|--------|----------------------------------------------------------|
-| name         | Oui         | -      | Le nom complet de votre jeton                            |
-| symbol       | Oui         | -      | Le symbole du jeton                                      |
-| description  | Non         | -      | Une brève description du projet                          |
-| decimals     | Non         | -      | Nombre de décimales pour le jeton                        |
-| supply       | Non         | -      | Offre totale de jetons                                   |
-| web          | Non         | 5      | Site web du projet (doit utiliser https)                 |
-| email        | Non         | -      | Email de contact de l’équipe                             |
-| whitepaper   | Non         | 10     | Lien vers un livre blanc complet                         |
-| holders      | Non         | 10     | true si plus de 1000 détenteurs sans airdrops            |
-| publicTeam   | Non         | 20     | true si les membres de l’équipe sont publics             |
-| product      | Non         | 30     | true s’il existe un produit utilisable                   |
+| Champ         | Obligatoire | Points | Notes                                                    |
+|---------------|-------------|--------|----------------------------------------------------------|
+| `name`        | Oui         | -      | Le nom complet de votre jeton                            |
+| `symbol`      | Oui         | -      | Le symbole du jeton                                      |
+| `description` | Non         | -      | Une brève description du projet                          |
+| `decimals`    | Non         | -      | Nombre de décimales pour le jeton                        |
+| `supply`      | Non         | -      | Offre totale de jetons                                   |
+| `web`         | Non         | 5      | Site web du projet (doit utiliser https)                 |
+| `email`       | Non         | -      | Email de contact de l’équipe                             |
+| `whitepaper`  | Non         | 10     | Lien vers un livre blanc complet                         |
+| `holders`     | Non         | 10     | `true` si plus de 1000 détenteurs sans airdrops          |
+| `publicTeam`  | Non         | 20     | `true` si les membres de l’équipe sont publics           |
+| `product`     | Non         | 30     | `true` s’il existe un produit utilisable                 |
+
 
 ### Champs de Liens
 
 L’objet links peut inclure les propriétés suivantes:
 
-| Champ de Lien    | Points | Notes                                                  |
-|------------------|--------|-----------------------------------------------------------|
-| research         | 10     | Liens vers Binance Research, TokenData, ou similaire      |
-| github           | 10     | Organisation ou compte avec des dépôts liés au projet     |
-| linkedin         | 10     | Doit afficher les membres de l’équipe                     |
-| x                | 5      | Compte X/Twitter du projet                                |
-| coinmarketcap    | -      | Page de listing CoinMarketCap                             |
-| coingecko        | -      | Page de listing CoinGecko                                 |
-| medium           | -      | Publication Medium du projet                              |
-| blog             | -      | Blog du projet                                            |
-| telegram         | -      | Groupe Telegram officiel                                  |
-| discord          | -      | Serveur Discord officiel                                  |
-| facebook         | -      | Page Facebook officielle                                  |
-| reddit           | -      | Subreddit officiel                                        |
-| youtube          | -      | OChaîne YouTube officielle                                |
-| instagram        | -      | Compte Instagram officiel                                 |
+| Champ de Lien    | Points   | Notes                                                     |
+|------------------|----------|-----------------------------------------------------------|
+| `research`       | 10       | Liens vers Binance Research, TokenData, ou similaire      |
+| `github`         | 10       | Organisation ou compte avec des dépôts liés au projet     |
+| `linkedin`       | 10       | Doit afficher les membres de l’équipe                     |
+| `x`              | 5        | Compte X/Twitter du projet                                |
+| `coinmarketcap`  | -        | Page de listing CoinMarketCap                             |
+| `coingecko`      | -        | Page de listing CoinGecko                                 |
+| `medium`         | -        | Publication Medium du projet                              |
+| `blog`           | -        | Blog du projet                                            |
+| `telegram`       | -        | Groupe Telegram officiel                                  |
+| `discord`        | -        | Serveur Discord officiel                                  |
+| `facebook`       | -        | Page Facebook officielle                                  |
+| `reddit`         | -        | Subreddit officiel                                        |
+| `youtube`        | -        | Chaîne YouTube officielle                                |
+| `instagram`      | -        | Compte Instagram officiel                                 |
+
 
 ## Calcul du Score des Jetons
 
